@@ -15,4 +15,34 @@ function selectGrade(i){current=i;renderLessons()}
 function renderLessons(){const tabs=document.getElementById('tabs'),cards=document.getElementById('lessonCards');tabs.replaceChildren();cards.replaceChildren();grades.forEach((g,i)=>{const b=document.createElement('button');b.textContent=g;b.className=i===current?'active':'';b.onclick=()=>selectGrade(i);tabs.append(b)});lessonNames[current].forEach((name,j)=>{const el=document.createElement('article');el.className='card';el.innerHTML='<div class="video">▶</div><span class="pill" style="margin-top:16px">'+grades[current]+'</span><h3>'+name+'</h3><p>شرح الدرس وتدريبات عليه. سيتم إضافة رابط الفيديو هنا.</p>';const b=document.createElement('button');b.textContent='شاهد الدروس على يوتيوب ↗';b.onclick=()=>window.open(channelUrl,'_blank','noopener');el.append(b);cards.append(el)})}renderLessons();
 const quiz=[{q:'ما ناتج ٣ × (٤ + ٢) ؟',a:['١٤','١٨','٢٠'],c:1},{q:'إذا كان س + ٥ = ١٢، فما قيمة س؟',a:['٥','٦','٧'],c:2},{q:'ما مربع العدد ٩؟',a:['١٨','٨١','٧٢'],c:1},{q:'إذا كانت ص = ٢س + ١، فما قيمة ص عندما س = ٣؟',a:['٧','٦','٥'],c:0},{q:'ما مجموع زوايا المثلث؟',a:['٩٠°','٢٧٠°','١٨٠°'],c:2}];
 function renderQuiz(){const root=document.getElementById('questions');root.replaceChildren();quiz.forEach((item,i)=>{const d=document.createElement('div');d.className='question';const p=document.createElement('p');p.textContent=(i+1)+'. '+item.q;d.append(p);item.a.forEach((answer,j)=>{const l=document.createElement('label');l.className='choice';const inp=document.createElement('input');inp.type='radio';inp.name='q'+i;inp.value=j;l.append(inp,document.createTextNode(answer));d.append(l)});root.append(d)})}function gradeQuiz(){let score=0,answered=0;quiz.forEach((q,i)=>{const selected=document.querySelector('input[name="q'+i+'"]:checked');if(selected){answered++;if(Number(selected.value)===q.c)score++}});const r=document.getElementById('result');if(answered<quiz.length){r.textContent='من فضلك جاوب على جميع الأسئلة أولًا ('+answered+' من '+quiz.length+').';r.className='result wrong';return}r.textContent='نتيجتك: '+score+' من '+quiz.length+' — '+(score===quiz.length?'ممتاز! أحسنت 👏':'استمر في التدريب، تقدر تتحسن 💪');r.className='result '+(score>=3?'correct':'wrong')}function resetQuiz(){renderQuiz();document.getElementById('result').textContent=''}renderQuiz();document.getElementById('year').textContent=new Date().getFullYear();
-</script></body></html>
+</script> <section id="first-prep-videos" dir="rtl"
+style="max-width:1000px;margin:35px auto;padding:20px;
+font-family:Arial,sans-serif;text-align:center;color:#071226">
+
+  <h2 style="color:#b89135">
+    مكتبة فيديوهات الرياضيات
+  </h2>
+
+  <h3>الصف الأول الإعدادي</h3>
+
+  <p>شرح مبسط للمناهج مع مستر محمد ربيع</p>
+
+  <div style="position:relative;width:100%;padding-top:56.25%;
+  background:#071226;border-radius:14px;overflow:hidden">
+
+    <iframe
+      src="https://www.youtube.com/embed/xKa601v8Gqg"
+      title="شرح الرياضيات للصف الأول الإعدادي - مستر محمد ربيع"
+      loading="lazy"
+      allow="accelerometer; autoplay; clipboard-write;
+      encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerpolicy="strict-origin-when-cross-origin"
+      allowfullscreen
+      style="position:absolute;inset:0;width:100%;height:100%;border:0">
+    </iframe>
+
+  </div>
+
+</section>
+</body>
+</html>
