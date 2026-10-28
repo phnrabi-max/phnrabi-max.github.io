@@ -1,1 +1,235 @@
-<!doctype html><html lang="ar" dir="rtl"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>الصف الثاني بكالوريا 2027 | أكاديمية مستر محمد ربيع</title><link rel="stylesheet" href="style.css"></head><body><header><h1>الصف الثاني بكالوريا 2027</h1><p>شرح مبسّط وتدريب مستمر</p></header><main><a class="btn secondary" href="index.html">← الرجوع للصفحة الرئيسية</a><section class="panel"><h2>📺 فيديوهات الشرح</h2><p class="muted">ترتيب الفيديوهات حسب الوحدات والدروس.</p><div class="grade"><h3>الوحدة الأولى</h3><p>سيتم إضافة فيديوهات الدروس هنا.</p></div><div class="grade"><h3>الوحدة الثانية</h3><p>سيتم إضافة فيديوهات الدروس هنا.</p></div></section><section class="panel"><h2>📝 اختبر نفسك</h2><p>نموذج جاهز لإضافة أسئلة المنهج، مع حساب الدرجة تلقائيًا بعد إدخال الأسئلة الصحيحة.</p><form id="quiz"><div class="quiz-q"><p>مثال توضيحي: ما ناتج 2 + 3؟</p><label><input type="radio" name="q1" value="0"> 4</label><br><label><input type="radio" name="q1" value="1"> 5</label><br><label><input type="radio" name="q1" value="0"> 6</label></div><button class="btn" type="button" onclick="gradeQuiz()">صحّح الاختبار</button><p class="result" id="result" aria-live="polite"></p><p class="muted">هذا سؤال تجريبي توضيحي فقط، ويجب استبداله بأسئلة الصف الفعلية قبل نشر الاختبار للطلاب.</p></form></section><a class="btn" href="https://wa.me/201281281205" target="_blank" rel="noopener">تواصل معايا على واتساب</a><footer>أكاديمية مستر محمد ربيع</footer></main><script>function gradeQuiz(){const a=document.querySelector('input[name="q1"]:checked');document.getElementById('result').textContent=a?'درجتك: '+a.value+'/1':'من فضلك اختار إجابة أولًا.';}</script></body></html>
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="شرح منهج الرياضيات للصف الثاني الثانوي بكالوريا 2027 مع مستر محمد ربيع">
+  <title>رياضيات ثانية بكالوريا 2027 | مستر محمد ربيع</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "Cairo", Tahoma, Arial, sans-serif;
+      background: #f3f7fd;
+      color: #24334b;
+      line-height: 1.9;
+    }
+
+    .top {
+      background: #102447;
+      color: white;
+      padding: 12px 5%;
+      text-align: center;
+    }
+
+    .container {
+      width: 92%;
+      max-width: 950px;
+      margin: auto;
+    }
+
+    .hero {
+      margin: 35px auto;
+      padding: 38px 24px;
+      border-radius: 24px;
+      background: linear-gradient(135deg, #102447, #1769d2);
+      color: white;
+      text-align: center;
+      box-shadow: 0 12px 30px #10244720;
+    }
+
+    .label {
+      display: inline-block;
+      background: #ffffff20;
+      border: 1px solid #ffffff40;
+      padding: 5px 15px;
+      border-radius: 30px;
+      font-size: 13px;
+    }
+
+    h1 {
+      font-size: clamp(27px, 5vw, 39px);
+      line-height: 1.5;
+      margin: 15px 0;
+    }
+
+    .hero p {
+      color: #e1ecff;
+      max-width: 650px;
+      margin: 0 auto 22px;
+    }
+
+    .youtube-button {
+      display: inline-block;
+      background: #ff3333;
+      color: white;
+      padding: 13px 23px;
+      border-radius: 12px;
+      font-weight: 800;
+      text-decoration: none;
+      margin: 8px 0;
+    }
+
+    .youtube-button:hover {
+      background: #d91f1f;
+    }
+
+    .back-button {
+      display: inline-block;
+      background: white;
+      color: #102447;
+      padding: 11px 20px;
+      border-radius: 12px;
+      font-weight: 800;
+      text-decoration: none;
+      margin: 8px;
+    }
+
+    .panel {
+      background: white;
+      padding: 25px;
+      margin: 22px auto;
+      border-radius: 20px;
+      border: 1px solid #e3eaf4;
+      box-shadow: 0 5px 20px #10244708;
+    }
+
+    .panel h2 {
+      color: #102447;
+      margin-top: 0;
+    }
+
+    .benefits {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+      gap: 14px;
+    }
+
+    .benefit {
+      padding: 18px;
+      background: #f3f7fd;
+      border-radius: 14px;
+    }
+
+    .benefit strong {
+      display: block;
+      color: #1769d2;
+      margin-bottom: 5px;
+    }
+
+    .benefit span {
+      font-size: 14px;
+      color: #69788d;
+    }
+
+    .contact {
+      text-align: center;
+    }
+
+    .contact a {
+      color: #1769d2;
+      font-weight: 800;
+    }
+
+    footer {
+      background: #0b1930;
+      color: #dbe5f4;
+      text-align: center;
+      padding: 20px 12px;
+      margin-top: 35px;
+      font-size: 13px;
+    }
+
+    @media (max-width: 480px) {
+      .hero { padding: 30px 17px; }
+      .panel { padding: 20px 16px; }
+      .youtube-button { width: 100%; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="top">
+    أكاديمية مستر محمد ربيع • الرياضيات ببساطة
+  </div>
+
+  <main class="container">
+
+    <section class="hero">
+      <span class="label">العام الدراسي 2027</span>
+
+      <h1>
+        رياضيات الصف الثاني الثانوي<br>
+        بكالوريا 2027
+      </h1>
+
+      <p>
+        ابدأ رحلة التفوق في الرياضيات مع مستر محمد ربيع.
+        شاهد دروس المنهج من خلال قائمة التشغيل الرسمية على يوتيوب،
+        وتابع الشرح بالترتيب.
+      </p>
+
+      <a
+        class="youtube-button"
+        href="https://youtube.com/playlist?list=PLVyuOepLvbj8"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        ▶ شاهد شرح المنهج كاملًا على يوتيوب
+      </a>
+
+      <br>
+
+      <a class="back-button" href="index.html">
+        ← العودة إلى الصفحة الرئيسية
+      </a>
+    </section>
+
+    <section class="panel">
+      <h2>ماذا ستجد في قائمة الشرح؟</h2>
+
+      <div class="benefits">
+        <div class="benefit">
+          <strong>📚 شرح المنهج</strong>
+          <span>انتقل إلى دروس الرياضيات الموجودة في قائمة التشغيل.</span>
+        </div>
+
+        <div class="benefit">
+          <strong>✏️ فهم وتدريب</strong>
+          <span>تابع الشرح ودوّن القواعد والأمثلة المهمة أثناء المشاهدة.</span>
+        </div>
+
+        <div class="benefit">
+          <strong>🎯 الاستعداد للامتحان</strong>
+          <span>راجع الدروس بانتظام واستعد لحل الاختبارات والتدريبات.</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel contact">
+      <h2>هل تحتاج إلى التواصل مع المدرس؟</h2>
+      <p>تواصل مع مستر محمد ربيع عبر واتساب.</p>
+
+      <a
+        href="https://wa.me/201281281205"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        تواصل عبر واتساب
+      </a>
+    </section>
+
+  </main>
+
+  <footer>
+    أكاديمية مستر محمد ربيع — التعليم متاح للجميع
+  </footer>
+
+</body>
+</html>
