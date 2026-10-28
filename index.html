@@ -4,169 +4,629 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="أكاديمية مستر محمد ربيع لتعليم الرياضيات للمرحلتين الإعدادية والثانوية. شرح مبسط وتدريبات واختبارات.">
+  <meta name="theme-color" content="#102447">
+  <title>أكاديمية مستر محمد ربيع | الرياضيات ببساطة</title>
 
-  <meta name="description" content="أكاديمية مستر محمد ربيع لتعليم الرياضيات مجانًا">
-
-  <title>أكاديمية مستر محمد ربيع</title>
-
-  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
   <style>
+    :root {
+      --navy: #102447;
+      --blue: #1769d2;
+      --cyan: #27c2d1;
+      --light: #f3f7fd;
+      --text: #24334b;
+      --muted: #69788d;
+      --white: #ffffff;
+      --border: #e3eaf4;
+      --shadow: 0 12px 35px rgba(16, 36, 71, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
-      font-family: Tahoma, Arial, sans-serif;
       margin: 0;
+      font-family: "Cairo", Tahoma, Arial, sans-serif;
+      color: var(--text);
+      background: var(--light);
       line-height: 1.9;
     }
 
-    header {
+    a {
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1120px, 92%);
+      margin: auto;
+    }
+
+    .topbar {
+      background: var(--navy);
+      color: white;
       text-align: center;
-      padding: 25px 15px;
+      padding: 8px 12px;
+      font-size: 13px;
     }
 
-    main {
-      width: 92%;
-      max-width: 1000px;
-      margin: 20px auto;
+    .navbar {
+      background: white;
+      border-bottom: 1px solid var(--border);
     }
 
-    .hero, .panel {
-      background: #fff;
-      padding: 22px;
-      margin-bottom: 22px;
-      border-radius: 18px;
-      box-shadow: 0 4px 15px #00000012;
+    .nav-inner {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--navy);
+      font-weight: 900;
+      font-size: 18px;
+    }
+
+    .brand-icon {
+      display: grid;
+      place-items: center;
+      width: 44px;
+      height: 44px;
+      border-radius: 14px;
+      background: #e6f2ff;
+      color: var(--blue);
+      font-size: 23px;
+    }
+
+    .nav-link {
+      color: var(--navy);
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(125deg, #102447, #174c91 72%, #1875bd);
+      color: white;
+      padding: 60px 0;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 50%;
+      top: -160px;
+      left: -60px;
+      box-shadow: 0 0 0 35px rgba(255,255,255,.025),
+                  0 0 0 75px rgba(255,255,255,.025);
+    }
+
+    .hero-grid {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 45px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      color: #a8f4f4;
+      background: rgba(255,255,255,.09);
+      border: 1px solid rgba(255,255,255,.15);
+      border-radius: 30px;
+      padding: 5px 15px;
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+
+    .hero h1 {
+      font-size: clamp(29px, 4vw, 47px);
+      line-height: 1.45;
+      margin: 0 0 15px;
+      font-weight: 900;
+    }
+
+    .hero h1 span {
+      color: #6ce4ed;
+    }
+
+    .hero-text {
+      color: #e0eafa;
+      font-size: 16px;
+      max-width: 600px;
+      margin: 0 0 25px;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .button {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      gap: 7px;
+      border-radius: 12px;
+      padding: 12px 20px;
+      font-family: inherit;
+      font-weight: 800;
+      font-size: 14px;
+      transition: transform .2s, background .2s;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+    }
+
+    .button-primary {
+      background: var(--cyan);
+      color: #102447;
+    }
+
+    .button-light {
+      background: white;
+      color: var(--navy);
+    }
+
+    .teacher-frame {
+      width: 100%;
+      max-width: 355px;
+      margin: auto;
+      padding: 10px;
+      border-radius: 26px;
+      background: rgba(255,255,255,.12);
+      border: 1px solid rgba(255,255,255,.2);
+      box-shadow: 0 22px 50px rgba(0,0,0,.2);
     }
 
     .teacher-photo {
       display: block;
       width: 100%;
-      max-width: 380px;
       height: auto;
-      margin: 0 auto 20px;
-      border-radius: 18px;
-      box-shadow: 0 4px 15px #00000020;
+      max-height: 440px;
+      object-fit: contain;
+      border-radius: 19px;
+      background: white;
     }
 
-    .welcome {
+    .section {
+      padding: 65px 0;
+    }
+
+    .section-heading {
       text-align: center;
+      max-width: 700px;
+      margin: 0 auto 35px;
     }
 
-    .grades {
+    .section-tag {
+      color: var(--blue);
+      font-size: 13px;
+      font-weight: 900;
+    }
+
+    .section-heading h2 {
+      color: var(--navy);
+      font-size: clamp(25px, 3vw, 34px);
+      line-height: 1.5;
+      margin: 5px 0 10px;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      margin: 0;
+      font-size: 15px;
+    }
+
+    .about-card {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-      gap: 12px;
+      grid-template-columns: 75px 1fr;
+      gap: 20px;
+      align-items: start;
+      padding: 30px;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      box-shadow: var(--shadow);
     }
 
-    .btn {
-      display: block;
-      text-align: center;
-      padding: 12px;
-      border-radius: 12px;
-      text-decoration: none;
-      background: #087eaa;
+    .about-icon {
+      width: 70px;
+      height: 70px;
+      display: grid;
+      place-items: center;
+      background: #e8f3ff;
+      border-radius: 20px;
+      font-size: 32px;
+    }
+
+    .about-card h3 {
+      color: var(--navy);
+      margin: 0 0 8px;
+      font-size: 21px;
+    }
+
+    .about-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .credentials {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .credential {
+      background: #f0f7ff;
+      color: #174c91;
+      padding: 7px 12px;
+      border-radius: 9px;
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .grades-section {
+      background: white;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .grades-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .grade-card {
+      display: flex;
+      flex-direction: column;
+      padding: 24px;
+      min-height: 215px;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      box-shadow: 0 5px 20px rgba(16,36,71,.04);
+      transition: transform .2s, box-shadow .2s, border-color .2s;
+    }
+
+    .grade-card:hover {
+      transform: translateY(-5px);
+      border-color: #8fc5ff;
+      box-shadow: var(--shadow);
+    }
+
+    .grade-icon {
+      width: 48px;
+      height: 48px;
+      display: grid;
+      place-items: center;
+      border-radius: 14px;
+      background: #e9f4ff;
+      font-size: 25px;
+      margin-bottom: 12px;
+    }
+
+    .grade-card h3 {
+      margin: 0 0 5px;
+      color: var(--navy);
+      font-size: 18px;
+    }
+
+    .grade-card p {
+      margin: 0 0 15px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .grade-action {
+      margin-top: auto;
+      color: var(--blue);
+      font-weight: 900;
+      font-size: 14px;
+    }
+
+    .contact-panel {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      padding: 30px;
+      border-radius: 22px;
       color: white;
-      margin-top: 12px;
+      background: linear-gradient(120deg, #102447, #1769d2);
     }
 
-    .btn:hover {
-      background: #05658a;
+    .contact-panel h2 {
+      margin: 0 0 5px;
+      font-size: 24px;
     }
 
-    .muted {
-      color: #666;
+    .contact-panel p {
+      margin: 0;
+      color: #dce9ff;
+      font-size: 14px;
     }
 
     footer {
+      background: #0b1930;
+      color: #dbe5f4;
       text-align: center;
-      padding: 20px;
-      margin-top: 25px;
+      padding: 24px 12px;
+      font-size: 13px;
+    }
+
+    footer p {
+      margin: 4px 0;
+    }
+
+    @media (max-width: 760px) {
+      .hero {
+        padding: 38px 0 45px;
+      }
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+        text-align: center;
+      }
+
+      .hero-content {
+        order: 1;
+      }
+
+      .teacher-frame {
+        order: 0;
+        max-width: 265px;
+      }
+
+      .teacher-photo {
+        max-height: 340px;
+      }
+
+      .hero-text {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .actions {
+        justify-content: center;
+      }
+
+      .section {
+        padding: 45px 0;
+      }
+
+      .grades-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .grade-card {
+        padding: 17px;
+        min-height: 205px;
+      }
+
+      .grade-card h3 {
+        font-size: 16px;
+      }
+
+      .about-card {
+        grid-template-columns: 1fr;
+        padding: 22px;
+      }
+
+      .about-icon {
+        width: 58px;
+        height: 58px;
+      }
+
+      .contact-panel {
+        flex-direction: column;
+        text-align: center;
+        padding: 25px 18px;
+      }
+    }
+
+    @media (max-width: 390px) {
+      .grades-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .brand {
+        font-size: 15px;
+      }
+
+      .hero h1 {
+        font-size: 28px;
+      }
     }
   </style>
 </head>
 
 <body>
 
-  <header>
-    <h1>أكاديمية مستر محمد ربيع</h1>
-    <p>الرياضيات ببساطة… افهم، اتدرّب، واتفوّق</p>
-  </header>
+  <div class="topbar">
+    أكاديمية تعليمية مجانية • الرياضيات من الفهم إلى التفوق
+  </div>
+
+  <nav class="navbar">
+    <div class="container nav-inner">
+      <a class="brand" href="#home">
+        <span class="brand-icon">∑</span>
+        <span>أكاديمية مستر محمد ربيع</span>
+      </a>
+      <a class="nav-link" href="#grades">الصفوف الدراسية ←</a>
+    </div>
+  </nav>
 
   <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
 
-    <section class="hero">
+        <div class="hero-content">
+          <span class="eyebrow">مرحبًا بك في أكاديميتك</span>
+          <h1>
+            الرياضيات أبسط مما تتخيل مع
+            <span>مستر محمد ربيع</span>
+          </h1>
+          <p class="hero-text">
+            افهم الدرس خطوة بخطوة، وتدرّب على المسائل، واختبر مستواك.
+            هدفنا إنك تتعلم بثقة وتحقق أفضل نتيجة.
+          </p>
+          <div class="actions">
+            <a class="button button-primary" href="#grades">
+              🚀 اختار صفك وابدأ
+            </a>
+            <a class="button button-light" href="#about">
+              تعرّف على المدرس
+            </a>
+          </div>
+        </div>
 
-      <img
-        class="teacher-photo"
-        src="teacher.jpg"
-        alt="صورة مستر محمد ربيع"
-      >
-
-      <div class="welcome">
-        <h2>أهلاً بيك في أكاديمية مستر محمد ربيع</h2>
-        <p>شرح مبسّط • تدريبات متنوعة • اختبارات تفاعلية</p>
-      </div>
-
-      <h3>عن مستر محمد ربيع</h3>
-
-      <p>
-        مستر محمد ربيع حاصل على بكالوريوس العلوم في الرياضيات<br>
-        جامعة المنصورة — الأول على الدفعة، بتقدير امتياز مع مرتبة الشرف.<br>
-        وحاصل على تمهيدي ماجستير في الرياضيات التطبيقية بتقدير امتياز.
-      </p>
-
-      <a
-        class="btn"
-        href="https://wa.me/201281281205"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        تواصل معايا على واتساب
-      </a>
-
-    </section>
-
-    <section class="panel">
-
-      <h2>اختار صفك الدراسي</h2>
-
-      <p class="muted">
-        اضغط على الصف علشان تدخل صفحة الشرح والاختبارات الخاصة بيه.
-      </p>
-
-      <div class="grades">
-
-        <a class="btn" href="grade1-prep.html">
-          الصف الأول الإعدادي<br>
-          <small>فيديوهات الشرح والاختبارات</small>
-        </a>
-
-        <a class="btn" href="grade2-prep.html">
-          الصف الثاني الإعدادي<br>
-          <small>فيديوهات الشرح والاختبارات</small>
-        </a>
-
-        <a class="btn" href="grade3-prep.html">
-          الصف الثالث الإعدادي<br>
-          <small>فيديوهات الشرح والاختبارات</small>
-        </a>
-
-        <a class="btn" href="grade1-secondary.html">
-          الصف الأول الثانوي<br>
-          <small>فيديوهات الشرح والاختبارات</small>
-        </a>
-
-        <a class="btn" href="grade2-baccalaureate-2027.html">
-          الصف الثاني بكالوريا 2027<br>
-          <small>فيديوهات الشرح والاختبارات</small>
-        </a>
+        <div class="teacher-frame">
+          <img
+            class="teacher-photo"
+            src="teacher.jpg"
+            alt="مستر محمد ربيع مدرس الرياضيات"
+          >
+        </div>
 
       </div>
     </section>
 
+    <section class="section" id="about">
+      <div class="container">
+
+        <div class="section-heading">
+          <span class="section-tag">من نحن؟</span>
+          <h2>تعليم متميز يبدأ من الفهم</h2>
+          <p>خبرة أكاديمية واهتمام بتبسيط الرياضيات للطلاب.</p>
+        </div>
+
+        <div class="about-card">
+          <div class="about-icon">🎓</div>
+          <div>
+            <h3>عن مستر محمد ربيع</h3>
+            <p>
+              مستر محمد ربيع حاصل على بكالوريوس العلوم في الرياضيات،
+              جامعة المنصورة — الأول على الدفعة، بتقدير امتياز مع مرتبة الشرف.
+              وحاصل على تمهيدي ماجستير في الرياضيات التطبيقية بتقدير امتياز.
+            </p>
+            <div class="credentials">
+              <span class="credential">بكالوريوس العلوم في الرياضيات</span>
+              <span class="credential">الأول على الدفعة</span>
+              <span class="credential">امتياز مع مرتبة الشرف</span>
+              <span class="credential">تمهيدي ماجستير في الرياضيات التطبيقية</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="section grades-section" id="grades">
+      <div class="container">
+
+        <div class="section-heading">
+          <span class="section-tag">ابدأ رحلتك</span>
+          <h2>اختار صفك الدراسي</h2>
+          <p>
+            ادخل إلى صفك للوصول إلى صفحات الشرح والتدريبات والاختبارات.
+          </p>
+        </div>
+
+        <div class="grades-grid">
+
+          <a class="grade-card" href="grade1-prep.html">
+            <span class="grade-icon">📘</span>
+            <h3>الصف الأول الإعدادي</h3>
+            <p>شرح الرياضيات والتدريبات والاختبارات.</p>
+            <span class="grade-action">دخول الصف ←</span>
+          </a>
+
+          <a class="grade-card" href="grade2-prep.html">
+            <span class="grade-icon">📗</span>
+            <h3>الصف الثاني الإعدادي</h3>
+            <p>شرح الرياضيات والتدريبات والاختبارات.</p>
+            <span class="grade-action">دخول الصف ←</span>
+          </a>
+
+          <a class="grade-card" href="grade3-prep.html">
+            <span class="grade-icon">📙</span>
+            <h3>الصف الثالث الإعدادي</h3>
+            <p>مراجعات ومسائل وتدريبات على المنهج.</p>
+            <span class="grade-action">دخول الصف ←</span>
+          </a>
+
+          <a class="grade-card" href="grade1-secondary.html">
+            <span class="grade-icon">📐</span>
+            <h3>الصف الأول الثانوي</h3>
+            <p>فهم القواعد والتدريب على المسائل.</p>
+            <span class="grade-action">دخول الصف ←</span>
+          </a>
+
+          <a class="grade-card" href="grade2-baccalaureate-2027.html">
+            <span class="grade-icon">🏆</span>
+            <h3>الصف الثاني بكالوريا 2027</h3>
+            <p>شرح وتدريبات واختبارات على المنهج.</p>
+            <span class="grade-action">دخول الصف ←</span>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="contact-panel">
+          <div>
+            <h2>عندك سؤال في الرياضيات؟</h2>
+            <p>تواصل مع مستر محمد ربيع عبر واتساب.</p>
+          </div>
+          <a
+            class="button button-primary"
+            href="https://wa.me/201281281205"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            تواصل عبر واتساب
+          </a>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer>
-    © أكاديمية مستر محمد ربيع — التعليم متاح للجميع
+    <p><strong>أكاديمية مستر محمد ربيع</strong></p>
+    <p>الرياضيات ببساطة… افهم، اتدرّب، واتفوّق</p>
+    <p>© أكاديمية مستر محمد ربيع — التعليم متاح للجميع</p>
   </footer>
 
 </body>
