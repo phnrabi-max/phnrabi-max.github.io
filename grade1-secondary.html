@@ -1,1 +1,119 @@
-<!doctype html><html lang="ar" dir="rtl"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>الصف الأول الثانوي | أكاديمية مستر محمد ربيع</title><link rel="stylesheet" href="style.css"></head><body><header><h1>الصف الأول الثانوي</h1><p>شرح مبسّط وتدريب مستمر</p></header><main><a class="btn secondary" href="index.html">← الرجوع للصفحة الرئيسية</a><section class="panel"><h2>📺 فيديوهات الشرح</h2><p class="muted">ترتيب الفيديوهات حسب الوحدات والدروس.</p><div class="grade"><h3>الوحدة الأولى</h3><p>سيتم إضافة فيديوهات الدروس هنا.</p></div><div class="grade"><h3>الوحدة الثانية</h3><p>سيتم إضافة فيديوهات الدروس هنا.</p></div></section><section class="panel"><h2>📝 اختبر نفسك</h2><p>نموذج جاهز لإضافة أسئلة المنهج، مع حساب الدرجة تلقائيًا بعد إدخال الأسئلة الصحيحة.</p><form id="quiz"><div class="quiz-q"><p>مثال توضيحي: ما ناتج 2 + 3؟</p><label><input type="radio" name="q1" value="0"> 4</label><br><label><input type="radio" name="q1" value="1"> 5</label><br><label><input type="radio" name="q1" value="0"> 6</label></div><button class="btn" type="button" onclick="gradeQuiz()">صحّح الاختبار</button><p class="result" id="result" aria-live="polite"></p><p class="muted">هذا سؤال تجريبي توضيحي فقط، ويجب استبداله بأسئلة الصف الفعلية قبل نشر الاختبار للطلاب.</p></form></section><a class="btn" href="https://wa.me/201281281205" target="_blank" rel="noopener">تواصل معايا على واتساب</a><footer>أكاديمية مستر محمد ربيع</footer></main><script>function gradeQuiz(){const a=document.querySelector('input[name="q1"]:checked');document.getElementById('result').textContent=a?'درجتك: '+a.value+'/1':'من فضلك اختار إجابة أولًا.';}</script></body></html>
+
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>الصف الأول الثانوي | أكاديمية مستر محمد ربيع</title>
+<link rel="stylesheet" href="style.css">
+<style>
+.unit-title {
+  margin: 24px 0 14px;
+  padding: 12px;
+  border-radius: 10px;
+  background: #e8f1ff;
+  color: #174a8b;
+}
+.lesson {
+  margin: 10px 0;
+  padding: 14px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background: #fff;
+}
+.lesson a {
+  display: inline-block;
+  margin-top: 10px;
+  text-decoration: none;
+}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>الصف الأول الثانوي</h1>
+  <p>شرح مبسّط وتدريب مستمر</p>
+</header>
+
+<main>
+  <a class="btn secondary" href="index.html">← الرجوع للصفحة الرئيسية</a>
+
+  <section class="panel">
+    <h2>📺 فيديوهات الشرح</h2>
+    <p class="muted">اختر الوحدة ثم الدرس الذي تريد مشاهدته.</p>
+
+    <h3 class="unit-title">📘 الوحدة الأولى</h3>
+
+    <div class="lesson">
+      <h4>1- مقدمة عن الأعداد المركبة</h4>
+      <a class="btn" href="https://youtu.be/ODLLT4ubKgU?si=fR2gGEMHxdFNMbzz" target="_blank" rel="noopener">▶ مشاهدة الدرس</a>
+    </div>
+
+    <div class="lesson">
+      <h4>2- تحديد نوع جذري المعادلة التربيعية</h4>
+      <a class="btn" href="https://youtu.be/Z0Q_dcDP0YQ?si=w77qSeGPKfdN435G" target="_blank" rel="noopener">▶ مشاهدة الدرس</a>
+    </div>
+
+    <div class="lesson">
+      <h4>3- العلاقة بين جذري المعادلة التربيعية ومعاملات حدودها</h4>
+      <a class="btn" href="https://youtu.be/FG_Y7jQxjh8?si=kNqbaBZdvokp3L7I" target="_blank" rel="noopener">▶ مشاهدة الدرس</a>
+    </div>
+
+    <div class="lesson">
+      <h4>4- تكوين المعادلة التربيعية متى علم جذراها</h4>
+      <a class="btn" href="https://youtu.be/RRdMwJmxjVM?si=mJJatgA2eh1uhAab" target="_blank" rel="noopener">▶ مشاهدة الدرس</a>
+    </div>
+
+    <h3 class="unit-title">📗 الوحدة الثانية</h3>
+
+    <div class="lesson">
+      <h4>1- الزاوية الموجهة</h4>
+      <a class="btn" href="https://youtu.be/eyS-PtSYGIk?si=fmeAnWRJyhnE6Za5" target="_blank" rel="noopener">▶ مشاهدة الدرس</a>
+    </div>
+
+    <div class="lesson">
+      <h4>2- القياس الستيني والدائري لزاوية</h4>
+      <a class="btn" href="https://youtu.be/5PP0cH6iq_g?si=QiYEfYQB7Z7Uiv5-" target="_blank" rel="noopener">▶ مشاهدة الدرس</a>
+    </div>
+
+    <div class="lesson">
+      <h4>3- الدوال المثلثية</h4>
+      <a class="btn" href="https://youtu.be/m1Pfrut8Oxw?si=PM4MhR24O8XlzZVc" target="_blank" rel="noopener">▶ مشاهدة الدرس</a>
+    </div>
+
+    <div class="lesson">
+      <h4>4- الزوايا المنتسبة</h4>
+      <a class="btn" href="https://youtu.be/6xBqdTYC4zA?si=fllYatqBOHOGAhhk" target="_blank" rel="noopener">▶ مشاهدة الدرس</a>
+    </div>
+
+    <h3 class="unit-title">📙 الوحدة الثالثة</h3>
+
+    <div class="lesson">
+      <h4>1- تشابه المضلعات</h4>
+      <a class="btn" href="https://youtu.be/z4xm0I8VCEA?si=7BVigJ8c4U11IH8B" target="_blank" rel="noopener">▶ مشاهدة الدرس</a>
+    </div>
+
+    <div class="lesson">
+      <h4>2- تشابه المثلثات</h4>
+      <a class="btn" href="https://youtu.be/GSr5srEUgu8?si=I4TiWhZy06LtMIZH" target="_blank" rel="noopener">▶ مشاهدة الدرس</a>
+    </div>
+
+    <div class="lesson">
+      <h4>3- العلاقة بين سطحي مضلعين متشابهين</h4>
+      <a class="btn" href="https://youtu.be/qakJOTNLLVU?si=Iy7feuirsz809wT2" target="_blank" rel="noopener">▶ مشاهدة الدرس</a>
+    </div>
+  </section>
+
+  <section class="panel">
+    <h2>📝 حل مذكرة توجيه الرياضيات 2027</h2>
+    <p>تابع شرح وحل مذكرة توجيه الرياضيات للصف الأول الثانوي.</p>
+    <p class="muted">سيتم إضافة روابط فيديوهات المذكرة هنا عند إرسالها.</p>
+  </section>
+
+  <a class="btn" href="https://wa.me/201281281205" target="_blank" rel="noopener">تواصل معايا على واتساب</a>
+
+  <footer>أكاديمية مستر محمد ربيع</footer>
+</main>
+
+</body>
+</html>
