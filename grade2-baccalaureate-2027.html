@@ -3,167 +3,359 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="دروس رياضيات ثانية ثانوي بكالوريا 2027 مع مستر محمد ربيع">
-<title>رياضيات ثانية بكالوريا 2027 | مستر محمد ربيع</title>
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ثانية ثانوي بكالوريا 2027 | مستر محمد ربيع</title>
 
 <style>
-*{box-sizing:border-box}
-body{margin:0;font-family:"Cairo",Tahoma,Arial,sans-serif;background:#f3f7fd;color:#24334b;line-height:1.9}
-.top{background:#102447;color:white;padding:12px 5%;text-align:center;font-weight:700}
-.container{width:92%;max-width:950px;margin:auto}
-.hero{margin:30px auto;padding:35px 22px;border-radius:24px;background:linear-gradient(135deg,#102447,#1769d2);color:white;text-align:center;box-shadow:0 12px 30px #10244720}
-.label{display:inline-block;background:#ffffff20;border:1px solid #ffffff40;padding:5px 15px;border-radius:30px;font-size:13px}
-h1{font-size:clamp(27px,5vw,38px);line-height:1.5;margin:15px 0}
-.hero p{color:#e1ecff;max-width:650px;margin:0 auto 20px}
-.panel{background:white;padding:24px;margin:22px auto;border-radius:20px;border:1px solid #e3eaf4;box-shadow:0 5px 20px #10244708}
-.panel h2{color:#102447;margin-top:0}
-.lesson-list{display:grid;grid-template-columns:1fr;gap:12px}
-.unit-heading{grid-column:1/-1;margin:16px 0 4px;padding:12px 16px;background:#e5f1ff;border-right:5px solid #1769d2;border-radius:10px;color:#102447;font-size:21px;font-weight:900}
-.lesson-button{display:flex;align-items:center;gap:12px;text-decoration:none;background:#fff;border:1px solid #dce6f4;border-radius:14px;padding:14px;color:#102447;transition:.2s}
-.lesson-button:hover{background:#edf5ff;border-color:#1769d2}
-.number{flex-shrink:0;display:flex;align-items:center;justify-content:center;background:#e5f1ff;color:#1769d2;border-radius:10px;width:42px;height:42px;font-weight:900}
-.lesson-name{font-weight:800;flex:1}
-.arrow{color:#1769d2;font-size:22px}
-.action{display:block;text-align:center;text-decoration:none;border:0;border-radius:12px;padding:12px 16px;margin:12px 0;font-family:inherit;font-size:15px;font-weight:800;cursor:pointer}
-.youtube{background:#ff3333;color:white}
-.back{background:#102447;color:white}
-.pdf{background:#eaf2fc;color:#1769d2}
-.disabled{opacity:.65;cursor:default}
-.note{font-size:13px;color:#69788d;text-align:center}
-.contact{text-align:center}
-.contact a{color:#1769d2;font-weight:800}
-.hidden{display:none}
-footer{background:#0b1930;color:#dbe5f4;text-align:center;padding:20px 12px;margin-top:35px;font-size:13px}
-@media(min-width:650px){.lesson-list{grid-template-columns:1fr 1fr}}
-@media(max-width:480px){.hero{padding:28px 16px}.panel{padding:19px 14px}.unit-heading{font-size:19px}}
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: Tahoma, Arial, sans-serif;
+  background: #eef4ff;
+  color: #18345b;
+}
+
+header {
+  background: linear-gradient(120deg,#08275b,#1479d1);
+  color: white;
+  padding: 30px 15px;
+  text-align: center;
+}
+
+header h1 { font-size: 27px; }
+header h2 { font-size: 21px; }
+
+main {
+  max-width: 900px;
+  margin: 25px auto;
+  padding: 12px;
+}
+
+.card, .item {
+  background: white;
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 17px;
+  box-shadow: 0 4px 13px #00000013;
+}
+
+.card {
+  border-right: 6px solid #1674c5;
+  text-align: center;
+}
+
+.card h2 { color: #0a4c96; }
+
+button, .link {
+  display: inline-block;
+  background: #126dc0;
+  color: white;
+  border: none;
+  padding: 12px 17px;
+  border-radius: 9px;
+  text-decoration: none;
+  font-size: 15px;
+  cursor: pointer;
+  margin: 5px 3px;
+  font-family: inherit;
+}
+
+button:hover, .link:hover {
+  background: #083f78;
+}
+
+.back { background: #667487; }
+
+.section { display: none; }
+.section.active { display: block; }
+
+.unit {
+  background: #dbeaff;
+  border-radius: 12px;
+  padding: 15px;
+  margin: 18px 0;
+}
+
+.unit h3 {
+  margin: 0;
+  color: #064987;
+}
+
+.item h3 {
+  margin-top: 0;
+  color: #0c559b;
+}
+
+.pdf { background: #16804b; }
+.solution { background: #8250b4; }
+.video { background: #d52d32; }
+
+.empty {
+  color: #748094;
+  font-size: 14px;
+}
+
+footer {
+  text-align: center;
+  padding: 25px;
+  color: #52647d;
+}
 </style>
 </head>
 
 <body>
-<div class="top">أكاديمية مستر محمد ربيع • الرياضيات ببساطة</div>
 
-<main class="container">
+<header>
+<h1>أكاديمية مستر محمد ربيع</h1>
+<h2>الصف الثاني الثانوي – بكالوريا 2027</h2>
+<p>شرح الدروس | الواجبات | الامتحانات | المذكرات</p>
+</header>
 
-<section class="hero">
-<span class="label">العام الدراسي 2027</span>
-<h1>رياضيات الصف الثاني الثانوي<br>بكالوريا 2027</h1>
-<p id="intro">اختر الدرس الذي تريد دراسته، وشاهد الشرح، وحمّل الواجب وإجاباته عند توفرهما.</p>
-<a class="action back" href="index.html">← العودة إلى الصفحة الرئيسية</a>
-</section>
+<main>
 
-<section class="panel" id="lessonsPage">
-<h2>📚 اختر درسًا للمذاكرة</h2>
-<div class="lesson-list" id="lessonList"></div>
-</section>
+<!-- الصفحة الرئيسية للأقسام -->
+<div id="home" class="section active">
 
-<section class="panel hidden" id="detailPage">
-<h2 id="lessonTitle"></h2>
-<p>شاهد شرح الدرس مع مستر محمد ربيع، ثم حل الواجب وراجع إجاباتك عند توفر الملفات.</p>
-
-<a class="action youtube" id="videoLink" href="#" target="_blank" rel="noopener noreferrer">▶ مشاهدة شرح الدرس على يوتيوب</a>
-
-<div class="panel">
-<h3>✏️ واجب الدرس</h3>
-<p>ملف أسئلة وتدريبات الدرس بصيغة PDF.</p>
-<a class="action pdf disabled" aria-disabled="true">📄 ملف الواجب — قريبًا</a>
+<div class="card">
+<h2>📘 شرح دروس المنهج</h2>
+<p>
+شرح الدرس بالفيديو، وملف الواجب PDF،
+وملف حل الواجب PDF.
+</p>
+<button onclick="show('lessons')">
+دخول قسم شرح الدروس
+</button>
 </div>
 
-<div class="panel">
-<h3>✅ إجابات الواجب</h3>
-<p>ملف الإجابات النموذجية بصيغة PDF.</p>
-<a class="action pdf disabled" aria-disabled="true">📄 ملف الإجابات — قريبًا</a>
+<div class="card">
+<h2>📝 امتحانات جزئية وشاملة</h2>
+<p>
+ملفات الامتحانات PDF مع فيديوهات شرح
+حل الامتحانات على اليوتيوب.
+</p>
+<button onclick="show('exams')">
+دخول قسم الامتحانات
+</button>
 </div>
 
-<a class="action back" id="backToLessons" href="grade2-baccalaureate-2027.html">← العودة إلى قائمة الدروس</a>
-</section>
+<div class="card">
+<h2>📚 كتب خارجية وملفات PDF</h2>
+<p>
+الكتب الخارجية والمذكرات والمراجعات
+والملفات التعليمية.
+</p>
+<button onclick="show('books')">
+دخول قسم الكتب والملفات
+</button>
+</div>
 
-<section class="panel contact">
-<h2>هل تحتاج إلى التواصل مع المدرس؟</h2>
-<p>تواصل مع مستر محمد ربيع عبر واتساب.</p>
-<a href="https://wa.me/201281281205" target="_blank" rel="noopener noreferrer">تواصل عبر واتساب</a>
-</section>
+</div>
+
+<!-- قسم الدروس -->
+<div id="lessons" class="section">
+<button class="back" onclick="show('home')">
+رجوع للأقسام الرئيسية
+</button>
+
+<h2>📘 شرح دروس المنهج</h2>
+<div id="lessonList"></div>
+</div>
+
+<!-- قسم الامتحانات -->
+<div id="exams" class="section">
+<button class="back" onclick="show('home')">
+رجوع للأقسام الرئيسية
+</button>
+
+<h2>📝 امتحانات جزئية وشاملة</h2>
+<div id="examList"></div>
+</div>
+
+<!-- قسم الكتب -->
+<div id="books" class="section">
+<button class="back" onclick="show('home')">
+رجوع للأقسام الرئيسية
+</button>
+
+<h2>📚 كتب خارجية وملفات PDF</h2>
+<div id="bookList"></div>
+</div>
 
 </main>
 
-<footer>أكاديمية مستر محمد ربيع — التعليم متاح للجميع</footer>
+<footer>
+<a class="link" href="index.html">
+العودة للصفحة الرئيسية للأكاديمية
+</a>
+<p>مع تحياتي مستر محمد ربيع</p>
+</footer>
 
 <script>
+
+// شرح الدروس
+// video = رابط فيديو شرح الدرس
+// homework = رابط ملف الواجب PDF
+// answer = رابط ملف حل الواجب PDF
+
 const lessons = [
-{title:"نظرية ذات الحدين",video:"qYT7IYJRFWo"},
-{title:"نظرية متعددة الحدود",video:"qac1NDHU9Zg"},
-{title:"تطبيقات نظرية متعددة الحدود",video:"Il5w5sbbkBk"},
-{title:"قسمة كثيرات الحدود",video:"55Os-Rnq7As"},
-{title:"إثبات المتطابقات (1)، (2)، (3)",video:"HxihBUGQJ1g"},
-{title:"إثبات المتباينات (1)، (2)، (3)",video:"NGaMeqCLDpg"},
-{title:"المتتابعات والحدود العامة",video:"Vri2rOXBDJU"},
-{title:"المتتابعات الحسابية",video:"KMLgetcWTao"},
-{title:"مجموع المتتابعات الحسابية (1)، (2)، (3)",video:"up_aM79A3Vg"},
-{title:"مجموع المتتابعات الهندسية (1)، (2)",video:"zcCdq1Hh4fA"},
-{title:"رمز التجميع (1)، (2)، (3)",video:"X_vwnjY0-Xw"}
+  {
+    unit: "الوحدة الأولى",
+    title: "نظرية ذات الحدين",
+    video: "",
+    homework: "",
+    answer: ""
+  },
+  {
+    unit: "الوحدة الأولى",
+    title: "تطبيقات على نظرية ذات الحدين",
+    video: "",
+    homework: "",
+    answer: ""
+  },
+  {
+    unit: "الوحدة الأولى",
+    title: "قسمة كثيرات الحدود",
+    video: "",
+    homework: "",
+    answer: ""
+  },
+  {
+    unit: "الوحدة الثانية",
+    title: "الدرس الأول",
+    video: "",
+    homework: "",
+    answer: ""
+  }
 ];
 
-const list = document.getElementById("lessonList");
-const lessonsPage = document.getElementById("lessonsPage");
-const detailPage = document.getElementById("detailPage");
-const params = new URLSearchParams(window.location.search);
-const selected = Number(params.get("lesson"));
+// الامتحانات
+// pdf = ملف الامتحان
+// video = فيديو شرح حل الامتحان
 
-function addUnitHeading(title){
-  const heading = document.createElement("h3");
-  heading.className = "unit-heading";
-  heading.textContent = title;
-  list.appendChild(heading);
-}
-
-function addLesson(lesson,index){
-  const link = document.createElement("a");
-  link.className = "lesson-button";
-  link.href = "grade2-baccalaureate-2027.html?lesson=" + index;
-
-  const number = document.createElement("span");
-  number.className = "number";
-  number.textContent = String(index+1).padStart(2,"0");
-
-  const name = document.createElement("span");
-  name.className = "lesson-name";
-  name.textContent = lesson.title;
-
-  const arrow = document.createElement("span");
-  arrow.className = "arrow";
-  arrow.textContent = "‹";
-
-  link.append(number,name,arrow);
-  list.appendChild(link);
-}
-
-addUnitHeading("📘 الوحدة الأولى");
-lessons.forEach((lesson,index)=>{
-  if(index < 6){
-    addLesson(lesson,index);
+const exams = [
+  {
+    title: "الاختبار (1) على الوحدة الأولى",
+    pdf: "",
+    video: ""
+  },
+  {
+    title: "اختبار شامل على الوحدة الأولى",
+    pdf: "",
+    video: ""
   }
-});
+];
 
-addUnitHeading("📗 الوحدة الثانية");
-lessons.forEach((lesson,index)=>{
-  if(index >= 6){
-    addLesson(lesson,index);
+// الكتب الخارجية والمذكرات
+
+const books = [
+  {
+    title: "الكتب الخارجية",
+    pdf: ""
+  },
+  {
+    title: "المذكرات الخارجية",
+    pdf: ""
+  },
+  {
+    title: "مراجعات وملفات PDF",
+    pdf: ""
   }
-});
+];
 
-if(params.has("lesson") && Number.isInteger(selected) && selected>=0 && selected<lessons.length){
-  const lesson = lessons[selected];
-  lessonsPage.classList.add("hidden");
-  detailPage.classList.remove("hidden");
-  document.getElementById("lessonTitle").textContent = lesson.title;
-  document.getElementById("videoLink").href = "https://youtu.be/" + lesson.video;
-  document.title = lesson.title + " | مستر محمد ربيع";
-  document.getElementById("intro").textContent = "صفحة شرح درس " + lesson.title;
-}else if(params.has("lesson")){
-  document.getElementById("intro").textContent = "الرابط المطلوب غير صحيح. اختر درسًا من القائمة.";
+// التنقل بين الأقسام
+function show(id) {
+  document.querySelectorAll(".section").forEach(
+    el => el.classList.remove("active")
+  );
+
+  document.getElementById(id).classList.add("active");
+  window.scrollTo(0, 0);
 }
+
+// حماية النصوص المعروضة
+function safe(value) {
+  return String(value).replace(/[&<>"']/g, c => ({
+    "&": "&amp;",
+    "<": "&lt;",
+    ">": "&gt;",
+    '"': "&quot;",
+    "'": "&#39;"
+  }[c]));
+}
+
+// إنشاء روابط الفيديو والملفات
+function link(url, label, css) {
+  if (!url || !/^https?:\/\//i.test(url)) return "";
+
+  return `<a class="link ${css}"
+    href="${safe(url)}"
+    target="_blank"
+    rel="noopener noreferrer">
+    ${label}
+  </a>`;
+}
+
+// عرض الدروس حسب الوحدات
+const units = [...new Set(lessons.map(x => x.unit))];
+
+document.getElementById("lessonList").innerHTML =
+  units.map(unit => `
+    <div class="unit">
+      <h3>${safe(unit)}</h3>
+    </div>
+    ${lessons.filter(x => x.unit === unit).map(x => `
+      <div class="item">
+        <h3>${safe(x.title)}</h3>
+
+        ${link(x.video, "▶ شرح الدرس", "video")}
+
+        ${link(x.homework,
+          "📄 ملف الواجب PDF", "pdf")}
+
+        ${link(x.answer,
+          "✅ ملف حل الواجب PDF", "solution")}
+
+        ${!x.video && !x.homework && !x.answer
+          ? '<p class="empty">المحتوى سيُضاف قريبًا</p>'
+          : ''}
+      </div>
+    `).join("")}
+  `).join("");
+
+// عرض الامتحانات
+document.getElementById("examList").innerHTML =
+  exams.map(x => `
+    <div class="item">
+      <h3>${safe(x.title)}</h3>
+
+      ${link(x.pdf,
+        "📄 تحميل الامتحان PDF", "pdf")}
+
+      ${link(x.video,
+        "▶ شرح حل الامتحان على اليوتيوب", "video")}
+
+      ${!x.pdf && !x.video
+        ? '<p class="empty">المحتوى سيُضاف قريبًا</p>'
+        : ''}
+    </div>
+  `).join("");
+
+// عرض الكتب والمذكرات
+document.getElementById("bookList").innerHTML =
+  books.map(x => `
+    <div class="item">
+      <h3>${safe(x.title)}</h3>
+
+      ${link(x.pdf,
+        "📥 فتح ملف PDF", "pdf")}
+
+      ${!x.pdf
+        ? '<p class="empty">الملف سيُضاف قريبًا</p>'
+        : ''}
+    </div>
+  `).join("");
+
 </script>
-
 </body>
 </html>
