@@ -3,141 +3,138 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ثانية بكالوريا 2027 | أكاديمية مستر محمد ربيع</title>
-<meta name="description" content="شرح رياضيات ثانية بكالوريا 2027 مع مستر محمد ربيع، دروس فيديو واختبارات وملفات تعليمية.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ثانية بكالوريا 2027 | مستر محمد ربيع</title>
+<meta name="description" content="شرح رياضيات الصف الثاني الثانوي بكالوريا 2027 مع مستر محمد ربيع، دروس واختبارات وكتب PDF.">
 <style>
 :root {
-  --blue:#123b73;
-  --blue2:#1768ac;
+  --navy:#10294e;
+  --blue:#1768ac;
   --gold:#ffc857;
   --bg:#f3f6fb;
-  --white:#fff;
-  --text:#202b3c;
-  --muted:#65748b;
-  --green:#16834a;
+  --text:#253247;
+  --muted:#64748b;
 }
 * { box-sizing:border-box; }
 body {
   margin:0;
   font-family:Tahoma,Arial,sans-serif;
-  background:var(--bg);
   color:var(--text);
+  background:var(--bg);
   line-height:1.8;
 }
 a { text-decoration:none; }
 header {
-  color:white;
-  background:linear-gradient(135deg,#10294e,#1768ac);
-  padding:30px 16px;
+  background:linear-gradient(135deg,var(--navy),var(--blue));
+  color:#fff;
   text-align:center;
+  padding:32px 16px;
 }
 header h1 { margin:0 0 8px; font-size:clamp(25px,5vw,38px); }
 header p { margin:4px 0; }
-.tag {
+.badge {
   display:inline-block;
   background:var(--gold);
-  color:#18263b;
-  padding:5px 14px;
+  color:var(--navy);
+  padding:4px 14px;
   border-radius:30px;
   font-weight:bold;
   margin-top:10px;
 }
-.container { max-width:1050px; margin:auto; padding:18px; }
-.intro {
-  background:white;
-  border-radius:18px;
+.container { width:min(100% - 24px,1000px); margin:auto; }
+.welcome {
+  margin:20px 0;
   padding:20px;
-  margin-top:18px;
-  box-shadow:0 4px 15px #15294d0c;
   text-align:center;
+  background:white;
+  border-radius:16px;
+  box-shadow:0 4px 15px #10294e0d;
 }
-.intro h2 { color:var(--blue); margin-top:0; }
+.welcome h2 { color:var(--navy); margin:0 0 8px; }
+.welcome p { margin:0; }
 .tabs {
   display:grid;
   grid-template-columns:repeat(3,minmax(0,1fr));
-  gap:10px;
-  margin:20px 0;
+  gap:8px;
+  margin:18px 0;
 }
 .tab {
+  padding:12px 5px;
   border:0;
-  border-radius:12px;
-  padding:13px 7px;
+  border-radius:11px;
   background:white;
-  color:var(--blue);
-  font-size:15px;
-  font-weight:bold;
-  cursor:pointer;
-  box-shadow:0 3px 12px #15294d0c;
-}
-.tab.active { background:var(--blue); color:white; }
-.search {
-  width:100%;
-  padding:13px 15px;
-  border:1px solid #d8e0ed;
-  border-radius:12px;
-  font-size:16px;
-  margin:5px 0 18px;
-  outline-color:var(--blue2);
-}
-.unit-title {
-  color:var(--blue);
-  font-size:21px;
-  border-right:5px solid var(--gold);
-  padding-right:12px;
-  margin:25px 0 12px;
-}
-.card {
-  background:white;
-  border-radius:15px;
-  padding:17px;
-  margin:12px 0;
-  box-shadow:0 4px 14px #15294d0b;
-  border:1px solid #e8edf5;
-}
-.card h3 { margin:0 0 8px; font-size:18px; }
-.card p { color:var(--muted); margin:5px 0 12px; }
-.actions { display:flex; flex-wrap:wrap; gap:9px; }
-.btn {
-  display:inline-block;
-  border:0;
-  border-radius:9px;
-  padding:9px 14px;
+  color:var(--navy);
+  font-family:inherit;
   font-weight:bold;
   font-size:14px;
   cursor:pointer;
 }
-.video { background:#d93025; color:white; }
-.pdf { background:#e9f1ff; color:#174b8b; }
-.answer { background:#e4f6e9; color:#14683b; }
+.tab.active { background:var(--navy); color:white; }
+#search {
+  width:100%;
+  border:1px solid #d5deeb;
+  border-radius:11px;
+  background:white;
+  padding:13px;
+  font-family:inherit;
+  font-size:16px;
+  margin-bottom:12px;
+}
+.unit-title {
+  color:var(--navy);
+  border-right:5px solid var(--gold);
+  padding-right:12px;
+  margin:24px 0 10px;
+  font-size:21px;
+}
+.card {
+  background:white;
+  border:1px solid #e5eaf2;
+  border-radius:14px;
+  padding:16px;
+  margin:12px 0;
+  box-shadow:0 3px 12px #10294e08;
+}
+.card h3 { margin:0 0 12px; font-size:17px; }
+.actions { display:flex; flex-wrap:wrap; gap:9px; }
+.btn {
+  display:inline-block;
+  text-align:center;
+  padding:9px 13px;
+  border-radius:9px;
+  font-weight:bold;
+  font-size:14px;
+}
+.video { color:white; background:#d93025; }
+.pdf { color:#174b8b; background:#e7efff; }
+.book { color:white; background:#16834a; }
+.pending { color:#65748b; background:#edf0f4; }
+.note {
+  padding:12px 14px;
+  border-radius:10px;
+  background:#fff7df;
+  margin:12px 0;
+  font-size:14px;
+}
 .empty {
+  text-align:center;
+  padding:22px;
   background:white;
   border-radius:12px;
-  padding:20px;
-  text-align:center;
   color:var(--muted);
 }
-.notice {
-  background:#fff7df;
-  border:1px solid #ffe2a0;
-  border-radius:12px;
-  padding:12px 15px;
-  margin:15px 0;
-}
 footer {
-  text-align:center;
-  background:#10294e;
+  background:var(--navy);
   color:white;
+  text-align:center;
+  margin-top:32px;
   padding:22px 12px;
-  margin-top:30px;
 }
 footer p { margin:4px; }
 @media(max-width:520px) {
-  .container { padding:12px; }
-  .tabs { gap:6px; }
-  .tab { font-size:12px; padding:11px 4px; }
-  .card { padding:14px; }
-  .btn { flex:1 1 auto; text-align:center; }
+  .tab { font-size:12px; }
+  .card { padding:13px; }
+  .btn { flex:1 1 auto; }
 }
 </style>
 </head>
@@ -145,18 +142,15 @@ footer p { margin:4px; }
 
 <header>
   <h1>أكاديمية مستر محمد ربيع</h1>
-  <p>تعليم الرياضيات بطريقة سهلة ومبسطة</p>
+  <p>شرح الرياضيات بطريقة سهلة ومبسطة</p>
   <p>الصف الثاني الثانوي — بكالوريا 2027</p>
-  <span class="tag">شرح الدروس • اختبارات • ملفات تعليمية</span>
+  <span class="badge">شرح • تدريب • اختبارات • تفوق</span>
 </header>
 
 <main class="container">
-  <section class="intro">
+  <section class="welcome">
     <h2>أهلاً بيك في قسم ثانية بكالوريا 2027</h2>
-    <p>
-      هنا هتلاقي شرح دروس الرياضيات، وحل الاختبارات،
-      وملفات تساعدك على الفهم والتدريب والاستعداد للامتحان.
-    </p>
+    <p>تابع شرح الدروس، وتدرّب على الاختبارات، وافتح الكتب والملفات التعليمية من مكان واحد.</p>
   </section>
 
   <nav class="tabs" aria-label="أقسام الصفحة">
@@ -165,10 +159,7 @@ footer p { margin:4px; }
     <button class="tab" data-section="books">الكتب وملفات PDF</button>
   </nav>
 
-  <input id="search" class="search" type="search"
-    placeholder="ابحث عن درس أو اختبار أو كتاب..."
-    aria-label="البحث في محتوى الصفحة">
-
+  <input id="search" type="search" placeholder="ابحث عن درس أو اختبار أو كتاب..." aria-label="بحث">
   <section id="content"></section>
 </main>
 
@@ -181,115 +172,111 @@ footer p { margin:4px; }
 <script>
 const lessons = [
   {
-    unit: "الوحدة الأولى",
-    title: "نظرية ذات الحدين",
-    video: "https://youtu.be/qYT7IYJRFWo?si=4OSO4IguJ-JxJ7WG",
-    homework: "",
-    answer: ""
+    unit:"الوحدة الأولى",
+    title:"نظرية ذات الحدين",
+    video:"https://youtu.be/qYT7IYJRFWo?si=4OSO4IguJ-JxJ7WG",
+    homework:"",
+    answer:""
   },
   {
-    unit: "الوحدة الأولى",
-    title: "نظرية متعددة الحدود",
-    video: "https://youtu.be/qac1NDHU9Zg?si=vhaQJP_Lt-_qWqQn",
-    homework: "",
-    answer: ""
+    unit:"الوحدة الأولى",
+    title:"نظرية متعددة الحدود",
+    video:"https://youtu.be/qac1NDHU9Zg?si=vhaQJP_Lt-_qWqQn",
+    homework:"",
+    answer:""
   },
   {
-    unit: "الوحدة الأولى",
-    title: "تطبيقات نظرية ذات الحدين",
-    video: "https://youtu.be/Il5w5sbbkBk?si=MCWQHqpbJ1nuk0G5",
-    homework: "",
-    answer: ""
+    unit:"الوحدة الأولى",
+    title:"تطبيقات نظرية ذات الحدين",
+    video:"https://youtu.be/Il5w5sbbkBk?si=MCWQHqpbJ1nuk0G5",
+    homework:"",
+    answer:""
   },
   {
-    unit: "الوحدة الأولى",
-    title: "قسمة كثيرات الحدود",
-    video: "https://youtu.be/55Os-Rnq7As?si=QkdTaSnLm7V4KnWH",
-    homework: "",
-    answer: ""
+    unit:"الوحدة الأولى",
+    title:"قسمة كثيرات الحدود",
+    video:"https://youtu.be/55Os-Rnq7As?si=QkdTaSnLm7V4KnWH",
+    homework:"",
+    answer:""
   },
   {
-    unit: "الوحدة الأولى",
-    title: "إثبات المتطابقات (1)، (2)، (3)",
-    video: "https://youtu.be/HxihBUGQJ1g?si=cA9W6eK8kEnmaEhW",
-    homework: "",
-    answer: ""
+    unit:"الوحدة الأولى",
+    title:"إثبات المتطابقات (1)، (2)، (3)",
+    video:"https://youtu.be/HxihBUGQJ1g?si=cA9W6eK8kEnmaEhW",
+    homework:"",
+    answer:""
   },
   {
-    unit: "الوحدة الأولى",
-    title: "إثبات المتباينات (1)، (2)، (3)",
-    video: "https://youtu.be/NGaMeqCLDpg?si=UdZX-ZzSAyuvR0p2",
-    homework: "",
-    answer: ""
+    unit:"الوحدة الأولى",
+    title:"إثبات المتباينات (1)، (2)، (3)",
+    video:"https://youtu.be/NGaMeqCLDpg?si=UdZX-ZzSAyuvR0p2",
+    homework:"",
+    answer:""
   },
   {
-    unit: "الوحدة الثانية",
-    title: "المتتابعات والحدود العامة",
-    video: "https://youtu.be/Vri2rOXBDJU?si=rbFrygFxI_SUkqjJ",
-    homework: "",
-    answer: ""
+    unit:"الوحدة الثانية",
+    title:"المتتابعات والحدود العامة",
+    video:"https://youtu.be/Vri2rOXBDJU?si=rbFrygFxI_SUkqjJ",
+    homework:"",
+    answer:""
   },
   {
-    unit: "الوحدة الثانية",
-    title: "المتتابعات الحسابية",
-    video: "https://youtu.be/KMLgetcWTao?si=9j8yLIuKJxH2J2K9",
-    homework: "",
-    answer: ""
+    unit:"الوحدة الثانية",
+    title:"المتتابعات الحسابية",
+    video:"https://youtu.be/KMLgetcWTao?si=9j8yLIuKJxH2J2K9",
+    homework:"",
+    answer:""
   },
   {
-    unit: "الوحدة الثانية",
-    title: "مجموع المتتابعات الحسابية (1)، (2)، (3)",
-    video: "https://youtu.be/up_aM79A3Vg?si=k0Nu-4HuqFoOqwbd",
-    homework: "",
-    answer: ""
+    unit:"الوحدة الثانية",
+    title:"مجموع المتتابعات الحسابية (1)، (2)، (3)",
+    video:"https://youtu.be/up_aM79A3Vg?si=k0Nu-4HuqFoOqwbd",
+    homework:"",
+    answer:""
   },
   {
-    unit: "الوحدة الثانية",
-    title: "مجموع المتتابعات الهندسية (1)، (2)",
-    video: "https://youtu.be/zcCdq1Hh4fA?si=Ck8L8-YFi8Y3lvBh",
-    homework: "",
-    answer: ""
+    unit:"الوحدة الثانية",
+    title:"مجموع المتتابعات الهندسية (1)، (2)",
+    video:"https://youtu.be/zcCdq1Hh4fA?si=Ck8L8-YFi8Y3lvBh",
+    homework:"",
+    answer:""
   },
   {
-    unit: "الوحدة الثانية",
-    title: "رمز التجميع (1)، (2)، (3)",
-    video: "https://youtu.be/X_vwnjY0-Xw?si=74yvHifTKyvfG-Du",
-    homework: "",
-    answer: ""
+    unit:"الوحدة الثانية",
+    title:"رمز التجميع (1)، (2)، (3)",
+    video:"https://youtu.be/X_vwnjY0-Xw?si=74yvHifTKyvfG-Du",
+    homework:"",
+    answer:""
   }
 ];
 
 const exams = [
   {
-    title: "الاختبار (1) على الوحدة الأولى",
-    pdf: "",
-    video: "https://youtu.be/84NQnNvGxjI?si=IGWrZuGW909sh8Yf"
+    title:"الاختبار (1) على الوحدة الأولى",
+    pdf:"",
+    video:"https://youtu.be/84NQnNvGxjI?si=IGWrZuGW909sh8Yf"
   },
   {
-    title: "اختبار شامل على الوحدة الأولى",
-    pdf: "",
-    video: ""
+    title:"اختبار شامل على الوحدة الأولى",
+    pdf:"",
+    video:""
   },
   {
-    title: "اختبارات الوحدة الثانية",
-    pdf: "",
-    video: ""
+    title:"اختبارات الوحدة الثانية",
+    pdf:"",
+    video:""
   },
   {
-    title: "اختبارات شاملة على المنهج",
-    pdf: "",
-    video: ""
+    title:"اختبارات شاملة على المنهج",
+    pdf:"",
+    video:""
   }
 ];
 
 const books = [
   {
-    title: "كتاب التقييمات في الرياضيات — ثانية بكالوريا 2027",
-    pdf: ""
-  },
-  {
-    title: "مراجعات وملفات إضافية في الرياضيات",
-    pdf: ""
+    title:"كتاب المعاصر في الرياضيات للصف الثاني الثانوي بكالوريا 2027",
+    pdf:"https://drive.google.com/file/d/1iKxwUxp1mm62ovn4DtldFbSoNByH5JwA/view?usp=drivesdk"
   }
 ];
 
@@ -298,123 +285,96 @@ let currentSection = "lessons";
 function safeUrl(url) {
   if (!url) return "";
   try {
-    const parsed = new URL(url);
-    if (parsed.protocol === "https:" &&
-        (parsed.hostname === "youtu.be" ||
-         parsed.hostname === "youtube.com" ||
-         parsed.hostname.endsWith(".youtube.com") ||
-         parsed.hostname === "drive.google.com" ||
-         parsed.hostname === "docs.google.com")) {
-      return parsed.href;
-    }
-  } catch (error) {}
+    const u = new URL(url);
+    if (u.protocol !== "https:") return "";
+    const allowed = [
+      "youtu.be",
+      "youtube.com",
+      "drive.google.com",
+      "docs.google.com"
+    ];
+    if (allowed.some(domain => u.hostname === domain ||
+        u.hostname.endsWith("." + domain))) return u.href;
+  } catch (e) {}
   return "";
 }
 
-function makeButton(url, label, className) {
+function linkButton(url, label, className) {
   const valid = safeUrl(url);
   if (!valid) {
-    return `<span class="btn pdf" style="opacity:.65">${label} — الرابط سيضاف لاحقًا</span>`;
+    return `<span class="btn pending">${label} — سيُضاف لاحقًا</span>`;
   }
   return `<a class="btn ${className}" href="${valid}" target="_blank" rel="noopener noreferrer">${label}</a>`;
 }
 
 function renderLessons(query) {
-  const filtered = lessons.filter(item =>
-    (item.title + " " + item.unit).includes(query)
+  const list = lessons.filter(x =>
+    (x.title + " " + x.unit).toLowerCase().includes(query)
   );
+  if (!list.length) return `<div class="empty">لا توجد نتائج مطابقة.</div>`;
 
-  if (!filtered.length) {
-    return `<div class="empty">مفيش نتائج مطابقة للبحث.</div>`;
-  }
-
-  const units = [...new Set(filtered.map(item => item.unit))];
-  return units.map(unit => {
-    const items = filtered.filter(item => item.unit === unit);
-    return `
-      <h2 class="unit-title">${unit}</h2>
-      ${items.map(item => `
-        <article class="card">
-          <h3>${item.title}</h3>
-          <div class="actions">
-            ${makeButton(item.video, "▶ مشاهدة الشرح", "video")}
-            ${makeButton(item.homework, "📄 ورقة الواجب", "pdf")}
-            ${makeButton(item.answer, "✓ إجابة الواجب", "answer")}
-          </div>
-        </article>
-      `).join("")}
-    `;
-  }).join("");
+  const units = [...new Set(list.map(x => x.unit))];
+  return units.map(unit => `
+    <h2 class="unit-title">${unit}</h2>
+    ${list.filter(x => x.unit === unit).map(x => `
+      <article class="card">
+        <h3>${x.title}</h3>
+        <div class="actions">
+          ${linkButton(x.video,"▶ مشاهدة الشرح","video")}
+          ${linkButton(x.homework,"📄 ورقة الواجب","pdf")}
+          ${linkButton(x.answer,"✓ إجابة الواجب","book")}
+        </div>
+      </article>
+    `).join("")}
+  `).join("");
 }
 
 function renderExams(query) {
-  const filtered = exams.filter(item =>
-    item.title.includes(query)
-  );
-
-  if (!filtered.length) {
-    return `<div class="empty">مفيش اختبارات مطابقة للبحث.</div>`;
-  }
-
-  return filtered.map(item => `
+  const list = exams.filter(x => x.title.toLowerCase().includes(query));
+  if (!list.length) return `<div class="empty">لا توجد اختبارات مطابقة.</div>`;
+  return list.map(x => `
     <article class="card">
-      <h3>${item.title}</h3>
+      <h3>${x.title}</h3>
       <div class="actions">
-        ${makeButton(item.pdf, "📄 ملف الاختبار PDF", "pdf")}
-        ${makeButton(item.video, "▶ مشاهدة الحل", "video")}
+        ${linkButton(x.pdf,"📄 ملف الاختبار PDF","pdf")}
+        ${linkButton(x.video,"▶ مشاهدة الحل","video")}
       </div>
     </article>
   `).join("");
 }
 
 function renderBooks(query) {
-  const filtered = books.filter(item =>
-    item.title.includes(query)
-  );
-
-  if (!filtered.length) {
-    return `<div class="empty">مفيش ملفات مطابقة للبحث.</div>`;
-  }
-
-  return filtered.map(item => `
+  const list = books.filter(x => x.title.toLowerCase().includes(query));
+  if (!list.length) return `<div class="empty">لا توجد كتب مطابقة للبحث.</div>`;
+  return list.map(x => `
     <article class="card">
-      <h3>${item.title}</h3>
+      <h3>${x.title}</h3>
       <div class="actions">
-        ${makeButton(item.pdf, "📥 فتح الملف PDF", "pdf")}
+        ${linkButton(x.pdf,"📘 فتح الكتاب على Google Drive","book")}
       </div>
     </article>
   `).join("");
 }
 
 function render() {
-  const query = document.getElementById("search").value
-    .trim().toLowerCase();
-
+  const query = document.getElementById("search").value.trim().toLowerCase();
   const content = document.getElementById("content");
-
-  if (currentSection === "lessons") {
-    content.innerHTML = renderLessons(query);
-  } else if (currentSection === "exams") {
-    content.innerHTML = renderExams(query);
-  } else {
-    content.innerHTML = renderBooks(query);
-  }
+  if (currentSection === "lessons") content.innerHTML = renderLessons(query);
+  else if (currentSection === "exams") content.innerHTML = renderExams(query);
+  else content.innerHTML = renderBooks(query);
 }
 
 document.querySelectorAll(".tab").forEach(button => {
   button.addEventListener("click", () => {
     currentSection = button.dataset.section;
-
-    document.querySelectorAll(".tab").forEach(tab => {
-      tab.classList.toggle("active", tab === button);
-    });
-
+    document.querySelectorAll(".tab").forEach(tab =>
+      tab.classList.toggle("active", tab === button)
+    );
     render();
   });
 });
 
 document.getElementById("search").addEventListener("input", render);
-
 render();
 </script>
 </body>
