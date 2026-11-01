@@ -1,117 +1,242 @@
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>الصف الأول الإعدادي | أكاديمية مستر محمد ربيع</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>الصف الأول الإعدادي | أكاديمية مستر محمد ربيع</title>
+  <meta name="description" content="شرح رياضيات الصف الأول الإعدادي وحل مذكرة توجيه الرياضيات مع مستر محمد ربيع">
 
-<!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-8JB3G7MD6C"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-8JB3G7MD6C');
-</script>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8JB3G7MD6C"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-8JB3G7MD6C');
+  </script>
 
-<link rel="stylesheet" href="style.css">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Tahoma, Arial, sans-serif;
+      background: #f3f6fb;
+      color: #172033;
+      line-height: 1.8;
+    }
+
+    header {
+      background: linear-gradient(135deg, #073b78, #0876bd);
+      color: white;
+      text-align: center;
+      padding: 35px 15px;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 30px;
+    }
+
+    header p {
+      margin: 8px 0 0;
+      font-size: 17px;
+    }
+
+    main {
+      width: 92%;
+      max-width: 900px;
+      margin: 25px auto;
+    }
+
+    .panel {
+      background: white;
+      padding: 22px;
+      margin-bottom: 22px;
+      border-radius: 14px;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.07);
+    }
+
+    h2 {
+      color: #07549a;
+      margin-top: 0;
+      border-bottom: 2px solid #e5edf7;
+      padding-bottom: 10px;
+    }
+
+    .muted {
+      color: #64748b;
+    }
+
+    .video-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
+    }
+
+    .btn {
+      display: block;
+      background: #0876bd;
+      color: white;
+      text-decoration: none;
+      text-align: center;
+      padding: 12px 15px;
+      border-radius: 9px;
+      font-weight: bold;
+      transition: 0.2s;
+    }
+
+    .btn:hover {
+      background: #064f88;
+    }
+
+    .btn.secondary {
+      background: #eaf2fb;
+      color: #07549a;
+      border: 1px solid #cbdced;
+    }
+
+    .btn.secondary:hover {
+      background: #d8e9fa;
+    }
+
+    .grade {
+      display: inline-block;
+      background: #e8f3ff;
+      color: #07549a;
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .quiz-q {
+      background: #f5f8fc;
+      padding: 15px;
+      border-radius: 10px;
+      margin: 15px 0;
+    }
+
+    button {
+      cursor: pointer;
+      border: none;
+      font-family: inherit;
+      font-size: 16px;
+    }
+
+    .result {
+      font-weight: bold;
+      margin-top: 12px;
+    }
+
+    footer {
+      background: #073b78;
+      color: white;
+      text-align: center;
+      padding: 18px;
+      margin-top: 35px;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 24px;
+      }
+
+      .panel {
+        padding: 16px;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-<header>
-<h1>الصف الأول الإعدادي</h1>
-<p>شرح مبسّط وتدريب مستمر</p>
-</header>
+  <header>
+    <h1>الصف الأول الإعدادي</h1>
+    <p>شرح مبسّط وتدريب مستمر</p>
+  </header>
 
-<main>
+  <main>
 
-<a class="btn secondary" href="index.html">← الرجوع للصفحة الرئيسية</a>
+    <p>
+      <a class="btn secondary" href="index.html">العودة إلى الصفحة الرئيسية</a>
+    </p>
 
-<section class="panel">
-<h2>📺 فيديوهات الشرح</h2>
-<p class="muted">ترتيب الفيديوهات حسب الوحدات والدروس.</p>
+    <section class="panel">
+      <span class="grade">العام الدراسي ٢٠٢٦</span>
+      <h2>📘 حل مذكرة توجيه الرياضيات ٢٠٢٦</h2>
+      <p class="muted">اختر النموذج لمشاهدة الحل بالفيديو.</p>
 
-<h3>شرح الرياضيات</h3>
+      <div class="video-list">
 
-<iframe
-src="https://www.youtube.com/embed/xKa601v8Gqg"
-title="شرح الرياضيات للصف الأول الإعدادي"
-loading="lazy"
-allowfullscreen>
-</iframe>
-</section>
+        <a class="btn" href="https://youtu.be/xKa601v8Gqg?si=DOsYCrlEM2NOvrJR" target="_blank" rel="noopener">حل النموذج ١</a>
 
-<section class="panel">
-<h2>📘 حل مذكرة توجيه الرياضيات ٢٠٢٦</h2>
-<p class="muted">اختر النموذج لمشاهدة الحل بالفيديو.</p>
+        <a class="btn" href="https://youtu.be/tq5FKO5B5Kw?si=JusLOtHbt5ypdRyP" target="_blank" rel="noopener">حل النموذج ٢</a>
 
-<div class="grade">
+        <a class="btn" href="https://youtu.be/dc4RCI63x8c?si=Dc7IYK1GqpTTPQtl" target="_blank" rel="noopener">حل النموذج ٣</a>
 
-<a class="btn" href="https://youtu.be/xKa601v8Gqg?si=DOsYCrlEM2NOvrJR" target="_blank" rel="noopener">حل النموذج ١</a>
+        <a class="btn" href="https://youtu.be/L6jMO5q1CCE?si=KCjpU_b85-og7lIc" target="_blank" rel="noopener">حل النموذج ٤</a>
 
-<a class="btn" href="https://youtu.be/tq5FKO5B5Kw?si=JusLOtHbt5ypdRyP" target="_blank" rel="noopener">حل النموذج ٢</a>
+        <a class="btn" href="https://youtu.be/xPMcfmInNB8?si=B3e98WcwxRMPcGkD" target="_blank" rel="noopener">حل النموذج ٥</a>
 
-<a class="btn" href="https://youtu.be/dc4RCI63x8c?si=Dc7IYK1GqpTTPQtl" target="_blank" rel="noopener">حل النموذج ٣</a>
+        <a class="btn" href="https://youtu.be/5C15puKg0JU?si=wg7dvyi7-6Kwj4nk" target="_blank" rel="noopener">حل النموذج ٦</a>
 
-<a class="btn" href="https://youtu.be/L6jMO5q1CCE?si=KCjpU_b85-og7lIc" target="_blank" rel="noopener">حل النموذج ٤</a>
+        <a class="btn" href="https://youtu.be/bId6cTSZdbI?si=1PFRTurhxzz0aKzh" target="_blank" rel="noopener">حل النموذج ٧</a>
 
-<a class="btn" href="https://youtu.be/xPMcfmInNB8?si=B3e98WcwxRMPcGkD" target="_blank" rel="noopener">حل النموذج ٥</a>
+        <a class="btn" href="https://youtu.be/wVORJTFlO_g?si=EGLRdKxeyL4O3kID" target="_blank" rel="noopener">حل النموذج ٨</a>
 
-<a class="btn" href="https://youtu.be/5C15puKg0JU?si=wg7dvyi7-6Kwj4nk" target="_blank" rel="noopener">حل النموذج ٦</a>
+      </div>
+    </section>
 
-<a class="btn" href="https://youtu.be/bId6cTSZdbI?si=1PFRTurhxzz0aKzh" target="_blank" rel="noopener">حل النموذج ٧</a>
+    <section class="panel">
+      <span class="grade">العام الدراسي ٢٠٢٧</span>
+      <h2>📘 حل مذكرة توجيه الرياضيات ٢٠٢٧</h2>
+      <p class="muted">سيتم إضافة روابط النماذج هنا فور اكتمالها.</p>
+    </section>
 
-<a class="btn" href="https://youtu.be/wVORJTFlO_g?si=EGLRdKxeyL4O3kID" target="_blank" rel="noopener">حل النموذج ٨</a>
+    <section class="panel">
+      <h2>📝 اختبر نفسك</h2>
 
-</div>
-</section>
+      <p>نموذج جاهز لإضافة أسئلة المنهج، مع حساب الدرجة تلقائيًا بعد إدخال الأسئلة الصحيحة.</p>
 
-<section class="panel">
-<h2>📘 حل مذكرة توجيه الرياضيات ٢٠٢٧</h2>
-<p class="muted">سيتم إضافة روابط النماذج هنا فور اكتمالها.</p>
-</section>
+      <form id="quiz">
 
-<section class="panel">
-<h2>📝 اختبر نفسك</h2>
+        <div class="quiz-q">
+          <p>مثال توضيحي: ما ناتج ٢ + ٣؟</p>
 
-<p>نموذج جاهز لإضافة أسئلة المنهج، مع حساب الدرجة تلقائيًا بعد إدخال الأسئلة الصحيحة.</p>
+          <label><input type="radio" name="q1" value="0"> ٤</label><br>
+          <label><input type="radio" name="q1" value="1"> ٥</label><br>
+          <label><input type="radio" name="q1" value="0"> ٦</label>
+        </div>
 
-<form id="quiz">
+        <button class="btn" type="button" onclick="gradeQuiz()">صحّح الاختبار</button>
 
-<div class="quiz-q">
-<p>مثال توضيحي: ما ناتج 2 + 3؟</p>
+        <p class="result" id="result" aria-live="polite"></p>
 
-<label><input type="radio" name="q1" value="0"> 4</label><br>
-<label><input type="radio" name="q1" value="1"> 5</label><br>
-<label><input type="radio" name="q1" value="0"> 6</label>
-</div>
+        <p class="muted">هذا سؤال تجريبي توضيحي فقط، ويجب استبداله بأسئلة الصف الفعلية قبل نشر الاختبار للطلاب.</p>
 
-<button class="btn" type="button" onclick="gradeQuiz()">صحّح الاختبار</button>
+      </form>
+    </section>
 
-<p class="result" id="result" aria-live="polite"></p>
+    <a class="btn" href="https://wa.me/201281281205" target="_blank" rel="noopener">
+      تواصل معايا على واتساب
+    </a>
 
-<p class="muted">هذا سؤال تجريبي توضيحي فقط، ويجب استبداله بأسئلة الصف الفعلية قبل نشر الاختبار للطلاب.</p>
+    <footer>أكاديمية مستر محمد ربيع</footer>
 
-</form>
-</section>
+  </main>
 
-<a class="btn" href="https://wa.me/201281281205" target="_blank" rel="noopener">
-تواصل معايا على واتساب
-</a>
+  <script>
+    function gradeQuiz() {
+      const a = document.querySelector('input[name="q1"]:checked');
 
-<footer>أكاديمية مستر محمد ربيع</footer>
-
-</main>
-
-<script>
-function gradeQuiz(){
-  const a = document.querySelector('input[name="q1"]:checked');
-
-  document.getElementById('result').textContent =
-    a ? 'درجتك: ' + a.value + '/1' : 'من فضلك اختار إجابة أولًا.';
-}
-</script>
+      document.getElementById('result').textContent =
+        a ? 'درجتك: ' + a.value + '/1' : 'من فضلك اختار إجابة أولًا.';
+    }
+  </script>
 
 </body>
 </html>
