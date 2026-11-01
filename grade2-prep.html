@@ -1,1 +1,289 @@
-<!doctype html><html lang="ar" dir="rtl"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>الصف الثاني الإعدادي | أكاديمية مستر محمد ربيع</title><link rel="stylesheet" href="style.css"></head><body><header><h1>الصف الثاني الإعدادي</h1><p>شرح مبسّط وتدريب مستمر</p></header><main><a class="btn secondary" href="index.html">← الرجوع للصفحة الرئيسية</a><section class="panel"><h2>📺 فيديوهات الشرح</h2><p class="muted">ترتيب الفيديوهات حسب الوحدات والدروس.</p><div class="grade"><h3>الوحدة الأولى</h3><p>سيتم إضافة فيديوهات الدروس هنا.</p></div><div class="grade"><h3>الوحدة الثانية</h3><p>سيتم إضافة فيديوهات الدروس هنا.</p></div></section><section class="panel"><h2>📝 اختبر نفسك</h2><p>نموذج جاهز لإضافة أسئلة المنهج، مع حساب الدرجة تلقائيًا بعد إدخال الأسئلة الصحيحة.</p><form id="quiz"><div class="quiz-q"><p>مثال توضيحي: ما ناتج 2 + 3؟</p><label><input type="radio" name="q1" value="0"> 4</label><br><label><input type="radio" name="q1" value="1"> 5</label><br><label><input type="radio" name="q1" value="0"> 6</label></div><button class="btn" type="button" onclick="gradeQuiz()">صحّح الاختبار</button><p class="result" id="result" aria-live="polite"></p><p class="muted">هذا سؤال تجريبي توضيحي فقط، ويجب استبداله بأسئلة الصف الفعلية قبل نشر الاختبار للطلاب.</p></form></section><a class="btn" href="https://wa.me/201281281205" target="_blank" rel="noopener">تواصل معايا على واتساب</a><footer>أكاديمية مستر محمد ربيع</footer></main><script>function gradeQuiz(){const a=document.querySelector('input[name="q1"]:checked');document.getElementById('result').textContent=a?'درجتك: '+a.value+'/1':'من فضلك اختار إجابة أولًا.';}</script></body></html>
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>الصف الثاني الإعدادي | أكاديمية مستر محمد ربيع</title>
+  <meta name="description" content="شرح رياضيات الصف الثاني الإعدادي وحل مذكرة توجيه الرياضيات مع مستر محمد ربيع">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Tahoma, Arial, sans-serif;
+      background: #f3f6fb;
+      color: #172033;
+      line-height: 1.8;
+    }
+
+    header {
+      background: linear-gradient(135deg, #073b78, #0876bd);
+      color: white;
+      text-align: center;
+      padding: 35px 15px;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 30px;
+    }
+
+    header p {
+      margin: 8px 0 0;
+      font-size: 17px;
+    }
+
+    main {
+      width: 92%;
+      max-width: 900px;
+      margin: 25px auto;
+    }
+
+    .panel {
+      background: white;
+      padding: 22px;
+      margin-bottom: 22px;
+      border-radius: 14px;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.07);
+    }
+
+    h2 {
+      color: #07549a;
+      margin-top: 0;
+      border-bottom: 2px solid #e5edf7;
+      padding-bottom: 10px;
+    }
+
+    .muted {
+      color: #64748b;
+    }
+
+    .video-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
+    }
+
+    .btn {
+      display: block;
+      background: #0876bd;
+      color: white;
+      text-decoration: none;
+      text-align: center;
+      padding: 12px 15px;
+      border-radius: 9px;
+      font-weight: bold;
+      transition: 0.2s;
+    }
+
+    .btn:hover {
+      background: #064f88;
+    }
+
+    .btn.secondary {
+      background: #eaf2fb;
+      color: #07549a;
+      border: 1px solid #cbdced;
+    }
+
+    .btn.secondary:hover {
+      background: #d8e9fa;
+    }
+
+    .grade {
+      display: inline-block;
+      background: #e8f3ff;
+      color: #07549a;
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .question {
+      background: #f5f8fc;
+      padding: 15px;
+      border-radius: 10px;
+      margin: 15px 0;
+    }
+
+    input[type="number"] {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      font-size: 17px;
+      margin: 8px 0;
+    }
+
+    button {
+      cursor: pointer;
+      border: none;
+      font-family: inherit;
+      font-size: 16px;
+    }
+
+    .result {
+      font-weight: bold;
+      margin-top: 12px;
+    }
+
+    .whatsapp {
+      background: #159b55;
+      color: white;
+      display: block;
+      text-align: center;
+      text-decoration: none;
+      padding: 13px;
+      border-radius: 10px;
+      font-weight: bold;
+    }
+
+    footer {
+      background: #073b78;
+      color: white;
+      text-align: center;
+      padding: 18px;
+      margin-top: 35px;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 24px;
+      }
+
+      .panel {
+        padding: 16px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>الصف الثاني الإعدادي</h1>
+    <p>شرح مبسّط وتدريب مستمر مع مستر محمد ربيع</p>
+  </header>
+
+  <main>
+
+    <p>
+      <a class="btn secondary" href="index.html">العودة إلى الصفحة الرئيسية</a>
+    </p>
+
+    <section class="panel">
+      <span class="grade">العام الدراسي ٢٠٢٦</span>
+      <h2>📚 حل مذكرة توجيه الرياضيات ٢٠٢٦</h2>
+      <p class="muted">
+        شاهد شرح وحل مذكرة توجيه الرياضيات للصف الثاني الإعدادي،
+        وتابع الفيديوهات بالترتيب حتى تتمكن من مراجعة جميع الأسئلة.
+      </p>
+
+      <div class="video-list">
+        <a class="btn" href="https://youtu.be/NTGsBrmkzv0?si=WYNNL03eboQyC_20" target="_blank" rel="noopener">الفيديو الأول</a>
+
+        <a class="btn" href="https://youtu.be/hMBpzHRqKzg?si=utRWm_kzSzqIRZNi" target="_blank" rel="noopener">الفيديو الثاني</a>
+
+        <a class="btn" href="https://youtu.be/AyPcnnt1FcY?si=i9MIAw5K7c_3QjU" target="_blank" rel="noopener">الفيديو الثالث</a>
+
+        <a class="btn" href="https://youtu.be/8YeuHdXV7Yo?si=gj9NA00ajptTeQVF" target="_blank" rel="noopener">الفيديو الرابع</a>
+
+        <a class="btn" href="https://youtu.be/0XEMDrm5FMo?si=Rn2hIDBpvMZe2ju4" target="_blank" rel="noopener">الفيديو الخامس</a>
+
+        <a class="btn" href="https://youtu.be/DdEdxYqprzE?si=aQut0aSh-j08YObg" target="_blank" rel="noopener">الفيديو السادس</a>
+
+        <a class="btn" href="https://youtu.be/g_XbgjIK2PI?si=AY-JaqsRDWfYg0r7" target="_blank" rel="noopener">الفيديو السابع</a>
+
+        <a class="btn" href="https://youtu.be/xguJqfzD51A?si=RMiez0AMhEj0bSBk" target="_blank" rel="noopener">الفيديو الثامن</a>
+
+        <a class="btn" href="https://youtu.be/gt46ncu9o_s?si=ZJrTFedMyuILhEhr" target="_blank" rel="noopener">الفيديو التاسع</a>
+
+        <a class="btn" href="https://youtu.be/-SvhnNzl1Xw?si=ygUjATYaeFv8qS2q" target="_blank" rel="noopener">الفيديو العاشر</a>
+
+        <a class="btn" href="https://youtu.be/_WynFueRauE?si=wPJUXGRZJodLkVAT" target="_blank" rel="noopener">الفيديو الحادي عشر</a>
+
+        <a class="btn" href="https://youtu.be/MITl4EtYBZ8?si=GjiY1FHND0QYok5-" target="_blank" rel="noopener">الفيديو الثاني عشر</a>
+      </div>
+    </section>
+
+    <section class="panel">
+      <span class="grade">العام الدراسي ٢٠٢٧</span>
+      <h2>🎓 شرح ومراجعة رياضيات الصف الثاني الإعدادي ٢٠٢٧</h2>
+
+      <p class="muted">
+        سيتم إضافة شرح الدروس والفيديوهات والامتحانات والتدريبات
+        الخاصة بالعام الدراسي ٢٠٢٧ تباعًا.
+      </p>
+
+      <p class="muted">
+        تابع الأكاديمية باستمرار حتى لا يفوتك أي درس جديد.
+      </p>
+    </section>
+
+    <section class="panel">
+      <h2>✍️ اختبر نفسك</h2>
+      <p>أجب عن السؤال التالي واختبر معلوماتك في الرياضيات.</p>
+
+      <div class="question">
+        <strong>إذا كان ٥ + ٣ = ؟</strong>
+
+        <input
+          type="number"
+          id="quizAnswer"
+          placeholder="اكتب الإجابة هنا"
+        >
+
+        <button class="btn" onclick="gradeQuiz()">
+          تأكد من إجابتك
+        </button>
+
+        <p class="result" id="quizResult"></p>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>📞 تواصل مع مستر محمد ربيع</h2>
+      <p class="muted">
+        للاستفسارات والمتابعة يمكنك التواصل معنا عبر واتساب.
+      </p>
+
+      <a
+        class="whatsapp"
+        href="https://wa.me/201281281205"
+        target="_blank"
+        rel="noopener"
+      >
+        تواصل معنا عبر واتساب
+      </a>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>جميع الحقوق محفوظة © أكاديمية مستر محمد ربيع</p>
+  </footer>
+
+  <script>
+    function gradeQuiz() {
+      const answer = document.getElementById("quizAnswer").value;
+      const result = document.getElementById("quizResult");
+
+      if (answer === "") {
+        result.textContent = "من فضلك اكتب الإجابة أولاً.";
+        result.style.color = "#d97706";
+      } else if (Number(answer) === 8) {
+        result.textContent = "أحسنت! إجابة صحيحة 🌟";
+        result.style.color = "green";
+      } else {
+        result.textContent = "حاول مرة أخرى، بالتوفيق!";
+        result.style.color = "red";
+      }
+    }
+  </script>
+
+</body>
+</html>
