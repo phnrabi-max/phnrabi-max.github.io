@@ -18,50 +18,100 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
 <header>
 <h1>الصف الأول الإعدادي</h1>
 <p>شرح مبسّط وتدريب مستمر</p>
 </header>
 
 <main>
+
 <a class="btn secondary" href="index.html">← الرجوع للصفحة الرئيسية</a>
 
 <section class="panel">
 <h2>📺 فيديوهات الشرح</h2>
 <p class="muted">ترتيب الفيديوهات حسب الوحدات والدروس.</p>
+
 <h3>شرح الرياضيات</h3>
-<iframe src="https://www.youtube.com/embed/xKa601v8Gqg" title="شرح الرياضيات للصف الأول الإعدادي" loading="lazy" allowfullscreen></iframe>
+
+<iframe
+src="https://www.youtube.com/embed/xKa601v8Gqg"
+title="شرح الرياضيات للصف الأول الإعدادي"
+loading="lazy"
+allowfullscreen>
+</iframe>
+</section>
+
+<section class="panel">
+<h2>📘 حل مذكرة توجيه الرياضيات ٢٠٢٦</h2>
+<p class="muted">اختر النموذج لمشاهدة الحل بالفيديو.</p>
+
+<div class="grade">
+
+<a class="btn" href="https://youtu.be/xKa601v8Gqg?si=DOsYCrlEM2NOvrJR" target="_blank" rel="noopener">حل النموذج ١</a>
+
+<a class="btn" href="https://youtu.be/tq5FKO5B5Kw?si=JusLOtHbt5ypdRyP" target="_blank" rel="noopener">حل النموذج ٢</a>
+
+<a class="btn" href="https://youtu.be/dc4RCI63x8c?si=Dc7IYK1GqpTTPQtl" target="_blank" rel="noopener">حل النموذج ٣</a>
+
+<a class="btn" href="https://youtu.be/L6jMO5q1CCE?si=KCjpU_b85-og7lIc" target="_blank" rel="noopener">حل النموذج ٤</a>
+
+<a class="btn" href="https://youtu.be/xPMcfmInNB8?si=B3e98WcwxRMPcGkD" target="_blank" rel="noopener">حل النموذج ٥</a>
+
+<a class="btn" href="https://youtu.be/5C15puKg0JU?si=wg7dvyi7-6Kwj4nk" target="_blank" rel="noopener">حل النموذج ٦</a>
+
+<a class="btn" href="https://youtu.be/bId6cTSZdbI?si=1PFRTurhxzz0aKzh" target="_blank" rel="noopener">حل النموذج ٧</a>
+
+<a class="btn" href="https://youtu.be/wVORJTFlO_g?si=EGLRdKxeyL4O3kID" target="_blank" rel="noopener">حل النموذج ٨</a>
+
+</div>
+</section>
+
+<section class="panel">
+<h2>📘 حل مذكرة توجيه الرياضيات ٢٠٢٧</h2>
+<p class="muted">سيتم إضافة روابط النماذج هنا فور اكتمالها.</p>
 </section>
 
 <section class="panel">
 <h2>📝 اختبر نفسك</h2>
+
 <p>نموذج جاهز لإضافة أسئلة المنهج، مع حساب الدرجة تلقائيًا بعد إدخال الأسئلة الصحيحة.</p>
 
 <form id="quiz">
+
 <div class="quiz-q">
 <p>مثال توضيحي: ما ناتج 2 + 3؟</p>
+
 <label><input type="radio" name="q1" value="0"> 4</label><br>
 <label><input type="radio" name="q1" value="1"> 5</label><br>
 <label><input type="radio" name="q1" value="0"> 6</label>
 </div>
 
 <button class="btn" type="button" onclick="gradeQuiz()">صحّح الاختبار</button>
+
 <p class="result" id="result" aria-live="polite"></p>
+
 <p class="muted">هذا سؤال تجريبي توضيحي فقط، ويجب استبداله بأسئلة الصف الفعلية قبل نشر الاختبار للطلاب.</p>
+
 </form>
 </section>
 
-<a class="btn" href="https://wa.me/201281281205" target="_blank" rel="noopener">تواصل معايا على واتساب</a>
+<a class="btn" href="https://wa.me/201281281205" target="_blank" rel="noopener">
+تواصل معايا على واتساب
+</a>
 
 <footer>أكاديمية مستر محمد ربيع</footer>
+
 </main>
 
 <script>
 function gradeQuiz(){
   const a = document.querySelector('input[name="q1"]:checked');
+
   document.getElementById('result').textContent =
     a ? 'درجتك: ' + a.value + '/1' : 'من فضلك اختار إجابة أولًا.';
 }
 </script>
+
 </body>
 </html>
