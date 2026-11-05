@@ -1,0 +1,154 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>حل مسائل المتفوقين رياضيات ثالثة إعدادي 2027 | مستر محمد ربيع</title>
+
+<meta name="description" content="فيديوهات حل مسائل المتفوقين في رياضيات الصف الثالث الإعدادي 2027 مع مستر محمد ربيع. شرح الدالة التربيعية والنسب المثلثية للزاوية الحادة.">
+
+<meta name="author" content="مستر محمد ربيع">
+
+<link rel="canonical" href="https://phnrabi-max.github.io/grade3-top-students.html">
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+.video-card {
+  margin: 22px 0;
+  padding: 18px;
+  border-radius: 14px;
+  background: var(--card, #f5f7fa);
+  box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+}
+
+.video-card h3 {
+  margin: 0 0 15px;
+  line-height: 1.7;
+}
+
+.video-frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 12px;
+  background: #111;
+}
+
+.video-frame iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>🏆 حل مسائل المتفوقين</h1>
+  <p>رياضيات الصف الثالث الإعدادي 2027 مع مستر محمد ربيع</p>
+</header>
+
+<main>
+
+<a class="btn secondary" href="grade3-prep.html">
+  ← الرجوع لصفحة الصف الثالث الإعدادي
+</a>
+
+<section class="panel">
+  <h2>📚 أقوى مسائل المتفوقين</h2>
+  <p class="muted">
+    تابع فيديوهات حل مسائل المتفوقين وتدرّب على الأفكار المميزة
+    والأسئلة التي تساعدك على التفوق في الرياضيات.
+  </p>
+</section>
+
+<section class="panel">
+
+  <h2>📺 فيديوهات الشرح والحل</h2>
+
+  <div class="video-card">
+    <h3>الحصة الأولى: حل مسائل المتفوقين على الدالة التربيعية</h3>
+    <div class="video-frame">
+      <iframe src="https://www.youtube.com/embed/SLxU6I29aTU"
+        title="الحصة الأولى حل مسائل المتفوقين على الدالة التربيعية"
+        loading="lazy"
+        allowfullscreen>
+      </iframe>
+    </div>
+  </div>
+
+  <div class="video-card">
+    <h3>الحصة الثانية: حل مسائل المتفوقين على الدالة التربيعية</h3>
+    <div class="video-frame">
+      <iframe src="https://www.youtube.com/embed/N8cauPClY_Q"
+        title="الحصة الثانية حل مسائل المتفوقين على الدالة التربيعية"
+        loading="lazy"
+        allowfullscreen>
+      </iframe>
+    </div>
+  </div>
+
+  <div class="video-card">
+    <h3>الحصة الثالثة: حل مسائل المتفوقين على الدالة التربيعية</h3>
+    <div class="video-frame">
+      <iframe src="https://www.youtube.com/embed/Srk_vVWFUCE"
+        title="الحصة الثالثة حل مسائل المتفوقين على الدالة التربيعية"
+        loading="lazy"
+        allowfullscreen>
+      </iframe>
+    </div>
+  </div>
+
+  <div class="video-card">
+    <h3>الحصة الرابعة: حل مسائل المتفوقين على الدالة التربيعية</h3>
+    <div class="video-frame">
+      <iframe src="https://www.youtube.com/embed/BgWeGArxNFM"
+        title="الحصة الرابعة حل مسائل المتفوقين على الدالة التربيعية"
+        loading="lazy"
+        allowfullscreen>
+      </iframe>
+    </div>
+  </div>
+
+  <div class="video-card">
+    <h3>الحصة الخامسة: حل مسائل المتفوقين على النسب المثلثية للزاوية الحادة</h3>
+    <div class="video-frame">
+      <iframe src="https://www.youtube.com/embed/hoe4ur6XMIk"
+        title="الحصة الخامسة حل مسائل المتفوقين على النسب المثلثية للزاوية الحادة"
+        loading="lazy"
+        allowfullscreen>
+      </iframe>
+    </div>
+  </div>
+
+</section>
+
+<section class="panel">
+  <h2>🎯 هدفنا التفوق والتميز</h2>
+  <p>
+    مع مستر محمد ربيع افهم الرياضيات وتدرّب على أقوى المسائل
+    واستعد للامتحان بثقة.
+  </p>
+</section>
+
+<a class="btn" href="https://wa.me/201281281205"
+   target="_blank" rel="noopener noreferrer">
+  تواصل مع مستر محمد ربيع على واتساب
+</a>
+
+<footer>
+  أكاديمية مستر محمد ربيع
+  <p>الرياضيات ببساطة… افهم، اتدرّب، واتفوّق</p>
+</footer>
+
+</main>
+
+</body>
+</html>
