@@ -5,150 +5,239 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>حل مسائل المتفوقين رياضيات ثالثة إعدادي 2027 | مستر محمد ربيع</title>
+<title>حل مسائل المتفوقين | مستر محمد ربيع</title>
 
-<meta name="description" content="فيديوهات حل مسائل المتفوقين في رياضيات الصف الثالث الإعدادي 2027 مع مستر محمد ربيع. شرح الدالة التربيعية والنسب المثلثية للزاوية الحادة.">
-
-<meta name="author" content="مستر محمد ربيع">
-
-<link rel="canonical" href="https://phnrabi-max.github.io/grade3-top-students.html">
+<meta name="description" content="حل أقوى مسائل المتفوقين في رياضيات الصف الثالث الإعدادي 2027 مع مستر محمد ربيع.">
 
 <link rel="stylesheet" href="style.css">
 
 <style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    direction: rtl;
+    text-align: right;
+}
+
+.page-header {
+    text-align: center;
+    padding: 30px 15px;
+    background: linear-gradient(135deg,#102b55,#1769aa);
+    color: white;
+    border-radius: 0 0 25px 25px;
+}
+
+.page-header h1 {
+    margin: 0 0 12px;
+    font-size: 28px;
+}
+
+.page-header p {
+    margin: 0;
+    font-size: 17px;
+}
+
+.container {
+    width: 92%;
+    max-width: 900px;
+    margin: 25px auto;
+}
+
+.back-button {
+    display: inline-block;
+    background: #1769aa;
+    color: white;
+    text-decoration: none;
+    padding: 12px 22px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.intro {
+    background: #eef5ff;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    margin-bottom: 25px;
+    line-height: 1.9;
+}
+
+.intro h2 {
+    color: #123d70;
+}
+
 .video-card {
-  margin: 22px 0;
-  padding: 18px;
-  border-radius: 14px;
-  background: var(--card, #f5f7fa);
-  box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+    background: white;
+    padding: 18px;
+    margin-bottom: 25px;
+    border-radius: 15px;
+    box-shadow: 0 3px 14px rgba(0,0,0,.10);
 }
 
 .video-card h3 {
-  margin: 0 0 15px;
-  line-height: 1.7;
+    color: #123d70;
+    line-height: 1.8;
+    margin-top: 0;
+    font-size: 19px;
 }
 
 .video-frame {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  overflow: hidden;
-  border-radius: 12px;
-  background: #111;
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background: #111;
+    border-radius: 12px;
+    overflow: hidden;
 }
 
 .video-frame iframe {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  border: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    inset: 0;
+    border: 0;
+}
+
+.contact {
+    display: block;
+    text-align: center;
+    background: #159447;
+    color: white;
+    text-decoration: none;
+    padding: 15px;
+    border-radius: 12px;
+    font-weight: bold;
+    margin: 30px 0;
+}
+
+footer {
+    text-align: center;
+    padding: 22px 10px;
+    background: #102b55;
+    color: white;
+    line-height: 1.8;
+    border-radius: 15px 15px 0 0;
+}
+
+@media (max-width: 600px) {
+    .page-header h1 {
+        font-size: 23px;
+    }
+
+    .video-card {
+        padding: 12px;
+    }
+
+    .video-card h3 {
+        font-size: 17px;
+    }
 }
 </style>
 </head>
 
 <body>
 
-<header>
-  <h1>🏆 حل مسائل المتفوقين</h1>
-  <p>رياضيات الصف الثالث الإعدادي 2027 مع مستر محمد ربيع</p>
+<header class="page-header">
+    <h1>🏆 حل مسائل المتفوقين</h1>
+    <p>رياضيات الصف الثالث الإعدادي 2027</p>
+    <p>مع مستر محمد ربيع</p>
 </header>
 
-<main>
+<main class="container">
 
-<a class="btn secondary" href="grade3-prep.html">
-  ← الرجوع لصفحة الصف الثالث الإعدادي
-</a>
+    <a class="back-button" href="grade3-prep.html">
+        ← الرجوع إلى صفحة الصف الثالث الإعدادي
+    </a>
 
-<section class="panel">
-  <h2>📚 أقوى مسائل المتفوقين</h2>
-  <p class="muted">
-    تابع فيديوهات حل مسائل المتفوقين وتدرّب على الأفكار المميزة
-    والأسئلة التي تساعدك على التفوق في الرياضيات.
-  </p>
-</section>
+    <section class="intro">
+        <h2>📚 أقوى مسائل المتفوقين</h2>
+        <p>
+            أهلاً بك في قسم حل مسائل المتفوقين.
+            تابع الحصص بالترتيب، وركز في خطوات الحل
+            حتى تتمكن من حل أصعب أفكار الرياضيات.
+        </p>
+    </section>
 
-<section class="panel">
+    <section>
 
-  <h2>📺 فيديوهات الشرح والحل</h2>
+        <div class="video-card">
+            <h3>الحصة الأولى: حل مسائل المتفوقين على الدالة التربيعية</h3>
+            <div class="video-frame">
+                <iframe src="https://www.youtube.com/embed/SLxU6I29aTU"
+                title="الحصة الأولى"
+                loading="lazy"
+                allowfullscreen></iframe>
+            </div>
+        </div>
 
-  <div class="video-card">
-    <h3>الحصة الأولى: حل مسائل المتفوقين على الدالة التربيعية</h3>
-    <div class="video-frame">
-      <iframe src="https://www.youtube.com/embed/SLxU6I29aTU"
-        title="الحصة الأولى حل مسائل المتفوقين على الدالة التربيعية"
-        loading="lazy"
-        allowfullscreen>
-      </iframe>
-    </div>
-  </div>
+        <div class="video-card">
+            <h3>الحصة الثانية: حل مسائل المتفوقين على الدالة التربيعية</h3>
+            <div class="video-frame">
+                <iframe src="https://www.youtube.com/embed/N8cauPClY_Q"
+                title="الحصة الثانية"
+                loading="lazy"
+                allowfullscreen></iframe>
+            </div>
+        </div>
 
-  <div class="video-card">
-    <h3>الحصة الثانية: حل مسائل المتفوقين على الدالة التربيعية</h3>
-    <div class="video-frame">
-      <iframe src="https://www.youtube.com/embed/N8cauPClY_Q"
-        title="الحصة الثانية حل مسائل المتفوقين على الدالة التربيعية"
-        loading="lazy"
-        allowfullscreen>
-      </iframe>
-    </div>
-  </div>
+        <div class="video-card">
+            <h3>الحصة الثالثة: حل مسائل المتفوقين على الدالة التربيعية</h3>
+            <div class="video-frame">
+                <iframe src="https://www.youtube.com/embed/Srk_vVWFUCE"
+                title="الحصة الثالثة"
+                loading="lazy"
+                allowfullscreen></iframe>
+            </div>
+        </div>
 
-  <div class="video-card">
-    <h3>الحصة الثالثة: حل مسائل المتفوقين على الدالة التربيعية</h3>
-    <div class="video-frame">
-      <iframe src="https://www.youtube.com/embed/Srk_vVWFUCE"
-        title="الحصة الثالثة حل مسائل المتفوقين على الدالة التربيعية"
-        loading="lazy"
-        allowfullscreen>
-      </iframe>
-    </div>
-  </div>
+        <div class="video-card">
+            <h3>الحصة الرابعة: حل مسائل المتفوقين على الدالة التربيعية</h3>
+            <div class="video-frame">
+                <iframe src="https://www.youtube.com/embed/BgWeGArxNFM"
+                title="الحصة الرابعة"
+                loading="lazy"
+                allowfullscreen></iframe>
+            </div>
+        </div>
 
-  <div class="video-card">
-    <h3>الحصة الرابعة: حل مسائل المتفوقين على الدالة التربيعية</h3>
-    <div class="video-frame">
-      <iframe src="https://www.youtube.com/embed/BgWeGArxNFM"
-        title="الحصة الرابعة حل مسائل المتفوقين على الدالة التربيعية"
-        loading="lazy"
-        allowfullscreen>
-      </iframe>
-    </div>
-  </div>
+        <div class="video-card">
+            <h3>الحصة الخامسة: حل مسائل المتفوقين على النسب المثلثية للزاوية الحادة</h3>
+            <div class="video-frame">
+                <iframe src="https://www.youtube.com/embed/hoe4ur6XMIk"
+                title="الحصة الخامسة"
+                loading="lazy"
+                allowfullscreen></iframe>
+            </div>
+        </div>
 
-  <div class="video-card">
-    <h3>الحصة الخامسة: حل مسائل المتفوقين على النسب المثلثية للزاوية الحادة</h3>
-    <div class="video-frame">
-      <iframe src="https://www.youtube.com/embed/hoe4ur6XMIk"
-        title="الحصة الخامسة حل مسائل المتفوقين على النسب المثلثية للزاوية الحادة"
-        loading="lazy"
-        allowfullscreen>
-      </iframe>
-    </div>
-  </div>
+    </section>
 
-</section>
+    <section class="intro">
+        <h2>🎯 هدفنا التفوق والتميز</h2>
+        <p>
+            مع مستر محمد ربيع افهم الرياضيات،
+            وتدرب على أقوى المسائل،
+            واستعد للامتحان بثقة.
+        </p>
+    </section>
 
-<section class="panel">
-  <h2>🎯 هدفنا التفوق والتميز</h2>
-  <p>
-    مع مستر محمد ربيع افهم الرياضيات وتدرّب على أقوى المسائل
-    واستعد للامتحان بثقة.
-  </p>
-</section>
-
-<a class="btn" href="https://wa.me/201281281205"
-   target="_blank" rel="noopener noreferrer">
-  تواصل مع مستر محمد ربيع على واتساب
-</a>
-
-<footer>
-  أكاديمية مستر محمد ربيع
-  <p>الرياضيات ببساطة… افهم، اتدرّب، واتفوّق</p>
-</footer>
+    <a class="contact"
+       href="https://wa.me/201281281205"
+       target="_blank"
+       rel="noopener noreferrer">
+       تواصل مع مستر محمد ربيع على واتساب
+    </a>
 
 </main>
+
+<footer>
+    <strong>أكاديمية مستر محمد ربيع</strong>
+    <p>الرياضيات ببساطة… افهم، اتدرب، وتفوق</p>
+</footer>
 
 </body>
 </html>
