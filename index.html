@@ -217,6 +217,100 @@ a { text-decoration:none; }
   background:white;
 }
 
+/* شريط الأخبار */
+
+.news-ticker {
+  width:100%;
+  min-height:78px;
+  display:flex;
+  align-items:stretch;
+  overflow:hidden;
+  background:#102447;
+  border-top:3px solid #27c2d1;
+  border-bottom:3px solid #27c2d1;
+}
+
+.news-label {
+  flex-shrink:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  padding:10px 20px;
+  background:#1769d2;
+  color:white;
+  font-size:19px;
+  font-weight:900;
+  position:relative;
+  z-index:2;
+}
+
+.news-label span {
+  color:#6ce4ed;
+  font-size:23px;
+}
+
+.news-window {
+  direction:ltr;
+  flex:1;
+  min-width:0;
+  overflow:hidden;
+  display:flex;
+  align-items:center;
+}
+
+.news-track {
+  display:flex;
+  align-items:center;
+  width:max-content;
+  flex-shrink:0;
+  animation:news-scroll-right 28s linear infinite;
+}
+
+.news-group {
+  direction:rtl;
+  display:flex;
+  align-items:center;
+  flex-shrink:0;
+  white-space:nowrap;
+}
+
+.news-item {
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  padding:0 30px;
+  color:white;
+  font-size:20px;
+  font-weight:800;
+}
+
+.news-item::before {
+  content:"●";
+  color:#27c2d1;
+  font-size:16px;
+}
+
+.news-item a {
+  color:#ffffff;
+  transition:color .2s;
+}
+
+.news-item a:hover {
+  color:#6ce4ed;
+}
+
+.news-separator {
+  color:#27c2d1;
+  font-size:25px;
+  font-weight:900;
+}
+
+@keyframes news-scroll-right {
+  from { transform:translateX(-50%); }
+  to { transform:translateX(0); }
+}
+
 .section { padding:65px 0; }
 
 .section-heading {
@@ -270,6 +364,7 @@ a { text-decoration:none; }
   color:var(--navy);
   margin:0 0 8px;
   font-size:21px;
+  text-align:center;
 }
 
 .about-card p {
@@ -393,14 +488,14 @@ a { text-decoration:none; }
 }
 
 .grade-icon {
-  width:48px;
-  height:48px;
+  width:85px;
+  height:85px;
   display:grid;
   place-items:center;
-  border-radius:14px;
-  background:#e9f4ff;
-  font-size:25px;
-  margin-bottom:12px;
+  margin:0 auto 18px;
+  border-radius:20px;
+  background:linear-gradient(135deg,#eaf3ff,#fff1cf);
+  font-size:48px;
 }
 
 .grade-card h3 {
@@ -476,6 +571,21 @@ footer p { margin:4px 0; }
 
   .actions { justify-content:center; }
 
+  .news-ticker { min-height:70px; }
+
+  .news-label {
+    padding:8px 12px;
+    font-size:15px;
+    gap:5px;
+  }
+
+  .news-label span { font-size:19px; }
+
+  .news-item {
+    padding:0 20px;
+    font-size:18px;
+  }
+
   .section { padding:45px 0; }
 
   .social-section { padding-bottom:40px; }
@@ -501,6 +611,13 @@ footer p { margin:4px 0; }
   }
 
   .grade-card h3 { font-size:16px; }
+
+  .grade-icon {
+    width:75px;
+    height:75px;
+    font-size:42px;
+    margin-bottom:14px;
+  }
 
   .about-card {
     grid-template-columns:1fr;
@@ -554,8 +671,9 @@ footer p { margin:4px 0; }
         <span class="eyebrow">مرحبًا بك في أكاديميتك</span>
 
         <h1>
-          الرياضيات أبسط مما تتخيل مع
-          <span>مستر محمد ربيع</span>
+          الرياضيات أبسط مما تتخيل
+          <br>
+          <span>مع مستر محمد ربيع</span>
         </h1>
 
         <p class="hero-text">
@@ -580,6 +698,63 @@ footer p { margin:4px 0; }
       </div>
 
     </div>
+  </section>
+
+  <!-- شريط الأخبار -->
+
+  <section class="news-ticker" aria-label="آخر أخبار الأكاديمية">
+
+    <div class="news-label">
+      <span>🔔</span>
+      عاجل | جديد الأكاديمية
+    </div>
+
+    <div class="news-window">
+      <div class="news-track">
+
+        <div class="news-group">
+
+          <div class="news-item">
+            عاجل انتظرونا قريبًا مع حل النموذج 1 من مذكرة توجيه الرياضيات 3ع
+          </div>
+
+          <span class="news-separator">✦</span>
+
+          <div class="news-item">
+            <a href="https://www.youtube.com/playlist?list=PLXcOdVCJTb_0"
+               target="_blank" rel="noopener noreferrer">
+              حل تمارين كتاب المعاصر للصف الأول الثانوي
+            </a>
+          </div>
+
+          <span class="news-separator">✦</span>
+
+        </div>
+
+        <!-- تكرار الأخبار لاستمرار الحركة دون توقف -->
+
+        <div class="news-group" aria-hidden="true">
+
+          <div class="news-item">
+            عاجل انتظرونا قريبًا مع حل النموذج 1 من مذكرة توجيه الرياضيات 3ع
+          </div>
+
+          <span class="news-separator">✦</span>
+
+          <div class="news-item">
+            <a href="https://www.youtube.com/playlist?list=PLXcOdVCJTb_0"
+               tabindex="-1">
+              حل تمارين كتاب المعاصر للصف الأول الثانوي
+            </a>
+          </div>
+
+          <span class="news-separator">✦</span>
+
+        </div>
+
+      </div>
+    </div>
+
   </section>
 
   <section class="section" id="about">
@@ -616,7 +791,7 @@ footer p { margin:4px 0; }
     </div>
   </section>
 
-  <!-- قسم التواصل موجود هنا مباشرة بعد قسم عن المدرس -->
+  <!-- قسم التواصل -->
 
   <section class="social-section" id="social">
     <div class="container">
@@ -715,21 +890,21 @@ footer p { margin:4px 0; }
         </a>
 
         <a class="grade-card" href="grade3-prep.html">
-          <span class="grade-icon">📙</span>
+          <span class="grade-icon">🏆</span>
           <h3>الصف الثالث الإعدادي</h3>
           <p>مراجعات ومسائل وتدريبات على المنهج.</p>
           <span class="grade-action">دخول الصف ←</span>
         </a>
 
         <a class="grade-card" href="grade1-secondary.html">
-          <span class="grade-icon">📐</span>
+          <span class="grade-icon">🧮</span>
           <h3>الصف الأول الثانوي</h3>
           <p>فهم القواعد والتدريب على المسائل.</p>
           <span class="grade-action">دخول الصف ←</span>
         </a>
 
         <a class="grade-card" href="grade2-baccalaureate-2027.html">
-          <span class="grade-icon">🏆</span>
+          <span class="grade-icon">📐</span>
           <h3>الصف الثاني بكالوريا 2027</h3>
           <p>شرح وتدريبات واختبارات على المنهج.</p>
           <span class="grade-action">دخول الصف ←</span>
