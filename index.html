@@ -14,14 +14,9 @@
 
   <link rel="canonical" href="https://phnrabi-max.github.io/">
   <meta property="og:title" content="أكاديمية مستر محمد ربيع">
-  <meta property="og:description" content="تعلم الرياضيات ببساطة مع مستر محمد ربيع">
-  <meta property="og:type" content="website">
+  <meta property="og:description" content="تعلم الرياضيات بسهولة مع مستر محمد ربيع">
   <meta property="og:url" content="https://phnrabi-max.github.io/">
   <meta property="og:image" content="https://phnrabi-max.github.io/teacher.jpg">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-8JB3G7MD6C"></script>
   <script>
@@ -31,33 +26,21 @@
     gtag('config', 'G-8JB3G7MD6C');
   </script>
 
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "EducationalOrganization",
-    "name": "أكاديمية مستر محمد ربيع",
-    "url": "https://phnrabi-max.github.io/",
-    "image": "https://phnrabi-max.github.io/teacher.jpg",
-    "founder": {
-      "@type": "Person",
-      "name": "مستر محمد ربيع",
-      "jobTitle": "مدرس رياضيات"
-    },
-    "description": "أكاديمية تعليمية مجانية لشرح الرياضيات للمرحلة الإعدادية والثانوية."
-  }
-  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
   <style>
     :root {
       --navy: #102447;
-      --blue: #1765bd;
+      --blue: #1769aa;
       --light-blue: #eaf3ff;
-      --gold: #f5b942;
-      --white: #ffffff;
+      --gold: #f5b82e;
       --text: #263449;
-      --muted: #68758a;
+      --muted: #65758b;
+      --white: #ffffff;
       --background: #f5f8fc;
-      --shadow: 0 10px 30px rgba(16,36,71,.09);
+      --shadow: 0 12px 35px rgba(16,36,71,.09);
     }
 
     * {
@@ -74,8 +57,8 @@
       font-family: 'Cairo', sans-serif;
       background: var(--background);
       color: var(--text);
-      line-height: 1.9;
       font-size: 18px;
+      line-height: 1.9;
     }
 
     a {
@@ -83,12 +66,8 @@
       color: inherit;
     }
 
-    button {
-      font-family: inherit;
-    }
-
     .container {
-      width: min(1150px, 92%);
+      width: min(1160px, 92%);
       margin: auto;
     }
 
@@ -98,14 +77,14 @@
       background: var(--navy);
       color: white;
       text-align: center;
-      padding: 10px 12px;
+      padding: 7px 12px;
       font-size: 16px;
-      font-weight: 800;
+      font-weight: 700;
     }
 
     /* القائمة الرئيسية */
 
-    .navbar {
+    header {
       background: white;
       box-shadow: 0 3px 15px rgba(0,0,0,.06);
       position: sticky;
@@ -113,18 +92,19 @@
       z-index: 100;
     }
 
-    .nav-content {
-      min-height: 80px;
+    .navbar {
+      min-height: 78px;
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      gap: 15px;
+      justify-content: space-between;
+      gap: 20px;
     }
 
     .brand {
+      color: var(--navy);
       font-size: 24px;
       font-weight: 900;
-      color: var(--navy);
+      white-space: nowrap;
     }
 
     .brand span {
@@ -135,33 +115,27 @@
       display: flex;
       align-items: center;
       gap: 25px;
-      font-size: 17px;
-      font-weight: 800;
+      flex-wrap: wrap;
     }
 
     .nav-links a {
-      transition: .25s;
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--navy);
+      transition: .2s;
     }
 
     .nav-links a:hover {
       color: var(--blue);
     }
 
-    .nav-button {
-      background: var(--blue);
-      color: white !important;
-      padding: 10px 20px;
-      border-radius: 25px;
-    }
-
     /* الواجهة الرئيسية */
 
     .hero {
+      padding: 65px 0 55px;
       background:
-        radial-gradient(circle at 10% 20%, rgba(245,185,66,.17), transparent 28%),
-        linear-gradient(135deg, #102447, #174a83);
-      color: white;
-      padding: 80px 0;
+        radial-gradient(circle at 10% 20%, #dcecff 0, transparent 30%),
+        linear-gradient(135deg, #f5f9ff, #ffffff);
       overflow: hidden;
     }
 
@@ -176,152 +150,163 @@
       text-align: right;
     }
 
-    .eyebrow {
+    .hero-eyebrow {
       display: inline-block;
-      background: rgba(255,255,255,.13);
-      border: 1px solid rgba(255,255,255,.25);
-      padding: 9px 19px;
+      color: var(--blue);
+      background: #e6f1ff;
       border-radius: 30px;
-      color: #ffdc91;
+      padding: 6px 17px;
       font-size: 16px;
-      font-weight: 900;
-      margin-bottom: 20px;
+      font-weight: 800;
+      margin-bottom: 17px;
     }
 
     .hero h1 {
+      color: var(--navy);
       font-size: clamp(36px, 4.5vw, 53px);
-      line-height: 1.55;
       font-weight: 900;
-      margin-bottom: 20px;
+      line-height: 1.7;
+      margin-bottom: 15px;
+      text-align: right;
     }
 
     .hero h1 span {
-      color: var(--gold);
+      display: block;
+      color: var(--blue);
     }
 
     .hero-description {
-      color: #e0e9f7;
       font-size: 19px;
-      max-width: 620px;
-      margin-bottom: 30px;
+      color: var(--muted);
+      line-height: 2;
+      margin-bottom: 25px;
+      max-width: 650px;
     }
 
     .hero-buttons {
       display: flex;
       flex-wrap: wrap;
-      gap: 15px;
+      gap: 13px;
     }
 
     .btn {
-      display: inline-flex;
-      justify-content: center;
-      align-items: center;
-      padding: 14px 25px;
-      border-radius: 10px;
+      display: inline-block;
+      padding: 11px 24px;
+      border-radius: 12px;
       font-size: 17px;
-      font-weight: 900;
+      font-weight: 800;
       transition: .25s;
     }
 
-    .btn:hover {
+    .btn-primary {
+      color: white;
+      background: var(--blue);
+      box-shadow: 0 7px 18px rgba(23,105,170,.2);
+    }
+
+    .btn-primary:hover {
+      background: var(--navy);
       transform: translateY(-3px);
     }
 
-    .btn-gold {
-      background: var(--gold);
+    .btn-outline {
       color: var(--navy);
+      border: 2px solid #d5e2f2;
+      background: white;
     }
 
-    .btn-outline {
-      border: 1px solid rgba(255,255,255,.65);
-      color: white;
+    .btn-outline:hover {
+      border-color: var(--blue);
+      color: var(--blue);
+      transform: translateY(-3px);
     }
 
     .hero-image {
-      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
     .hero-image img {
-      width: min(100%, 360px);
-      max-height: 430px;
-      object-fit: contain;
-      border-radius: 25px;
-      filter: drop-shadow(0 15px 25px rgba(0,0,0,.2));
+      width: 100%;
+      max-width: 390px;
+      height: 420px;
+      object-fit: cover;
+      object-position: center top;
+      border-radius: 28px;
+      border: 7px solid white;
+      box-shadow: 0 18px 45px rgba(16,36,71,.17);
     }
 
-    /* شريط الأخبار العاجلة */
+    /* شريط الأخبار */
+
+    .news-section {
+      background: white;
+      border-top: 1px solid #e7edf5;
+      border-bottom: 1px solid #e7edf5;
+      overflow: hidden;
+    }
 
     .news-bar {
       display: flex;
       align-items: center;
-      overflow: hidden;
       min-height: 78px;
-      margin: 0;
-      background: #fff5df;
-      border-top: 1px solid #f0dcae;
-      border-bottom: 1px solid #f0dcae;
-      box-shadow: 0 5px 18px rgba(16,36,71,.06);
+      gap: 15px;
     }
 
     .news-label {
-      align-self: stretch;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex: 0 0 auto;
-      background: #c62828;
+      flex-shrink: 0;
+      background: #d92332;
       color: white;
-      padding: 12px 22px;
+      padding: 7px 17px;
+      border-radius: 8px;
       font-size: 19px;
       font-weight: 900;
-      white-space: nowrap;
-      z-index: 2;
     }
 
     .news-window {
+      direction: ltr;
+      overflow: hidden;
       flex: 1;
       min-width: 0;
-      overflow: hidden;
-      direction: ltr;
     }
 
     .news-track {
       display: flex;
       width: max-content;
-      will-change: transform;
       animation: news-scroll-right 28s linear infinite;
     }
 
     .news-group {
       display: flex;
       align-items: center;
-      flex: 0 0 auto;
+      flex-shrink: 0;
       white-space: nowrap;
-      direction: rtl;
     }
 
     .news-item {
-      display: inline-block;
-      padding: 10px 12px;
-      color: #24334b;
+      direction: rtl;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 0 20px;
+      color: var(--navy);
       font-size: 20px;
-      font-weight: 900;
-      line-height: 1.7;
+      font-weight: 800;
     }
 
-    .news-link {
-      color: #145bb3;
+    .news-item::before {
+      content: "●";
+      color: #e0a21b;
+      font-size: 15px;
     }
 
-    .news-link:hover {
+    .news-item a {
+      color: var(--blue);
+    }
+
+    .news-item a:hover {
       text-decoration: underline;
-    }
-
-    .news-separator {
-      color: #d08a00;
-      font-size: 16px;
-      font-weight: 900;
-      padding: 0 2px;
     }
 
     @keyframes news-scroll-right {
@@ -336,74 +321,78 @@
     /* الأقسام العامة */
 
     section {
-      padding: 80px 0;
+      padding: 65px 0;
     }
 
     .section-heading {
       text-align: center;
-      margin-bottom: 42px;
+      margin-bottom: 35px;
     }
 
-    .section-heading .small-title {
-      color: var(--blue);
-      font-size: 17px;
-      font-weight: 900;
-    }
-
-    .section-heading h2 {
+    .section-title {
       color: var(--navy);
       font-size: clamp(30px, 3.5vw, 39px);
       font-weight: 900;
-      margin: 7px 0;
+      margin-bottom: 7px;
     }
 
-    .section-heading p {
+    .section-subtitle {
       color: var(--muted);
       font-size: 17px;
     }
 
     /* من نحن */
 
-    .about-card {
+    .about-section {
       background: white;
-      border-radius: 20px;
-      padding: 40px;
+    }
+
+    .about-card {
+      max-width: 900px;
+      margin: auto;
+      background: #f7faff;
+      border: 1px solid #e3edf9;
+      border-radius: 22px;
+      padding: 35px;
       box-shadow: var(--shadow);
-      border-right: 5px solid var(--gold);
     }
 
     .about-card h3 {
       color: var(--navy);
       font-size: 27px;
       margin-bottom: 15px;
+      text-align: center;
+      font-weight: 900;
     }
 
     .about-card p {
       font-size: 19px;
       line-height: 2.1;
-      color: #526078;
+      color: var(--text);
+      margin-bottom: 20px;
+      text-align: right;
     }
 
-    .badges {
+    .qualifications {
       display: flex;
       flex-wrap: wrap;
+      justify-content: center;
       gap: 12px;
-      margin-top: 25px;
     }
 
-    .badge-item {
-      background: var(--light-blue);
-      color: #174a83;
-      padding: 9px 16px;
-      border-radius: 25px;
+    .qualification {
+      background: #e6f1ff;
+      color: var(--navy);
+      padding: 8px 15px;
+      border-radius: 12px;
       font-size: 15px;
-      font-weight: 900;
+      font-weight: 800;
     }
 
     /* الصفوف الدراسية */
 
     .grades-section {
-      background: #edf3fa;
+      background: var(--background);
     }
 
     .grades-grid {
@@ -413,105 +402,122 @@
     }
 
     .grade-card {
+      display: block;
       background: white;
-      border-radius: 17px;
-      padding: 30px 22px;
+      border: 1px solid #e6edf6;
+      border-radius: 20px;
+      padding: 27px 20px;
       text-align: center;
       box-shadow: var(--shadow);
-      border-bottom: 4px solid transparent;
-      transition: .3s;
+      transition: .25s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .grade-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 5px;
+      background: linear-gradient(90deg, var(--blue), var(--gold));
     }
 
     .grade-card:hover {
       transform: translateY(-7px);
-      border-bottom-color: var(--gold);
+      box-shadow: 0 18px 40px rgba(16,36,71,.14);
+      border-color: #c8ddf5;
     }
 
     .grade-icon {
-      width: 70px;
-      height: 70px;
-      border-radius: 18px;
-      background: var(--light-blue);
-      color: var(--blue);
+      width: 85px;
+      height: 85px;
       display: grid;
       place-items: center;
       margin: 0 auto 18px;
-      font-size: 32px;
-      font-weight: 900;
+      border-radius: 20px;
+      background: linear-gradient(135deg, #eaf3ff, #fff1cf);
+      font-size: 48px;
+      box-shadow: 0 6px 16px rgba(16,36,71,.07);
     }
 
     .grade-card h3 {
       color: var(--navy);
       font-size: 22px;
-      margin-bottom: 10px;
+      font-weight: 900;
+      margin-bottom: 8px;
     }
 
     .grade-card p {
       color: var(--muted);
       font-size: 16px;
-      margin-bottom: 20px;
+      margin-bottom: 12px;
     }
 
     .grade-link {
       display: inline-block;
-      background: var(--blue);
-      color: white;
-      padding: 10px 22px;
-      border-radius: 25px;
-      font-size: 17px;
+      color: var(--blue);
+      font-size: 16px;
       font-weight: 900;
     }
 
-    /* التواصل */
+    /* تواصل معنا */
 
     .contact-section {
       background: white;
     }
 
+    .contact-box {
+      max-width: 850px;
+      margin: auto;
+      text-align: center;
+      background: linear-gradient(135deg, #102447, #1769aa);
+      color: white;
+      padding: 38px 25px;
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .contact-box h2 {
+      font-size: 30px;
+      font-weight: 900;
+      margin-bottom: 10px;
+    }
+
+    .contact-box p {
+      font-size: 17px;
+      color: #e6efff;
+      margin-bottom: 24px;
+    }
+
     .social-links {
       display: flex;
-      justify-content: center;
       flex-wrap: wrap;
-      gap: 17px;
-    }
-
-    .social-link {
-      display: inline-flex;
-      align-items: center;
       justify-content: center;
-      min-width: 160px;
-      padding: 14px 22px;
+      gap: 13px;
+    }
+
+    .social-links a {
+      display: inline-block;
+      background: white;
+      color: var(--navy);
       border-radius: 12px;
-      color: white;
+      padding: 9px 19px;
       font-size: 17px;
-      font-weight: 900;
-      transition: .25s;
+      font-weight: 800;
+      transition: .2s;
     }
 
-    .social-link:hover {
-      transform: translateY(-4px);
-    }
-
-    .facebook {
-      background: #1877f2;
-    }
-
-    .youtube {
-      background: #e62117;
-    }
-
-    .telegram {
-      background: #229ed9;
-    }
-
-    .whatsapp {
-      background: #159b58;
+    .social-links a:hover {
+      background: var(--gold);
+      transform: translateY(-3px);
     }
 
     /* الفوتر */
 
     footer {
-      background: var(--navy);
+      background: #0b1930;
       color: white;
       text-align: center;
       padding: 35px 15px;
@@ -520,79 +526,53 @@
     footer h3 {
       font-size: 26px;
       font-weight: 900;
-      margin-bottom: 8px;
+      margin-bottom: 7px;
     }
 
     footer p {
-      color: #d9e5f5;
+      color: #cbd6e5;
       font-size: 16px;
+      margin-bottom: 8px;
     }
 
-    .copyright {
-      margin-top: 18px;
-      padding-top: 17px;
-      border-top: 1px solid rgba(255,255,255,.15);
-      font-size: 15px;
+    .footer-copy {
+      color: #9eafc5;
+      font-size: 14px;
+      margin-top: 15px;
     }
 
-    /* زر العودة للأعلى */
+    /* الشاشات الصغيرة */
 
-    .back-to-top {
-      position: fixed;
-      bottom: 20px;
-      left: 20px;
-      width: 48px;
-      height: 48px;
-      border: none;
-      border-radius: 50%;
-      background: var(--blue);
-      color: white;
-      font-size: 25px;
-      cursor: pointer;
-      box-shadow: var(--shadow);
-      z-index: 90;
-    }
-
-    /* شاشات الموبايل */
-
-    @media(max-width: 760px) {
-
-      body {
-        font-size: 17px;
-      }
-
+    @media (max-width: 760px) {
       .topbar {
         font-size: 14px;
       }
 
-      .nav-content {
-        flex-direction: column;
+      .navbar {
         padding: 13px 0;
-        gap: 10px;
+        flex-direction: column;
+        gap: 8px;
       }
 
       .brand {
-        font-size: 21px;
+        font-size: 22px;
       }
 
       .nav-links {
-        gap: 14px;
-        flex-wrap: wrap;
         justify-content: center;
+        gap: 15px;
+      }
+
+      .nav-links a {
         font-size: 15px;
       }
 
-      .nav-button {
-        padding: 7px 13px;
-      }
-
       .hero {
-        padding: 50px 0;
+        padding: 38px 0;
       }
 
       .hero-content {
         grid-template-columns: 1fr;
-        text-align: center;
         gap: 28px;
       }
 
@@ -600,86 +580,64 @@
         text-align: center;
       }
 
-      .eyebrow {
-        font-size: 14px;
-      }
-
       .hero h1 {
         font-size: 34px;
+        line-height: 1.7;
+        text-align: center;
       }
 
       .hero-description {
+        font-size: 17px;
         margin-right: auto;
         margin-left: auto;
-        font-size: 17px;
       }
 
       .hero-buttons {
         justify-content: center;
       }
 
-      .btn {
-        font-size: 16px;
-        padding: 12px 18px;
-      }
-
       .hero-image img {
-        width: min(75%, 280px);
-        max-height: 320px;
+        max-width: 300px;
+        height: 330px;
       }
 
       .news-bar {
         min-height: 70px;
+        gap: 9px;
       }
 
       .news-label {
-        padding: 10px 13px;
         font-size: 15px;
+        padding: 6px 10px;
       }
 
       .news-item {
-        padding: 9px 9px;
         font-size: 18px;
-      }
-
-      .news-separator {
-        font-size: 14px;
-        padding: 0 1px;
+        padding: 0 13px;
       }
 
       section {
-        padding: 58px 0;
+        padding: 48px 0;
       }
 
-      .section-heading {
-        margin-bottom: 30px;
-      }
-
-      .section-heading .small-title {
-        font-size: 15px;
-      }
-
-      .section-heading h2 {
-        font-size: 29px;
-      }
-
-      .section-heading p {
-        font-size: 16px;
+      .section-title {
+        font-size: 30px;
       }
 
       .about-card {
-        padding: 25px 19px;
+        padding: 23px 18px;
       }
 
       .about-card h3 {
-        font-size: 23px;
+        font-size: 24px;
+        text-align: center;
       }
 
       .about-card p {
         font-size: 17px;
       }
 
-      .badge-item {
+      .qualification {
         font-size: 14px;
       }
 
@@ -689,49 +647,47 @@
       }
 
       .grade-card {
-        padding: 25px 17px;
+        padding: 23px 15px;
       }
 
       .grade-card h3 {
         font-size: 21px;
       }
 
-      .grade-card p {
-        font-size: 16px;
+      .contact-box {
+        padding: 30px 17px;
       }
 
-      .grade-link {
-        font-size: 16px;
+      .contact-box h2 {
+        font-size: 25px;
       }
 
-      .social-link {
-        min-width: 135px;
-        font-size: 16px;
+      .social-links a {
+        font-size: 15px;
+        padding: 8px 13px;
       }
 
       footer h3 {
         font-size: 23px;
       }
-
-      footer p {
-        font-size: 15px;
-      }
-
-      .copyright {
-        font-size: 13px;
-      }
-    }
-
-    @media(min-width: 761px) and (max-width: 950px) {
-      .grades-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .hero-content {
-        gap: 20px;
-      }
     }
   </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "EducationalOrganization",
+    "name": "أكاديمية مستر محمد ربيع",
+    "url": "https://phnrabi-max.github.io/",
+    "image": "https://phnrabi-max.github.io/teacher.jpg",
+    "founder": {
+      "@type": "Person",
+      "name": "مستر محمد ربيع",
+      "jobTitle": "مدرس رياضيات"
+    },
+    "description": "أكاديمية تعليمية مجانية لشرح الرياضيات للمرحلة الإعدادية والثانوية."
+  }
+  </script>
 </head>
 
 <body>
@@ -740,31 +696,31 @@
     أكاديمية تعليمية مجانية • الرياضيات من الفهم إلى التفوق
   </div>
 
-  <nav class="navbar">
-    <div class="container nav-content">
+  <header>
+    <div class="container navbar">
 
       <a href="#home" class="brand">
         ∑ أكاديمية <span>مستر محمد ربيع</span>
       </a>
 
-      <div class="nav-links">
+      <nav class="nav-links">
         <a href="#home">الرئيسية</a>
         <a href="#about">عن الأكاديمية</a>
         <a href="#grades">الصفوف الدراسية</a>
-        <a href="#contact" class="nav-button">تواصل معنا</a>
-      </div>
+        <a href="#contact">تواصل معنا</a>
+      </nav>
 
     </div>
-  </nav>
+  </header>
 
   <!-- الواجهة الرئيسية -->
 
-  <header class="hero" id="home">
+  <section class="hero" id="home">
     <div class="container hero-content">
 
       <div class="hero-text">
 
-        <div class="eyebrow">
+        <div class="hero-eyebrow">
           مرحبًا بك في أكاديميتك
         </div>
 
@@ -779,7 +735,7 @@
         </p>
 
         <div class="hero-buttons">
-          <a href="#grades" class="btn btn-gold">
+          <a href="#grades" class="btn btn-primary">
             🚀 اختار صفك وابدأ
           </a>
 
@@ -791,77 +747,68 @@
       </div>
 
       <div class="hero-image">
-        <img src="teacher.jpg"
-             alt="مستر محمد ربيع مدرس الرياضيات"
-             onerror="this.style.display='none'">
+        <img src="teacher.jpg" alt="مستر محمد ربيع مدرس الرياضيات">
       </div>
 
     </div>
-  </header>
+  </section>
 
-  <!-- شريط الأخبار العاجلة -->
+  <!-- شريط الأخبار -->
 
-  <div class="news-bar">
+  <div class="news-section">
+    <div class="container news-bar">
 
-    <div class="news-label">
-      عاجل | جديد الأكاديمية
-    </div>
+      <div class="news-label">
+        عاجل | جديد الأكاديمية
+      </div>
 
-    <div class="news-window">
+      <div class="news-window">
+        <div class="news-track">
 
-      <div class="news-track">
+          <div class="news-group">
 
-        <div class="news-group">
+            <div class="news-item">
+              عاجل انتظرونا قريبًا مع حل النموذج 1 من مذكرة توجيه الرياضيات 3ع
+            </div>
 
-          <span class="news-item">
-            عاجل انتظرونا قريبًا مع حل النموذج 1 من مذكرة توجيه الرياضيات 3ع
-          </span>
+            <div class="news-item">
+              <a href="https://www.youtube.com/playlist?list=PLXcOdVCJTb_0" target="_blank" rel="noopener">
+                حل تمارين كتاب المعاصر للصف الأول الثانوي
+              </a>
+            </div>
 
-          <span class="news-separator">◆</span>
+          </div>
 
-          <a class="news-item news-link"
-             href="https://www.youtube.com/playlist?list=PLXcOdVCJTb_0"
-             target="_blank"
-             rel="noopener">
-            حل تمارين كتاب المعاصر للصف الأول الثانوي
-          </a>
+          <div class="news-group" aria-hidden="true">
 
-          <span class="news-separator">◆</span>
+            <div class="news-item">
+              عاجل انتظرونا قريبًا مع حل النموذج 1 من مذكرة توجيه الرياضيات 3ع
+            </div>
 
-        </div>
+            <div class="news-item">
+              <a href="https://www.youtube.com/playlist?list=PLXcOdVCJTb_0" target="_blank" rel="noopener">
+                حل تمارين كتاب المعاصر للصف الأول الثانوي
+              </a>
+            </div>
 
-        <div class="news-group" aria-hidden="true">
-
-          <span class="news-item">
-            عاجل انتظرونا قريبًا مع حل النموذج 1 من مذكرة توجيه الرياضيات 3ع
-          </span>
-
-          <span class="news-separator">◆</span>
-
-          <span class="news-item news-link">
-            حل تمارين كتاب المعاصر للصف الأول الثانوي
-          </span>
-
-          <span class="news-separator">◆</span>
+          </div>
 
         </div>
-
       </div>
 
     </div>
-
   </div>
 
   <!-- من نحن -->
 
-  <section id="about">
-
+  <section class="about-section" id="about">
     <div class="container">
 
       <div class="section-heading">
-        <div class="small-title">من نحن؟</div>
-        <h2>تعليم متميز يبدأ من الفهم</h2>
-        <p>خبرة أكاديمية واهتمام بتبسيط الرياضيات للطلاب.</p>
+        <h2 class="section-title">من نحن؟</h2>
+        <p class="section-subtitle">
+          تعليم متميز يبدأ من الفهم
+        </p>
       </div>
 
       <div class="about-card">
@@ -874,125 +821,166 @@
           وحاصل على تمهيدي ماجستير في الرياضيات التطبيقية بتقدير امتياز.
         </p>
 
-        <div class="badges">
-          <span class="badge-item">بكالوريوس العلوم في الرياضيات</span>
-          <span class="badge-item">الأول على الدفعة</span>
-          <span class="badge-item">امتياز مع مرتبة الشرف</span>
-          <span class="badge-item">تمهيدي ماجستير في الرياضيات التطبيقية</span>
+        <div class="qualifications">
+
+          <div class="qualification">
+            بكالوريوس العلوم في الرياضيات
+          </div>
+
+          <div class="qualification">
+            الأول على الدفعة
+          </div>
+
+          <div class="qualification">
+            امتياز مع مرتبة الشرف
+          </div>
+
+          <div class="qualification">
+            تمهيدي ماجستير في الرياضيات التطبيقية
+          </div>
+
         </div>
 
       </div>
 
     </div>
-
   </section>
 
   <!-- الصفوف الدراسية -->
 
   <section class="grades-section" id="grades">
-
     <div class="container">
 
       <div class="section-heading">
-        <div class="small-title">ابدأ رحلتك التعليمية</div>
-        <h2>اختر صفك الدراسي</h2>
-        <p>
-          اختر الصف الدراسي الخاص بك للوصول إلى الشروحات والدروس والاختبارات.
+        <h2 class="section-title">اختر صفك الدراسي</h2>
+        <p class="section-subtitle">
+          ابدأ رحلتك في تعلم الرياضيات واختر صفك للوصول إلى الدروس والاختبارات
         </p>
       </div>
 
       <div class="grades-grid">
 
-        <div class="grade-card">
-          <div class="grade-icon">١</div>
+        <a href="grade1-prep.html" class="grade-card">
+
+          <div class="grade-icon">📘</div>
+
           <h3>الصف الأول الإعدادي</h3>
-          <p>شرح دروس الرياضيات والتدريبات والاختبارات.</p>
-          <a href="grade1-prep.html" class="grade-link">ادخل إلى الصف</a>
-        </div>
 
-        <div class="grade-card">
-          <div class="grade-icon">٢</div>
+          <p>
+            شرح الدروس والتدريبات والاختبارات
+          </p>
+
+          <span class="grade-link">
+            ادخل إلى الصف ←
+          </span>
+
+        </a>
+
+        <a href="grade2-prep.html" class="grade-card">
+
+          <div class="grade-icon">📗</div>
+
           <h3>الصف الثاني الإعدادي</h3>
-          <p>شرح دروس الرياضيات والتدريبات والاختبارات.</p>
-          <a href="grade2-prep.html" class="grade-link">ادخل إلى الصف</a>
-        </div>
 
-        <div class="grade-card">
-          <div class="grade-icon">٣</div>
+          <p>
+            شرح مبسط وتدريبات متنوعة على المنهج
+          </p>
+
+          <span class="grade-link">
+            ادخل إلى الصف ←
+          </span>
+
+        </a>
+
+        <a href="grade3-prep.html" class="grade-card">
+
+          <div class="grade-icon">🏆</div>
+
           <h3>الصف الثالث الإعدادي</h3>
-          <p>شرح دروس الرياضيات والتدريبات والاختبارات.</p>
-          <a href="grade3-prep.html" class="grade-link">ادخل إلى الصف</a>
-        </div>
 
-        <div class="grade-card">
-          <div class="grade-icon">١</div>
+          <p>
+            أقوى المسائل والمراجعات والامتحانات
+          </p>
+
+          <span class="grade-link">
+            ادخل إلى الصف ←
+          </span>
+
+        </a>
+
+        <a href="grade1-secondary.html" class="grade-card">
+
+          <div class="grade-icon">🧮</div>
+
           <h3>الصف الأول الثانوي</h3>
-          <p>شرح الجبر والهندسة والتدريبات والاختبارات.</p>
-          <a href="grade1-secondary.html" class="grade-link">ادخل إلى الصف</a>
-        </div>
 
-        <div class="grade-card">
-          <div class="grade-icon">٢</div>
+          <p>
+            شرح الرياضيات والتدريب على أفكار الامتحانات
+          </p>
+
+          <span class="grade-link">
+            ادخل إلى الصف ←
+          </span>
+
+        </a>
+
+        <a href="grade2-baccalaureate-2027.html" class="grade-card">
+
+          <div class="grade-icon">📐</div>
+
           <h3>الصف الثاني بكالوريا 2027</h3>
-          <p>شرح المنهج والتدريبات والاختبارات الشاملة.</p>
-          <a href="grade2-baccalaureate-2027.html" class="grade-link">ادخل إلى الصف</a>
-        </div>
+
+          <p>
+            شرح المنهج وحل التدريبات والاختبارات
+          </p>
+
+          <span class="grade-link">
+            ادخل إلى الصف ←
+          </span>
+
+        </a>
 
       </div>
 
     </div>
-
   </section>
 
-  <!-- التواصل الاجتماعي -->
+  <!-- تواصل معنا -->
 
   <section class="contact-section" id="contact">
-
     <div class="container">
 
-      <div class="section-heading">
-        <div class="small-title">نحن هنا لمساعدتك</div>
+      <div class="contact-box">
+
         <h2>تواصل مع مستر محمد ربيع</h2>
+
         <p>
-          تابع الأكاديمية على مواقع التواصل الاجتماعي
-          ليصلك كل جديد من الشروحات والمراجعات.
+          تابع الأكاديمية واشترك في قنواتنا ليصلك كل جديد في شرح الرياضيات
         </p>
-      </div>
 
-      <div class="social-links">
+        <div class="social-links">
 
-        <a class="social-link facebook"
-           href="https://www.facebook.com/profile.php?id=100065325180987"
-           target="_blank"
-           rel="noopener">
-          Facebook
-        </a>
+          <a href="https://www.facebook.com/profile.php?id=100065325180987" target="_blank" rel="noopener">
+            📘 فيسبوك
+          </a>
 
-        <a class="social-link youtube"
-           href="https://youtube.com/@user-mr.mo.rabi."
-           target="_blank"
-           rel="noopener">
-          YouTube
-        </a>
+          <a href="https://youtube.com/@user-mr.mo.rabi." target="_blank" rel="noopener">
+            ▶️ يوتيوب
+          </a>
 
-        <a class="social-link telegram"
-           href="https://t.me/+gU6uggsRpmozMDRk"
-           target="_blank"
-           rel="noopener">
-          Telegram
-        </a>
+          <a href="https://t.me/+gU6uggsRpmozMDRk" target="_blank" rel="noopener">
+            ✈️ تليجرام
+          </a>
 
-        <a class="social-link whatsapp"
-           href="https://wa.me/201281281205"
-           target="_blank"
-           rel="noopener">
-          WhatsApp
-        </a>
+          <a href="https://wa.me/201281281205" target="_blank" rel="noopener">
+            💬 واتساب
+          </a>
+
+        </div>
 
       </div>
 
     </div>
-
   </section>
 
   <!-- نهاية الموقع -->
@@ -1005,17 +993,11 @@
       الرياضيات ببساطة… افهم، اتدرّب، واتفوّق
     </p>
 
-    <div class="copyright">
+    <div class="footer-copy">
       © أكاديمية مستر محمد ربيع — التعليم متاح للجميع
     </div>
 
   </footer>
-
-  <button class="back-to-top"
-          onclick="window.scrollTo({top:0,behavior:'smooth'})"
-          aria-label="العودة إلى أعلى الصفحة">
-    ↑
-  </button>
 
 </body>
 </html>
