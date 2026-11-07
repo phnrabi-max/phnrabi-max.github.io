@@ -196,8 +196,6 @@ nav a {
   cursor: default;
 }
 
-/* مكتبة الكتب والمذكرات */
-
 .library-intro {
   background: linear-gradient(135deg,#e5efff,#ffffff);
   border: 1px solid #d6e3f5;
@@ -280,14 +278,37 @@ nav a {
   font-weight: bold;
 }
 
-.library-empty {
-  background: white;
-  border-radius: 14px;
-  padding: 30px 15px;
-  text-align: center;
-  color: #667;
-  line-height: 2;
-  box-shadow: 0 2px 9px #00000012;
+/* أزرار وحدات الكتاب */
+
+.unit-buttons {
+  display: grid;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  gap: 9px;
+  margin-top: 15px;
+}
+
+.unit-btn {
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 13px 6px;
+  background: #0875c7;
+  color: white;
+  border: 0;
+  border-radius: 9px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.unit-btn.available {
+  background: #16804b;
+}
+
+.unit-btn.coming {
+  background: #9ba8b8;
+  cursor: default;
 }
 
 .book-viewer {
@@ -315,6 +336,16 @@ nav a {
 .viewer-actions {
   text-align: center;
   padding: 12px 0;
+}
+
+.library-empty {
+  background: white;
+  border-radius: 14px;
+  padding: 30px 15px;
+  text-align: center;
+  color: #667;
+  line-height: 2;
+  box-shadow: 0 2px 9px #00000012;
 }
 
 .empty {
@@ -346,6 +377,10 @@ footer {
 
   .book-frame {
     height: 70vh;
+  }
+
+  .unit-btn {
+    font-size: 14px;
   }
 }
 </style>
@@ -482,8 +517,7 @@ footer {
           id="downloadLink"
           class="btn btn-orange"
           target="_blank"
-          rel="noopener noreferrer"
-          style="display:none;">
+          rel="noopener noreferrer">
           ⬇️ تحميل PDF
         </a>
 
@@ -617,23 +651,31 @@ const exams = [
 // مكتبة الكتب والمذكرات
 // ===================================
 
-// لإضافة مصدر جديد:
-// title: اسم الكتاب أو المذكرة
-// description: وصف مختصر
-// category: notes أو books أو exams أو summaries
-// fileId: رقم ملف Google Drive
-// cover: رابط صورة الغلاف (اختياري)
-// downloadUrl: رابط التحميل (اختياري، عند السماح بالتوزيع)
-
 const books = [
 
 {
   title:"كتاب المعاصر في الرياضيات للصف الثاني الثانوي بكالوريا 2027",
-  description:"كتاب الرياضيات للصف الثاني الثانوي بكالوريا 2027.",
+  description:"كتاب المعاصر مقسم إلى وحدات مستقلة لتسهيل القراءة والتحميل.",
   category:"books",
-  fileId:"1iKxwUxp1mm62ovn4DtldFbSoNByH5JwA",
   cover:"",
-  downloadUrl:""
+  units:[
+    {
+      title:"الوحدة الأولى",
+      fileId:"1H7qya9VvIO50bvqbPHV0SnHGEoCnjQd6"
+    },
+    {
+      title:"الوحدة الثانية",
+      fileId:""
+    },
+    {
+      title:"الوحدة الثالثة",
+      fileId:""
+    },
+    {
+      title:"الوحدة الرابعة",
+      fileId:""
+    }
+  ]
 }
 
 ];
@@ -857,15 +899,40 @@ function renderBooks() {
     const description = document.createElement("p");
     description.textContent = item.description || "مصدر تعليمي لطلاب الصف الثاني بكالوريا.";
 
-    const button = document.createElement("button");
-    button.className = "btn btn-green";
-    button.textContent = "📖 قراءة PDF";
+    info.append(categoryLabel,heading,description);
 
-    button.onclick = function() {
-      openBook(item);
-    };
+    // إنشاء أزرار الوحدات الأربع
 
-    info.append(categoryLabel,heading,description,button);
+    const unitButtons = document.createElement("div");
+    unitButtons.className = "unit-buttons";
+
+    item.units.forEach(unit => {
+
+      const button = document.createElement("button");
+      button.className = "unit-btn";
+
+      if(unit.fileId) {
+
+        button.classList.add("available");
+        button.textContent = "📖 " + unit.title;
+
+        button.onclick = function() {
+          openBookUnit(item.title,unit);
+        };
+
+      } else {
+
+        button.classList.add("coming");
+        button.textContent = unit.title + " - قريبًا";
+        button.disabled = true;
+
+      }
+
+      unitButtons.appendChild(button);
+
+    });
+
+    info.appendChild(unitButtons);
 
     card.append(cover,info);
     container.appendChild(card);
@@ -892,28 +959,32 @@ function renderBooks() {
 }
 
 // ===================================
-// فتح الكتاب داخل الموقع
+// فتح وحدة الكتاب
 // ===================================
 
-function openBook(book) {
+function openBookUnit(bookTitle,unit) {
 
-  if(!book.fileId) {
-    alert("رابط الكتاب غير متاح حاليًا.");
+  if(!unit.fileId) {
+    alert("هذه الوحدة ستضاف قريبًا بإذن الله.");
     return;
   }
 
   const previewUrl =
     "https://drive.google.com/file/d/" +
-    encodeURIComponent(book.fileId) +
+    encodeURIComponent(unit.fileId) +
     "/preview";
 
   const viewUrl =
     "https://drive.google.com/file/d/" +
-    encodeURIComponent(book.fileId) +
+    encodeURIComponent(unit.fileId) +
     "/view";
 
+  const downloadUrl =
+    "https://drive.google.com/uc?export=download&id=" +
+    encodeURIComponent(unit.fileId);
+
   document.getElementById("viewerTitle").textContent =
-    book.title;
+    bookTitle + " - " + unit.title;
 
   document.getElementById("pdfFrame").src =
     previewUrl;
@@ -921,15 +992,8 @@ function openBook(book) {
   document.getElementById("driveLink").href =
     viewUrl;
 
-  const downloadLink = document.getElementById("downloadLink");
-
-  if(book.downloadUrl) {
-    downloadLink.href = book.downloadUrl;
-    downloadLink.style.display = "inline-block";
-  } else {
-    downloadLink.style.display = "none";
-    downloadLink.removeAttribute("href");
-  }
+  document.getElementById("downloadLink").href =
+    downloadUrl;
 
   const viewer = document.getElementById("bookViewer");
 
