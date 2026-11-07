@@ -196,6 +196,100 @@ nav a {
   cursor: default;
 }
 
+/* مكتبة الكتب والمذكرات */
+
+.library-intro {
+  background: linear-gradient(135deg,#e5efff,#ffffff);
+  border: 1px solid #d6e3f5;
+  border-radius: 14px;
+  padding: 18px;
+  text-align: center;
+  line-height: 1.9;
+  margin-bottom: 18px;
+}
+
+.library-categories {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(145px,1fr));
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.category-btn {
+  border: 2px solid #d7e3f2;
+  background: white;
+  color: #123b75;
+  padding: 15px 8px;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  line-height: 1.7;
+}
+
+.category-btn.active {
+  background: #1263af;
+  border-color: #1263af;
+  color: white;
+}
+
+.category-icon {
+  display: block;
+  font-size: 27px;
+  margin-bottom: 5px;
+}
+
+.book-card {
+  overflow: hidden;
+  padding: 0;
+}
+
+.book-cover {
+  height: 190px;
+  background: linear-gradient(135deg,#092b63,#1268b3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 65px;
+  overflow: hidden;
+}
+
+.book-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: #f4f7fc;
+}
+
+.book-info {
+  padding: 17px;
+}
+
+.book-info h3 {
+  margin-top: 5px;
+}
+
+.book-category-label {
+  display: inline-block;
+  background: #e7f0fc;
+  color: #14518e;
+  border-radius: 20px;
+  padding: 5px 12px;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.library-empty {
+  background: white;
+  border-radius: 14px;
+  padding: 30px 15px;
+  text-align: center;
+  color: #667;
+  line-height: 2;
+  box-shadow: 0 2px 9px #00000012;
+}
+
 .book-viewer {
   display: none;
   background: white;
@@ -290,7 +384,7 @@ footer {
     </button>
 
     <button class="tab" onclick="showTab('books',this)">
-      📖 الكتب PDF
+      📖 المكتبة التعليمية
     </button>
   </div>
 
@@ -313,7 +407,51 @@ footer {
   </section>
 
   <section id="books" class="section">
-    <h2 class="section-title">📖 الكتب والمذكرات</h2>
+
+    <h2 class="section-title">📚 مكتبة الكتب والمذكرات التعليمية</h2>
+
+    <div class="library-intro">
+      <h3>كل مصادر التفوق في الرياضيات في مكان واحد 🌟</h3>
+      <p>
+        مذكرات تعليمية وكتب ومراجعات واختبارات
+        لمساعدتك على التفوق في الصف الثاني بكالوريا 2027.
+      </p>
+    </div>
+
+    <div class="library-categories">
+
+      <button class="category-btn active"
+        onclick="showBookCategory('all',this)">
+        <span class="category-icon">📚</span>
+        جميع المصادر
+      </button>
+
+      <button class="category-btn"
+        onclick="showBookCategory('notes',this)">
+        <span class="category-icon">📒</span>
+        المذكرات التعليمية
+      </button>
+
+      <button class="category-btn"
+        onclick="showBookCategory('books',this)">
+        <span class="category-icon">📖</span>
+        الكتب والمراجع
+      </button>
+
+      <button class="category-btn"
+        onclick="showBookCategory('exams',this)">
+        <span class="category-icon">📝</span>
+        الاختبارات والنماذج
+      </button>
+
+      <button class="category-btn"
+        onclick="showBookCategory('summaries',this)">
+        <span class="category-icon">📑</span>
+        الملخصات والمراجعات
+      </button>
+
+    </div>
+
     <div id="booksList" class="cards"></div>
 
     <div id="bookViewer" class="book-viewer">
@@ -340,6 +478,15 @@ footer {
           📖 فتح على Google Drive
         </a>
 
+        <a
+          id="downloadLink"
+          class="btn btn-orange"
+          target="_blank"
+          rel="noopener noreferrer"
+          style="display:none;">
+          ⬇️ تحميل PDF
+        </a>
+
         <button
           class="btn btn-orange"
           onclick="closeBook()">
@@ -347,6 +494,7 @@ footer {
         </button>
       </div>
     </div>
+
   </section>
 
 </div>
@@ -466,23 +614,36 @@ const exams = [
 ];
 
 // ===================================
-// الكتب
+// مكتبة الكتب والمذكرات
 // ===================================
+
+// لإضافة مصدر جديد:
+// title: اسم الكتاب أو المذكرة
+// description: وصف مختصر
+// category: notes أو books أو exams أو summaries
+// fileId: رقم ملف Google Drive
+// cover: رابط صورة الغلاف (اختياري)
+// downloadUrl: رابط التحميل (اختياري، عند السماح بالتوزيع)
 
 const books = [
 
 {
   title:"كتاب المعاصر في الرياضيات للصف الثاني الثانوي بكالوريا 2027",
-  fileId:"1iKxwUxp1mm62ovn4DtldFbSoNByH5JwA"
+  description:"كتاب الرياضيات للصف الثاني الثانوي بكالوريا 2027.",
+  category:"books",
+  fileId:"1iKxwUxp1mm62ovn4DtldFbSoNByH5JwA",
+  cover:"",
+  downloadUrl:""
 }
 
 ];
 
 // ===================================
-// التحكم في الأقسام
+// التحكم في الأقسام الرئيسية
 // ===================================
 
 let currentTab = "lessons";
+let currentBookCategory = "all";
 
 function showTab(tab,button) {
 
@@ -607,7 +768,40 @@ function renderExams() {
 }
 
 // ===================================
-// عرض الكتب
+// اختيار قسم المكتبة
+// ===================================
+
+function showBookCategory(category,button) {
+
+  currentBookCategory = category;
+
+  document.querySelectorAll(".category-btn").forEach(
+    item => item.classList.remove("active")
+  );
+
+  button.classList.add("active");
+
+  renderBooks();
+}
+
+// ===================================
+// أسماء أقسام المكتبة
+// ===================================
+
+function getCategoryName(category) {
+
+  const names = {
+    notes:"المذكرات التعليمية",
+    books:"الكتب والمراجع",
+    exams:"الاختبارات والنماذج",
+    summaries:"الملخصات والمراجعات"
+  };
+
+  return names[category] || "مصادر تعليمية";
+}
+
+// ===================================
+// عرض الكتب والمذكرات
 // ===================================
 
 function renderBooks() {
@@ -615,35 +809,86 @@ function renderBooks() {
   const container = document.getElementById("booksList");
   container.innerHTML = "";
 
-  const filtered = books.filter(item => matches(item.title));
+  const filtered = books.filter(item => {
+
+    const categoryMatch =
+      currentBookCategory === "all" ||
+      item.category === currentBookCategory;
+
+    const searchMatch =
+      item.title.toLowerCase().includes(getSearch()) ||
+      (item.description || "").toLowerCase().includes(getSearch());
+
+    return categoryMatch && searchMatch;
+
+  });
 
   filtered.forEach(item => {
 
     const card = document.createElement("div");
-    card.className = "card";
+    card.className = "card book-card";
+
+    const cover = document.createElement("div");
+    cover.className = "book-cover";
+
+    if(item.cover) {
+
+      const image = document.createElement("img");
+      image.src = item.cover;
+      image.alt = item.title;
+      cover.appendChild(image);
+
+    } else {
+
+      cover.textContent = "📘";
+
+    }
+
+    const info = document.createElement("div");
+    info.className = "book-info";
+
+    const categoryLabel = document.createElement("span");
+    categoryLabel.className = "book-category-label";
+    categoryLabel.textContent = getCategoryName(item.category);
 
     const heading = document.createElement("h3");
     heading.textContent = item.title;
 
     const description = document.createElement("p");
-    description.textContent = "عرض الكتاب أونلاين باستخدام Google Drive";
+    description.textContent = item.description || "مصدر تعليمي لطلاب الصف الثاني بكالوريا.";
 
     const button = document.createElement("button");
     button.className = "btn btn-green";
-    button.textContent = "📖 قراءة الكتاب أونلاين";
+    button.textContent = "📖 قراءة PDF";
 
     button.onclick = function() {
       openBook(item);
     };
 
-    card.append(heading,description,button);
+    info.append(categoryLabel,heading,description,button);
+
+    card.append(cover,info);
     container.appendChild(card);
 
   });
 
   if(filtered.length === 0) {
-    container.innerHTML = '<p class="empty">لا توجد كتب مطابقة للبحث</p>';
+
+    const message = document.createElement("div");
+    message.className = "library-empty";
+
+    if(currentBookCategory === "all") {
+      message.textContent = "سيتم إضافة المزيد من الكتب والمذكرات قريبًا بإذن الله.";
+    } else {
+      message.textContent =
+        "سيتم إضافة " + getCategoryName(currentBookCategory) +
+        " قريبًا بإذن الله.";
+    }
+
+    container.appendChild(message);
+
   }
+
 }
 
 // ===================================
@@ -651,6 +896,11 @@ function renderBooks() {
 // ===================================
 
 function openBook(book) {
+
+  if(!book.fileId) {
+    alert("رابط الكتاب غير متاح حاليًا.");
+    return;
+  }
 
   const previewUrl =
     "https://drive.google.com/file/d/" +
@@ -670,6 +920,16 @@ function openBook(book) {
 
   document.getElementById("driveLink").href =
     viewUrl;
+
+  const downloadLink = document.getElementById("downloadLink");
+
+  if(book.downloadUrl) {
+    downloadLink.href = book.downloadUrl;
+    downloadLink.style.display = "inline-block";
+  } else {
+    downloadLink.style.display = "none";
+    downloadLink.removeAttribute("href");
+  }
 
   const viewer = document.getElementById("bookViewer");
 
