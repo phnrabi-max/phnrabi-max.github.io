@@ -1,15 +1,15 @@
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>رياضيات الصف الأول الثانوي ٢٠٢٧ | شرح مستر محمد ربيع</title>
 
 <meta name="description" content="شرح رياضيات الصف الأول الثانوي مع مستر محمد ربيع، دروس الأعداد المركبة والمعادلات التربيعية وإشارة الدالة والدوال المثلثية والتشابه، مع فيديوهات شرح مبسطة ومراجعة مذكرة توجيه الرياضيات ٢٠٢٧.">
 
-<meta name="keywords" content="رياضيات الصف الأول الثانوي, شرح رياضيات أولى ثانوي, مستر محمد ربيع, الأعداد المركبة, المعادلات التربيعية, إشارة الدالة, الدوال المثلثية, تشابه المثلثات, مذكرة توجيه الرياضيات ٢٠٢٧">
+<meta name="keywords" content="رياضيات الصف الأول الثانوي, شرح رياضيات أولى ثانوي, مستر محمد ربيع, الأعداد المركبة, المعادلات التربيعية, إشارة الدالة, الدوال المثلثية, تشابه المثلثات">
 
 <meta name="author" content="مستر محمد ربيع">
 <meta name="robots" content="index, follow">
@@ -19,145 +19,251 @@
 <meta property="og:type" content="website">
 <meta property="og:locale" content="ar_EG">
 <meta property="og:title" content="رياضيات الصف الأول الثانوي ٢٠٢٧ | مستر محمد ربيع">
-<meta property="og:description" content="شاهد شرح دروس الرياضيات للصف الأول الثانوي مع مستر محمد ربيع، وتابع فيديوهات الوحدات والمراجعات.">
+<meta property="og:description" content="شاهد شرح دروس الرياضيات للصف الأول الثانوي مع مستر محمد ربيع.">
 <meta property="og:url" content="https://phnrabi-max.github.io/grade1-secondary.html">
 <meta property="og:image" content="https://phnrabi-max.github.io/teacher.jpg">
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebPage",
-  "name": "رياضيات الصف الأول الثانوي | مستر محمد ربيع",
-  "description": "شرح دروس الرياضيات للصف الأول الثانوي مع مستر محمد ربيع.",
-  "url": "https://phnrabi-max.github.io/grade1-secondary.html",
-  "inLanguage": "ar",
-  "isPartOf": {
-    "@type": "WebSite",
-    "name": "أكاديمية مستر محمد ربيع",
-    "url": "https://phnrabi-max.github.io/"
-  }
-}
-</script>
 
 <link rel="stylesheet" href="style.css">
 
 <style>
+.unit-section {
+  margin-top: 25px;
+  padding: 18px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+}
+
 .unit-title {
-  margin: 24px 0 14px;
+  color: #07549a;
+  background: #e8f3ff;
+  padding: 12px 16px;
+  border-radius: 10px;
+  margin: 0 0 18px;
+  font-size: 21px;
+}
+
+.video-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+}
+
+.video-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  min-height: 58px;
   padding: 12px;
-  border-radius: 10px;
-  background: #e8f1ff;
-  color: #174a8b;
-}
-.lesson {
-  margin: 10px 0;
-  padding: 14px;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  background: #fff;
-}
-.lesson a {
-  display: inline-block;
-  margin-top: 10px;
+  background: #0876bd;
+  color: white;
   text-decoration: none;
+  text-align: center;
+  border-radius: 10px;
+  font-weight: bold;
+  line-height: 1.6;
+  transition: 0.2s;
+}
+
+.video-btn:hover {
+  background: #064f88;
+  transform: translateY(-2px);
+}
+
+.play-icon {
+  font-size: 19px;
+  flex-shrink: 0;
+}
+
+.section-description {
+  color: #64748b;
+  margin-bottom: 18px;
+  line-height: 1.8;
+}
+
+.memo-section {
+  margin-top: 25px;
+}
+
+@media (max-width: 600px) {
+  .unit-section {
+    padding: 13px;
+  }
+
+  .unit-title {
+    font-size: 19px;
+  }
+
+  .video-list {
+    grid-template-columns: 1fr;
+  }
+
+  .video-btn {
+    min-height: 52px;
+  }
 }
 </style>
 </head>
+
 <body>
 
 <header>
   <h1>الصف الأول الثانوي</h1>
-  <p>شرح مبسّط وتدريب مستمر</p>
+  <p>شرح مبسّط وتدريب مستمر مع مستر محمد ربيع</p>
 </header>
 
 <main>
-  <a class="btn secondary" href="index.html">← الرجوع للصفحة الرئيسية</a>
+
+  <a class="btn secondary" href="index.html">
+    ← الرجوع للصفحة الرئيسية
+  </a>
 
   <section class="panel">
-    <h2>📺 فيديوهات الشرح</h2>
-    <p class="muted">اختر الوحدة ثم الدرس الذي تريد مشاهدته.</p>
 
-    <h3 class="unit-title">📘 الوحدة الأولى</h3>
+    <h2>📺 فيديوهات شرح الرياضيات</h2>
 
-    <div class="lesson">
-      <h4>1- مقدمة عن الأعداد المركبة</h4>
-      <a class="btn" href="https://youtu.be/ODLLT4ubKgU?si=fR2gGEMHxdFNMbzz" target="_blank" rel="noopener">▶ مشاهدة الدرس</a>
-    </div>
+    <p class="section-description">
+      اختر الوحدة التي تريد دراستها، ثم اضغط على زر الدرس لمشاهدة الشرح مباشرة.
+    </p>
 
-    <div class="lesson">
-      <h4>2- تحديد نوع جذري المعادلة التربيعية</h4>
-      <a class="btn" href="https://youtu.be/Z0Q_dcDP0YQ?si=w77qSeGPKfdN435G" target="_blank" rel="noopener">▶ مشاهدة الدرس</a>
-    </div>
+    <!-- الوحدة الأولى -->
 
-    <div class="lesson">
-      <h4>3- العلاقة بين جذري المعادلة التربيعية ومعاملات حدودها</h4>
-      <a class="btn" href="https://youtu.be/FG_Y7jQxjh8?si=kNqbaBZdvokp3L7I" target="_blank" rel="noopener">▶ مشاهدة الدرس</a>
-    </div>
+    <section class="unit-section">
 
-    <div class="lesson">
-      <h4>4- تكوين المعادلة التربيعية متى علم جذراها</h4>
-      <a class="btn" href="https://youtu.be/RRdMwJmxjVM?si=mJJatgA2eh1uhAab" target="_blank" rel="noopener">▶ مشاهدة الدرس</a>
-    </div>
+      <h3 class="unit-title">📘 الوحدة الأولى</h3>
 
-    <div class="lesson">
-      <h4>5- إشارة الدالة</h4>
-      <a class="btn" href="https://youtu.be/ld6X8c5j79E?si=yGZfkO74F_wSYV82" target="_blank" rel="noopener">▶ مشاهدة الدرس</a>
-    </div>
+      <div class="video-list">
 
-    <h3 class="unit-title">📗 الوحدة الثانية</h3>
+        <a class="video-btn" href="https://youtu.be/ODLLT4ubKgU?si=fR2gGEMHxdFNMbzz" target="_blank" rel="noopener">
+          <span class="play-icon">▶</span>
+          مقدمة عن الأعداد المركبة
+        </a>
 
-    <div class="lesson">
-      <h4>1- الزاوية الموجهة</h4>
-      <a class="btn" href="https://youtu.be/eyS-PtSYGIk?si=fmeAnWRJyhnE6Za5" target="_blank" rel="noopener">▶ مشاهدة الدرس</a>
-    </div>
+        <a class="video-btn" href="https://youtu.be/Z0Q_dcDP0YQ?si=w77qSeGPKfdN435G" target="_blank" rel="noopener">
+          <span class="play-icon">▶</span>
+          تحديد نوع جذري المعادلة التربيعية
+        </a>
 
-    <div class="lesson">
-      <h4>2- القياس الستيني والدائري لزاوية</h4>
-      <a class="btn" href="https://youtu.be/5PP0cH6iq_g?si=QiYEfYQB7Z7Uiv5-" target="_blank" rel="noopener">▶ مشاهدة الدرس</a>
-    </div>
+        <a class="video-btn" href="https://youtu.be/FG_Y7jQxjh8?si=kNqbaBZdvokp3L7I" target="_blank" rel="noopener">
+          <span class="play-icon">▶</span>
+          العلاقة بين جذري المعادلة التربيعية ومعاملات حدودها
+        </a>
 
-    <div class="lesson">
-      <h4>3- الدوال المثلثية</h4>
-      <a class="btn" href="https://youtu.be/m1Pfrut8Oxw?si=PM4MhR24O8XlzZVc" target="_blank" rel="noopener">▶ مشاهدة الدرس</a>
-    </div>
+        <a class="video-btn" href="https://youtu.be/RRdMwJmxjVM?si=mJJatgA2eh1uhAab" target="_blank" rel="noopener">
+          <span class="play-icon">▶</span>
+          تكوين المعادلة التربيعية متى علم جذراها
+        </a>
 
-    <div class="lesson">
-      <h4>4- الزوايا المنتسبة</h4>
-      <a class="btn" href="https://youtu.be/6xBqdTYC4zA?si=fllYatqBOHOGAhhk" target="_blank" rel="noopener">▶ مشاهدة الدرس</a>
-    </div>
+        <a class="video-btn" href="https://youtu.be/ld6X8c5j79E?si=yGZfkO74F_wSYV82" target="_blank" rel="noopener">
+          <span class="play-icon">▶</span>
+          إشارة الدالة
+        </a>
 
-    <h3 class="unit-title">📙 الوحدة الثالثة</h3>
+      </div>
+    </section>
 
-    <div class="lesson">
-      <h4>1- تشابه المضلعات</h4>
-      <a class="btn" href="https://youtu.be/z4xm0I8VCEA?si=7BVigJ8c4U11IH8B" target="_blank" rel="noopener">▶ مشاهدة الدرس</a>
-    </div>
+    <!-- الوحدة الثانية -->
 
-    <div class="lesson">
-      <h4>2- تشابه المثلثات</h4>
-      <a class="btn" href="https://youtu.be/GSr5srEUgu8?si=I4TiWhZy06LtMIZH" target="_blank" rel="noopener">▶ مشاهدة الدرس</a>
-    </div>
+    <section class="unit-section">
 
-    <div class="lesson">
-      <h4>3- العلاقة بين سطحي مضلعين متشابهين</h4>
-      <a class="btn" href="https://youtu.be/qakJOTNLLVU?si=Iy7feuirsz809wT2" target="_blank" rel="noopener">▶ مشاهدة الدرس</a>
-    </div>
+      <h3 class="unit-title">📗 الوحدة الثانية</h3>
 
-    <div class="lesson">
-      <h4>5- تطبيقات التشابة فى الدائرة</h4>
-      <a class="btn" href="https://youtu.be/DvNfDx5n9R8?si=XvCBRxxyTyGyAbSY" target="_blank" rel="noopener">▶ مشاهدة الدرس</a>
-    </div>
+      <div class="video-list">
+
+        <a class="video-btn" href="https://youtu.be/eyS-PtSYGIk?si=fmeAnWRJyhnE6Za5" target="_blank" rel="noopener">
+          <span class="play-icon">▶</span>
+          الزاوية الموجهة
+        </a>
+
+        <a class="video-btn" href="https://youtu.be/5PP0cH6iq_g?si=QiYEfYQB7Z7Uiv5-" target="_blank" rel="noopener">
+          <span class="play-icon">▶</span>
+          القياس الستيني والدائري لزاوية
+        </a>
+
+        <a class="video-btn" href="https://youtu.be/m1Pfrut8Oxw?si=PM4MhR24O8XlzZVc" target="_blank" rel="noopener">
+          <span class="play-icon">▶</span>
+          الدوال المثلثية
+        </a>
+
+        <a class="video-btn" href="https://youtu.be/6xBqdTYC4zA?si=fllYatqBOHOGAhhk" target="_blank" rel="noopener">
+          <span class="play-icon">▶</span>
+          الزوايا المنتسبة
+        </a>
+
+      </div>
+    </section>
+
+    <!-- الوحدة الثالثة -->
+
+    <section class="unit-section">
+
+      <h3 class="unit-title">📙 الوحدة الثالثة</h3>
+
+      <div class="video-list">
+
+        <a class="video-btn" href="https://youtu.be/z4xm0I8VCEA?si=7BVigJ8c4U11IH8B" target="_blank" rel="noopener">
+          <span class="play-icon">▶</span>
+          تشابه المضلعات
+        </a>
+
+        <a class="video-btn" href="https://youtu.be/GSr5srEUgu8?si=I4TiWhZy06LtMIZH" target="_blank" rel="noopener">
+          <span class="play-icon">▶</span>
+          تشابه المثلثات
+        </a>
+
+        <a class="video-btn" href="https://youtu.be/qakJOTNLLVU?si=Iy7feuirsz809wT2" target="_blank" rel="noopener">
+          <span class="play-icon">▶</span>
+          العلاقة بين سطحي مضلعين متشابهين
+        </a>
+
+        <a class="video-btn" href="https://youtu.be/DvNfDx5n9R8?si=XvCBRxxyTyGyAbSY" target="_blank" rel="noopener">
+          <span class="play-icon">▶</span>
+          تطبيقات التشابه في الدائرة
+        </a>
+
+      </div>
+    </section>
+
   </section>
+
+  <!-- حل مذكرة التوجيه -->
+
+  <section class="panel memo-section">
+
+    <h2>📝 حل مذكرة توجيه الرياضيات ٢٠٢٧</h2>
+
+    <p class="section-description">
+      تابع شرح وحل مذكرة توجيه الرياضيات للصف الأول الثانوي مع مستر محمد ربيع.
+    </p>
+
+    <p class="muted">
+      سيتم إضافة روابط فيديوهات حل المذكرة هنا عند تجهيزها.
+    </p>
+
+  </section>
+
+  <!-- التواصل -->
 
   <section class="panel">
-    <h2>📝 حل مذكرة توجيه الرياضيات 2027</h2>
-    <p>تابع شرح وحل مذكرة توجيه الرياضيات للصف الأول الثانوي.</p>
-    <p class="muted">سيتم إضافة روابط فيديوهات المذكرة هنا عند إرسالها.</p>
+
+    <h2>📞 تواصل مع مستر محمد ربيع</h2>
+
+    <p class="section-description">
+      للاستفسارات والمتابعة يمكنك التواصل معنا عبر واتساب.
+    </p>
+
+    <a class="btn" href="https://wa.me/201281281205" target="_blank" rel="noopener">
+      تواصل معايا على واتساب
+    </a>
+
   </section>
 
-  <a class="btn" href="https://wa.me/201281281205" target="_blank" rel="noopener">تواصل معايا على واتساب</a>
+  <footer>
+    أكاديمية مستر محمد ربيع
+  </footer>
 
-  <footer>أكاديمية مستر محمد ربيع</footer>
 </main>
 
 </body>
