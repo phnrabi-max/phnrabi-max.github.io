@@ -1,225 +1,409 @@
 
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>رياضيات الصف الثالث الإعدادي 2027 | شرح ومراجعات مستر محمد ربيع</title>
-
-<meta name="description" content="شرح رياضيات الصف الثالث الإعدادي مع مستر محمد ربيع. دروس مبسطة، مسائل المتفوقين، مذكرة توجيه الرياضيات 2027، تدريبات ومراجعات واختبارات.">
-
-<meta name="keywords" content="رياضيات الصف الثالث الإعدادي, شرح رياضيات ثالثة إعدادي, مسائل المتفوقين, مذكرة توجيه الرياضيات 2027, مستر محمد ربيع">
-
-<meta name="author" content="مستر محمد ربيع">
-
-<link rel="canonical" href="https://phnrabi-max.github.io/grade3-prep.html">
-
-<meta property="og:type" content="website">
-<meta property="og:title" content="رياضيات الصف الثالث الإعدادي | مستر محمد ربيع">
-<meta property="og:description" content="شرح ومراجعات وتدريبات واختبارات رياضيات الصف الثالث الإعدادي مع مستر محمد ربيع.">
-<meta property="og:url" content="https://phnrabi-max.github.io/grade3-prep.html">
-<meta property="og:image" content="https://phnrabi-max.github.io/teacher.jpg">
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebPage",
-  "name": "رياضيات الصف الثالث الإعدادي",
-  "description": "شرح ومراجعات وتدريبات واختبارات الرياضيات للصف الثالث الإعدادي مع مستر محمد ربيع.",
-  "url": "https://phnrabi-max.github.io/grade3-prep.html",
-  "inLanguage": "ar",
-  "isPartOf": {
-    "@type": "WebSite",
-    "name": "أكاديمية مستر محمد ربيع",
-    "url": "https://phnrabi-max.github.io/"
-  }
-}
-</script>
-
-<!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-8JB3G7MD6C"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-8JB3G7MD6C');
-</script>
-<!-- نهاية Google Analytics -->
-
-<link rel="stylesheet" href="style.css">
-
 <style>
-.special-lessons {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 18px;
-  margin-top: 22px;
+#mathQuiz {
+  direction: rtl;
+  text-align: right;
+  margin-top: 20px;
 }
-
-.special-card {
+#mathQuiz .quiz-progress {
+  background: #eaf2ff;
+  color: #174a91;
+  padding: 14px;
+  border-radius: 10px;
+  margin-bottom: 18px;
+  font-weight: bold;
+}
+#mathQuiz .quiz-q {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 14px;
+  padding: 20px;
+  margin-bottom: 18px;
+}
+#mathQuiz .quiz-question-title {
+  font-size: 19px;
+  font-weight: bold;
+  line-height: 1.9;
+  margin-bottom: 18px;
+}
+#mathQuiz .quiz-option {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
-  text-align: center;
-  text-decoration: none;
-  color: white;
-  padding: 28px 18px;
-  border-radius: 16px;
-  min-height: 145px;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  gap: 10px;
+  background: #f7f9fc;
+  border: 1px solid #ddd;
+  padding: 13px;
+  margin: 10px 0;
+  border-radius: 9px;
+  cursor: pointer;
+  line-height: 1.7;
 }
-
-.special-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 22px rgba(0,0,0,0.18);
+#mathQuiz .quiz-option:has(input:checked) {
+  background: #e5f0ff;
+  border-color: #2678c8;
 }
-
-.special-card .special-icon {
-  font-size: 35px;
-  margin-bottom: 12px;
+#mathQuiz .quiz-option input {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
 }
-
-.special-card h3 {
-  color: white;
-  margin: 0 0 10px;
-  font-size: 21px;
+#mathQuiz .quiz-navigation {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 15px 0;
 }
-
-.special-card p {
-  color: white;
-  margin: 0;
-  font-size: 14px;
+#mathQuiz button:disabled {
+  opacity: .45;
+  cursor: not-allowed;
 }
-
-.top-students {
-  background: linear-gradient(135deg, #174A91, #2678C8);
+#mathQuiz .result {
+  font-size: 20px;
+  font-weight: bold;
+  color: #087c83;
+  margin-top: 20px;
 }
-
-.directorate {
-  background: linear-gradient(135deg, #087C83, #12A6A0);
+#mathQuiz .quiz-review-item {
+  border: 1px solid #ddd;
+  padding: 14px;
+  border-radius: 10px;
+  margin: 12px 0;
+  line-height: 1.9;
 }
-
-.library {
-  background: linear-gradient(135deg, #6b3fa0, #9b59b6);
+#mathQuiz .correct-answer {
+  color: #087c35;
+  font-weight: bold;
+}
+#mathQuiz .wrong-answer {
+  color: #b42318;
+  font-weight: bold;
 }
 </style>
-</head>
 
-<body>
+<section class="panel" id="mathQuiz">
+  <h2>📝 الاختبار الإلكتروني في الرياضيات</h2>
+  <p>اختبر مستواك في الرياضيات من خلال 35 سؤالًا. أجب عن جميع الأسئلة ثم اضغط على إنهاء الاختبار لمعرفة نتيجتك.</p>
 
-<header>
-  <h1>رياضيات الصف الثالث الإعدادي</h1>
-  <p>شرح مبسّط وتدريبات ومراجعات مع مستر محمد ربيع</p>
-</header>
+  <div class="quiz-progress" id="quizProgress"></div>
+  <div class="quiz-q" id="quizQuestion"></div>
 
-<main>
-
-<a class="btn secondary" href="index.html">← الرجوع للصفحة الرئيسية</a>
-
-<section class="panel">
-  <h2>📚 تعلم الرياضيات للصف الثالث الإعدادي</h2>
-  <p class="muted">
-    مرحبًا بك في صفحة الصف الثالث الإعدادي بأكاديمية مستر محمد ربيع.
-    ستجد هنا شروحات الرياضيات والتدريبات ومسائل المتفوقين والمراجعات والاختبارات.
-  </p>
-</section>
-
-<section class="panel">
-  <h2>🏆 تدريبات ومراجعات مميزة</h2>
-  <p class="muted">
-    اختر القسم الذي تريد مشاهدته لمتابعة فيديوهات الشرح والحل على قناة مستر محمد ربيع.
-  </p>
-
-  <div class="special-lessons">
-
-    <a class="special-card top-students" href="grade3-top-students.html">
-      <span class="special-icon">🏆</span>
-      <h3>حل مسائل المتفوقين</h3>
-      <p>فيديوهات شرح وحل أقوى المسائل والتدريبات</p>
-    </a>
-
-    <a class="special-card directorate" href="grade3-directorate-2027.html">
-      <span class="special-icon">📘</span>
-      <h3>حل مذكرة توجيه الرياضيات 2027</h3>
-      <p>شرح وحل نماذج وتدريبات المذكرة بالفيديو</p>
-    </a>
-
-    <a class="special-card library" href="grade3-library.html">
-      <span class="special-icon">📚</span>
-      <h3>كتب ومذكرات وامتحانات</h3>
-      <p>المكتبة التعليمية للكتب والمذكرات ونماذج الامتحانات</p>
-    </a>
-
+  <div class="quiz-navigation">
+    <button class="btn secondary" type="button" id="quizPrev">السابق</button>
+    <button class="btn" type="button" id="quizNext">السؤال التالي</button>
+    <button class="btn" type="button" id="quizSubmit" hidden>إنهاء الاختبار وتصحيح الإجابات</button>
   </div>
+
+  <p class="result" id="quizResult" aria-live="polite"></p>
+  <div id="quizReview"></div>
 </section>
-
-<section class="panel">
-  <h2>📝 اختبر نفسك في الرياضيات</h2>
-  <p>
-    اختبر معلوماتك في الرياضيات وتعرّف على درجتك بعد الإجابة عن الأسئلة.
-  </p>
-
-  <form id="quiz">
-
-    <div class="quiz-q">
-      <p>مثال توضيحي: ما ناتج 2 + 3؟</p>
-
-      <label><input type="radio" name="q1" value="0"> 4</label>
-      <br>
-
-      <label><input type="radio" name="q1" value="1"> 5</label>
-      <br>
-
-      <label><input type="radio" name="q1" value="0"> 6</label>
-    </div>
-
-    <button class="btn" type="button" onclick="gradeQuiz()">
-      صحّح الاختبار
-    </button>
-
-    <p class="result" id="result" aria-live="polite"></p>
-
-    <p class="muted">
-      هذا سؤال تجريبي توضيحي فقط، وسيتم استبداله بأسئلة الصف الفعلية قبل نشر الاختبار للطلاب.
-    </p>
-
-  </form>
-</section>
-
-<section class="panel">
-  <h2>🎯 هدفنا التفوق في الرياضيات</h2>
-  <p>
-    مع مستر محمد ربيع ستتعلم الرياضيات بطريقة مبسطة،
-    وتتدرب على حل المسائل وتستعد للاختبارات بثقة.
-  </p>
-</section>
-
-<a class="btn" href="https://wa.me/201281281205" target="_blank" rel="noopener noreferrer">
-  تواصل مع مستر محمد ربيع على واتساب
-</a>
-
-<footer>
-  أكاديمية مستر محمد ربيع
-  <p>الرياضيات ببساطة… افهم، اتدرّب، واتفوّق</p>
-</footer>
-
-</main>
 
 <script>
-function gradeQuiz() {
-  const answer = document.querySelector('input[name="q1"]:checked');
-  const result = document.getElementById('result');
+const quizQuestions = [
+  {
+    q: "صورة النقطة (3,5-) بتمدد مركزه نقطة الأصل ومعاملته 3.",
+    o: ["(1,2-)", "(9,6-)", "(3,2-)", "(9,15-)"],
+    a: 3
+  },
+  {
+    q: "معادلة المستقيم الذي يصنع زاوية 45 ومقطع y يساوي 3.",
+    o: ["x-y=-3", "x+y=-3", "x-y=3", "x+y=3"],
+    a: 0
+  },
+  {
+    q: "إذا كانت 2sinx=tanx فإن x:",
+    o: ["60", "45", "30", "15"],
+    a: 0
+  },
+  {
+    q: "ميل المستقيم العمودي على المستقيم x=3y+1:",
+    o: ["3", "-3", "1/3", "-1/3"],
+    a: 1
+  },
+  {
+    q: "مثلث ABC قائم في B وكان 5AB=4AC، أوجد tan C.",
+    o: ["3/4", "4/5", "4/3", "3/5"],
+    a: 2
+  },
+  {
+    q: "قياس زاوية ميل المستقيم المار بالنقطتين (5,6),(4,7):",
+    o: ["45", "60", "120", "135"],
+    a: 3
+  },
+  {
+    q: "المستقيم 3y-kx=13 يوازي المستقيم (k-1)x-2y=8، أوجد k.",
+    o: ["3", "2", "1", "-2"],
+    a: 0
+  },
+  {
+    q: "الانحراف المعياري للقيم 5,5,5,5:",
+    o: ["0", "5", "4", "20"],
+    a: 0
+  },
+  {
+    q: "لأي زاوية حادة x، قيمة sinx-cosx tanx:",
+    o: ["1", "2", "0", "-1"],
+    a: 2
+  },
+  {
+    q: "معادلة المستقيم الذي يمر بالنقطة (2,1-) ويوازي محور y.",
+    o: ["x=-2", "y=1", "x=2", "y=-1"],
+    a: 0
+  },
+  {
+    q: "إذا كان tanx sin30=cos30، أوجد x.",
+    o: ["30", "45", "60", "75"],
+    a: 2
+  },
+  {
+    q: "المستقيمان 3x-4y=3 و4x+ky=8 متعامدان، أوجد k.",
+    o: ["3", "4", "-3", "-4"],
+    a: 0
+  },
+  {
+    q: "ميل المستقيم العمودي على محور x:",
+    o: ["0", "1", "-1", "غير معرف"],
+    a: 3
+  },
+  {
+    q: "أي من الآتي ليس مقياس تشتت:",
+    o: ["المدى", "المدى الربيعي", "الوسيط", "الانحراف المعياري"],
+    a: 2
+  },
+  {
+    q: "مساحة المثلث المحدد بالمستقيمات x=0,y=0,5x-6y=30:",
+    o: ["60", "30", "15", "7.5"],
+    a: 2
+  },
+  {
+    q: "ميل المستقيم العمودي على محور y:",
+    o: ["0", "1", "-1", "غير معرف"],
+    a: 0
+  },
+  {
+    q: "إذا كان المدى الربيعي 8 والربيع الأدنى 7، الربيع الأعلى:",
+    o: ["1", "8", "7", "15"],
+    a: 3
+  },
+  {
+    q: "أي النسب التالية تمثل معامل تصغير لتمدد:",
+    o: ["120%", "50%", "5/4", "2"],
+    a: 1
+  },
+  {
+    q: "إذا كان sin4x÷cos2x=1، قيمة x:",
+    o: ["30", "15", "45", "20"],
+    a: 1
+  },
+  {
+    q: "إذا كان 1=tan(3x÷2)، قيمة x:",
+    o: ["10", "30", "45", "60"],
+    a: 1
+  },
+  {
+    q: "جميع ........ متشابهة:",
+    o: ["المثلثات", "المربعات", "المعينات", "المستطيلات"],
+    a: 1
+  },
+  {
+    q: "إذا كان ABCD معين وكان C(-6,9), A(-3,8)، فإن ميل BD:",
+    o: ["3", "-1/3", "1/3", "-3"],
+    a: 0
+  },
+  {
+    q: "إذا كان الانحراف المعياري للقيم A-2,4,B+3 صفرًا، فإن A+B:",
+    o: ["4", "6", "7", "9"],
+    a: 2
+  },
+  {
+    q: "إذا كان ABCD مربعًا فيه ميل AB=-1/2، ميل BC:",
+    o: ["-1/2", "2", "-2", "1"],
+    a: 1
+  },
+  {
+    q: "إذا كان المستقيم المار بالنقطتين A(k,3), B(2,4) يصنع زاوية 45، قيمة k:",
+    o: ["1", "2", "-1", "-2"],
+    a: 0
+  },
+  {
+    q: "المدى لمجموعة القيم x+8,x+4,x-3:",
+    o: ["1", "4", "11", "7"],
+    a: 2
+  },
+  {
+    q: "مثلث ABC قائم في B، قيمة sinA+2cosC:",
+    o: ["2sinC", "3sinA", "2sinA", "3cosA"],
+    a: 1
+  },
+  {
+    q: "إذا كان 2cos(x+20)=tan45، قيمة x:",
+    o: ["60", "45", "40", "30"],
+    a: 2
+  },
+  {
+    q: "ميل المستقيم 3y=kx-5 ويمر بالنقطة (20,5):",
+    o: ["1", "-2", "1/3", "-1"],
+    a: 2
+  },
+  {
+    q: "ميل المستقيم x-3=0:",
+    o: ["3", "1/3", "صفر", "غير معرف"],
+    a: 3
+  },
+  {
+    q: "إذا كان ميل مستقيم أكبر من الصفر فإن زاوية ميله:",
+    o: ["حادة", "قائمة", "منفرجة", "مستقيمة"],
+    a: 0
+  },
+  {
+    q: "إذا كان cosx tanx=1/2، قيمة x:",
+    o: ["60", "30", "45", "90"],
+    a: 1
+  },
+  {
+    q: "مجموعة أصفار الدالة 0=f(x):",
+    o: ["{0}", "R", "R-{0}", "فاي"],
+    a: 1
+  },
+  {
+    q: "ميل المستقيم y-5=0:",
+    o: ["5", "-5", "0", "غير معرف"],
+    a: 2
+  },
+  {
+    q: "المدى للقيم 6,A,7,2 هو 8، قيمة A:",
+    o: ["10", "7", "9", "4"],
+    a: 0
+  }
+];
 
-  if (!answer) {
-    result.textContent = 'من فضلك اختار إجابة أولًا.';
+const quizLetters = ["أ", "ب", "ج", "ء"];
+let quizAnswers = Array(quizQuestions.length).fill(null);
+let quizIndex = 0;
+let quizFinished = false;
+
+function renderQuizQuestion() {
+  const holder = document.getElementById("quizQuestion");
+  const progress = document.getElementById("quizProgress");
+  const previous = document.getElementById("quizPrev");
+  const next = document.getElementById("quizNext");
+  const submit = document.getElementById("quizSubmit");
+  const item = quizQuestions[quizIndex];
+
+  progress.textContent =
+    "السؤال " + (quizIndex + 1) + " من " + quizQuestions.length +
+    " — تمت الإجابة عن " +
+    quizAnswers.filter(value => value !== null).length + " سؤالًا";
+
+  holder.replaceChildren();
+
+  const heading = document.createElement("p");
+  heading.className = "quiz-question-title";
+  heading.textContent = (quizIndex + 1) + ". " + item.q;
+  holder.appendChild(heading);
+
+  item.o.forEach((option, optionIndex) => {
+    const label = document.createElement("label");
+    label.className = "quiz-option";
+
+    const radio = document.createElement("input");
+    radio.type = "radio";
+    radio.name = "currentQuizAnswer";
+    radio.value = String(optionIndex);
+    radio.checked = quizAnswers[quizIndex] === optionIndex;
+
+    radio.addEventListener("change", () => {
+      quizAnswers[quizIndex] = optionIndex;
+      renderQuizQuestion();
+    });
+
+    const optionText = document.createElement("span");
+    optionText.textContent =
+      quizLetters[optionIndex] + ") " + option;
+
+    label.append(radio, optionText);
+    holder.appendChild(label);
+  });
+
+  previous.disabled = quizIndex === 0;
+  next.hidden = quizIndex === quizQuestions.length - 1;
+  submit.hidden = quizIndex !== quizQuestions.length - 1;
+}
+
+function finishQuiz() {
+  if (quizFinished) return;
+
+  const unanswered = quizAnswers.filter(value => value === null).length;
+
+  if (unanswered > 0) {
+    document.getElementById("quizResult").textContent =
+      "لم تجب عن " + unanswered +
+      " سؤالًا. يمكنك الرجوع إليها أو إنهاء الاختبار.";
     return;
   }
 
-  result.textContent = 'درجتك: ' + answer.value + '/1';
-}
-</script>
+  quizFinished = true;
 
-</body>
-</html>
+  const score = quizQuestions.reduce((total, question, index) => {
+    return total +
+      (quizAnswers[index] === question.a ? 1 : 0);
+  }, 0);
+
+  document.getElementById("quizResult").textContent =
+    "نتيجتك: " + score + " من " + quizQuestions.length;
+
+  document.getElementById("quizQuestion").hidden = true;
+  document.getElementById("quizProgress").hidden = true;
+  document.getElementById("quizPrev").hidden = true;
+  document.getElementById("quizNext").hidden = true;
+  document.getElementById("quizSubmit").hidden = true;
+
+  const review = document.getElementById("quizReview");
+  const title = document.createElement("h3");
+  title.textContent = "مراجعة الإجابات";
+  review.appendChild(title);
+
+  quizQuestions.forEach((question, index) => {
+    const entry = document.createElement("div");
+    entry.className = "quiz-review-item";
+
+    const prompt = document.createElement("p");
+    prompt.textContent = (index + 1) + ". " + question.q;
+
+    const chosen = document.createElement("p");
+    chosen.textContent =
+      "إجابتك: " + quizLetters[quizAnswers[index]] +
+      ") " + question.o[quizAnswers[index]];
+
+    chosen.className =
+      quizAnswers[index] === question.a
+        ? "correct-answer"
+        : "wrong-answer";
+
+    const correct = document.createElement("p");
+    correct.textContent =
+      "الإجابة الصحيحة: " + quizLetters[question.a] +
+      ") " + question.o[question.a];
+
+    entry.append(prompt, chosen, correct);
+    review.appendChild(entry);
+  });
+}
+
+document.getElementById("quizPrev").addEventListener("click", () => {
+  if (quizIndex > 0) {
+    quizIndex--;
+    renderQuizQuestion();
+  }
+});
+
+document.getElementById("quizNext").addEventListener("click", () => {
+  if (quizIndex < quizQuestions.length - 1) {
+    quizIndex++;
+    renderQuizQuestion();
+  }
+});
+
+document.getElementById("quizSubmit").addEventListener("click", finishQuiz);
+
+renderQuizQuestion();
+</script>
