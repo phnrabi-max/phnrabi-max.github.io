@@ -179,6 +179,44 @@
   margin-top: 20px;
 }
 
+/* رسالة النتيجة والتهنئة */
+#mathQuiz .quiz-result-message {
+  background: #eaf2ff;
+  border: 2px solid #2678c8;
+  border-radius: 14px;
+  padding: 22px 16px;
+  margin: 20px 0;
+  text-align: center;
+  line-height: 2;
+}
+
+#mathQuiz .quiz-result-message h3 {
+  color: #174a91;
+  margin: 0 0 10px;
+  font-size: 22px;
+}
+
+#mathQuiz .quiz-result-message p {
+  margin: 8px 0 16px;
+  color: #333;
+}
+
+#mathQuiz .quiz-video-link {
+  display: inline-block;
+  background: #c62828;
+  color: white;
+  text-decoration: none;
+  padding: 12px 20px;
+  border-radius: 9px;
+  font-weight: bold;
+  margin-top: 8px;
+  transition: background .2s ease;
+}
+
+#mathQuiz .quiz-video-link:hover {
+  background: #a51f1f;
+}
+
 #mathQuiz .quiz-review-item {
   border: 1px solid #ddd;
   padding: 14px;
@@ -267,6 +305,23 @@
   </div>
 
   <p class="result" id="quizResult" aria-live="polite"></p>
+
+  <!-- رسالة تظهر بعد ظهور النتيجة -->
+  <div class="quiz-result-message" id="quizMessage" hidden>
+    <h3>مع تحياتي مستر محمد ربيع 🌹</h3>
+    <p>
+      نتمنى كتابة اسمك ودرجتك في تعليقات الفيديو،
+      حتى نعرف أبطالنا المتفوقين ونتابع تقدمكم.
+    </p>
+    <a
+      class="quiz-video-link"
+      href="https://youtu.be/o7G8r4ArN9g"
+      target="_blank"
+      rel="noopener noreferrer">
+      اكتب اسمك ودرجتك في تعليقات الفيديو
+    </a>
+  </div>
+
   <div id="quizReview"></div>
 </section>
 
@@ -540,15 +595,21 @@ function finishQuiz() {
       (quizAnswers[index] === question.a ? 1 : 0);
   }, 0);
 
+  // عرض نتيجة الطالب
   document.getElementById("quizResult").textContent =
     "نتيجتك: " + score + " من " + quizQuestions.length;
 
+  // إظهار رسالة مستر محمد ربيع بعد ظهور النتيجة
+  document.getElementById("quizMessage").hidden = false;
+
+  // إخفاء واجهة الأسئلة بعد انتهاء الاختبار
   document.getElementById("quizQuestion").hidden = true;
   document.getElementById("quizProgress").hidden = true;
   document.getElementById("quizPrev").hidden = true;
   document.getElementById("quizNext").hidden = true;
   document.getElementById("quizSubmit").hidden = true;
 
+  // مراجعة الإجابات
   const review = document.getElementById("quizReview");
   const title = document.createElement("h3");
   title.textContent = "مراجعة الإجابات";
