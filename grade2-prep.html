@@ -1,4 +1,4 @@
-
+```html
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
@@ -8,12 +8,9 @@
   <title>رياضيات الصف الثاني الإعدادي ٢٠٢٦ و٢٠٢٧ | مستر محمد ربيع</title>
 
   <meta name="description" content="شرح رياضيات الصف الثاني الإعدادي مع مستر محمد ربيع، وحل مذكرة توجيه الرياضيات ٢٠٢٦ بالفيديو، مع تدريبات ومراجعات واختبارات للعام الدراسي ٢٠٢٧.">
-
   <meta name="keywords" content="رياضيات الصف الثاني الإعدادي, شرح رياضيات تانية إعدادي, حل مذكرة توجيه الرياضيات, حل نماذج رياضيات الصف الثاني الإعدادي, مستر محمد ربيع">
-
   <meta name="author" content="مستر محمد ربيع">
   <meta name="robots" content="index, follow">
-
   <link rel="canonical" href="https://phnrabi-max.github.io/grade2-prep.html">
 
   <meta property="og:type" content="website">
@@ -50,9 +47,7 @@
   <!-- نهاية Google Analytics -->
 
   <style>
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     body {
       margin: 0;
@@ -69,15 +64,8 @@
       padding: 35px 15px;
     }
 
-    header h1 {
-      margin: 0;
-      font-size: 30px;
-    }
-
-    header p {
-      margin: 8px 0 0;
-      font-size: 17px;
-    }
+    header h1 { margin: 0; font-size: 30px; }
+    header p { margin: 8px 0 0; font-size: 17px; }
 
     main {
       width: 92%;
@@ -100,9 +88,7 @@
       padding-bottom: 10px;
     }
 
-    .muted {
-      color: #64748b;
-    }
+    .muted { color: #64748b; }
 
     .video-list {
       display: grid;
@@ -122,9 +108,7 @@
       transition: 0.2s;
     }
 
-    .btn:hover {
-      background: #064f88;
-    }
+    .btn:hover { background: #064f88; }
 
     .btn.secondary {
       background: #eaf2fb;
@@ -132,9 +116,7 @@
       border: 1px solid #cbdced;
     }
 
-    .btn.secondary:hover {
-      background: #d8e9fa;
-    }
+    .btn.secondary:hover { background: #d8e9fa; }
 
     .grade {
       display: inline-block;
@@ -146,32 +128,11 @@
       margin-bottom: 10px;
     }
 
-    .question {
-      background: #f5f8fc;
-      padding: 15px;
-      border-radius: 10px;
-      margin: 15px 0;
-    }
-
-    input[type="number"] {
-      width: 100%;
-      padding: 12px;
-      border: 1px solid #cbd5e1;
-      border-radius: 8px;
-      font-size: 17px;
-      margin: 8px 0;
-    }
-
     button {
       cursor: pointer;
       border: none;
       font-family: inherit;
       font-size: 16px;
-    }
-
-    .result {
-      font-weight: bold;
-      margin-top: 12px;
     }
 
     .whatsapp {
@@ -193,14 +154,136 @@
       margin-top: 35px;
     }
 
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 24px;
-      }
+    /* تنسيق الاختبار الإلكتروني */
+    #mathQuiz {
+      direction: rtl;
+      text-align: right;
+      margin-top: 20px;
+    }
 
-      .panel {
-        padding: 16px;
-      }
+    #mathQuiz .quiz-progress {
+      background: #eaf2ff;
+      color: #174a91;
+      padding: 14px;
+      border-radius: 10px;
+      margin-bottom: 18px;
+      font-weight: bold;
+    }
+
+    #mathQuiz .quiz-q {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 14px;
+      padding: 20px;
+      margin-bottom: 18px;
+    }
+
+    #mathQuiz .quiz-question-title {
+      font-size: 19px;
+      font-weight: bold;
+      line-height: 1.9;
+      margin-bottom: 18px;
+    }
+
+    #mathQuiz .quiz-option {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: #f7f9fc;
+      border: 1px solid #ddd;
+      padding: 13px;
+      margin: 10px 0;
+      border-radius: 9px;
+      cursor: pointer;
+      line-height: 1.7;
+    }
+
+    #mathQuiz .quiz-option:has(input:checked) {
+      background: #e5f0ff;
+      border-color: #2678c8;
+    }
+
+    #mathQuiz .quiz-option input {
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+    }
+
+    #mathQuiz .quiz-navigation {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 15px 0;
+    }
+
+    #mathQuiz button:disabled {
+      opacity: .45;
+      cursor: not-allowed;
+    }
+
+    #mathQuiz .result {
+      font-size: 20px;
+      font-weight: bold;
+      color: #087c83;
+      margin-top: 20px;
+    }
+
+    #mathQuiz .quiz-result-message {
+      background: #eaf2ff;
+      border: 2px solid #2678c8;
+      border-radius: 14px;
+      padding: 22px 16px;
+      margin: 20px 0;
+      text-align: center;
+      line-height: 2;
+    }
+
+    #mathQuiz .quiz-result-message h3 {
+      color: #174a91;
+      margin: 0 0 10px;
+      font-size: 22px;
+    }
+
+    #mathQuiz .quiz-result-message p {
+      margin: 8px 0 16px;
+      color: #333;
+    }
+
+    #mathQuiz .quiz-video-link {
+      display: inline-block;
+      background: #c62828;
+      color: white;
+      text-decoration: none;
+      padding: 12px 20px;
+      border-radius: 9px;
+      font-weight: bold;
+      margin-top: 8px;
+      transition: background .2s ease;
+    }
+
+    #mathQuiz .quiz-video-link:hover { background: #a51f1f; }
+
+    #mathQuiz .quiz-review-item {
+      border: 1px solid #ddd;
+      padding: 14px;
+      border-radius: 10px;
+      margin: 12px 0;
+      line-height: 1.9;
+    }
+
+    #mathQuiz .correct-answer {
+      color: #087c35;
+      font-weight: bold;
+    }
+
+    #mathQuiz .wrong-answer {
+      color: #b42318;
+      font-weight: bold;
+    }
+
+    @media (max-width: 600px) {
+      header h1 { font-size: 24px; }
+      .panel { padding: 16px; }
     }
   </style>
 </head>
@@ -228,27 +311,16 @@
 
       <div class="video-list">
         <a class="btn" href="https://youtu.be/NTGsBrmkzv0?si=WYNNL03eboQyC_20" target="_blank" rel="noopener">حل النموذج ١</a>
-
         <a class="btn" href="https://youtu.be/hMBpzHRqKzg?si=utRWm_kzSzqIRZNi" target="_blank" rel="noopener">حل النموذج ٢</a>
-
         <a class="btn" href="https://youtu.be/AyPcnnt1FcY?si=i9MIAw5K7c_3QjU" target="_blank" rel="noopener">حل النموذج ٣</a>
-
         <a class="btn" href="https://youtu.be/8YeuHdXV7Yo?si=gj9NA00ajptTeQVF" target="_blank" rel="noopener">حل النموذج ٤</a>
-
         <a class="btn" href="https://youtu.be/0XEMDrm5FMo?si=Rn2hIDBpvMZe2ju4" target="_blank" rel="noopener">حل النموذج ٥</a>
-
         <a class="btn" href="https://youtu.be/DdEdxYqprzE?si=aQut0aSh-j08YObg" target="_blank" rel="noopener">حل النموذج ٦</a>
-
         <a class="btn" href="https://youtu.be/g_XbgjIK2PI?si=AY-JaqsRDWfYg0r7" target="_blank" rel="noopener">حل النموذج ٧</a>
-
         <a class="btn" href="https://youtu.be/xguJqfzD51A?si=RMiez0AMhEj0bSBk" target="_blank" rel="noopener">حل النموذج ٨</a>
-
         <a class="btn" href="https://youtu.be/gt46ncu9o_s?si=ZJrTFedMyuILhEhr" target="_blank" rel="noopener">حل النموذج ٩</a>
-
         <a class="btn" href="https://youtu.be/-SvhnNzl1Xw?si=ygUjATYaeFv8qS2q" target="_blank" rel="noopener">حل النموذج ١٠</a>
-
         <a class="btn" href="https://youtu.be/_WynFueRauE?si=wPJUXGRZJodLkVAT" target="_blank" rel="noopener">حل النموذج ١١</a>
-
         <a class="btn" href="https://youtu.be/MITl4EtYBZ8?si=GjiY1FHND0QYok5-" target="_blank" rel="noopener">حل النموذج ١٢</a>
       </div>
     </section>
@@ -256,36 +328,52 @@
     <section class="panel">
       <span class="grade">العام الدراسي ٢٠٢٧</span>
       <h2>🎓 شرح ومراجعة رياضيات الصف الثاني الإعدادي ٢٠٢٧</h2>
-
       <p class="muted">
         سيتم إضافة شرح الدروس والفيديوهات والامتحانات والتدريبات
         الخاصة بالعام الدراسي ٢٠٢٧ تباعًا.
       </p>
-
       <p class="muted">
         تابع الأكاديمية باستمرار حتى لا يفوتك أي درس جديد.
       </p>
     </section>
 
-    <section class="panel">
-      <h2>✍️ اختبر نفسك</h2>
-      <p>أجب عن السؤال التالي واختبر معلوماتك في الرياضيات.</p>
+    <!-- الاختبار الإلكتروني التفاعلي الجديد -->
+    <section class="panel" id="mathQuiz">
+      <h2>📝 الاختبار الإلكتروني التفاعلي للصف الثاني الإعدادي</h2>
+      <p>
+        اختبر مستواك في الرياضيات من خلال 35 سؤالًا.
+        أجب عن الأسئلة ثم اضغط على إنهاء الاختبار لمعرفة نتيجتك ومراجعة إجاباتك.
+      </p>
 
-      <div class="question">
-        <strong>إذا كان ٥ + ٣ = ؟</strong>
+      <div class="quiz-progress" id="quizProgress"></div>
+      <div class="quiz-q" id="quizQuestion"></div>
 
-        <input
-          type="number"
-          id="quizAnswer"
-          placeholder="اكتب الإجابة هنا"
-        >
-
-        <button class="btn" onclick="gradeQuiz()">
-          تأكد من إجابتك
+      <div class="quiz-navigation">
+        <button class="btn secondary" type="button" id="quizPrev">السابق</button>
+        <button class="btn" type="button" id="quizNext">السؤال التالي</button>
+        <button class="btn" type="button" id="quizSubmit" hidden>
+          إنهاء الاختبار وتصحيح الإجابات
         </button>
-
-        <p class="result" id="quizResult"></p>
       </div>
+
+      <p class="result" id="quizResult" aria-live="polite"></p>
+
+      <div class="quiz-result-message" id="quizMessage" hidden>
+        <h3>مع تحياتي مستر محمد ربيع 🌹</h3>
+        <p>
+          نتمنى كتابة اسمك ودرجتك في تعليقات الفيديو،
+          حتى نعرف أبطالنا المتفوقين ونتابع تقدمكم.
+        </p>
+        <a
+          class="quiz-video-link"
+          href="https://youtu.be/o7G8r4ArN9g"
+          target="_blank"
+          rel="noopener noreferrer">
+          اكتب اسمك ودرجتك في تعليقات الفيديو
+        </a>
+      </div>
+
+      <div id="quizReview"></div>
     </section>
 
     <section class="panel">
@@ -293,13 +381,7 @@
       <p class="muted">
         للاستفسارات والمتابعة يمكنك التواصل معنا عبر واتساب.
       </p>
-
-      <a
-        class="whatsapp"
-        href="https://wa.me/201281281205"
-        target="_blank"
-        rel="noopener"
-      >
+      <a class="whatsapp" href="https://wa.me/201281281205" target="_blank" rel="noopener">
         تواصل معنا عبر واتساب
       </a>
     </section>
@@ -311,21 +393,314 @@
   </footer>
 
   <script>
-    function gradeQuiz() {
-      const answer = document.getElementById("quizAnswer").value;
-      const result = document.getElementById("quizResult");
-
-      if (answer === "") {
-        result.textContent = "من فضلك اكتب الإجابة أولاً.";
-        result.style.color = "#d97706";
-      } else if (Number(answer) === 8) {
-        result.textContent = "أحسنت! إجابة صحيحة 🌟";
-        result.style.color = "green";
-      } else {
-        result.textContent = "حاول مرة أخرى، بالتوفيق!";
-        result.style.color = "red";
+    const quizQuestions = [
+      {
+        q: "عند اكمال المربع للمقدار x²+6x نضيف الية .....",
+        o: ["6", "9", "10", "12"],
+        a: 1
+      },
+      {
+        q: "تحليل المقدار x²-ax+bx-ab هو .......",
+        o: ["(x-b)(x-a)", "(x+b)(x-a)", "(x+b)(x+a)", "(x-b)(x+a)"],
+        a: 1
+      },
+      {
+        q: "المقدار 36x²+kx+1 مربع كامل فان k تساوى.......",
+        o: ["6±", "6", "12±", "12"],
+        a: 2
+      },
+      {
+        q: "ABC مثلث فية m(A)=80 , m(C)=50 فان المثلث يكون .......",
+        o: ["متساوي الساقين", "متساوي الاضلاع", "مختلف الاضلاع", "قائم الزاوية"],
+        a: 0
+      },
+      {
+        q: "مجموعه حل المعادلة x²+9=0 هى .........",
+        o: ["∅", "{3}", "{3-}", "{3,3-}"],
+        a: 0
+      },
+      {
+        q: "اذا كان الحد الاعلى لمجموعة 18 ومركزها 16 فإن حدها الأدنى يساوى ........",
+        o: ["11", "15", "14", "12"],
+        a: 2
+      },
+      {
+        q: "اذا كان a+b=3 , a-b=2 فإن b²-a²= .......",
+        o: ["1", "6", "5", "6-"],
+        a: 3
+      },
+      {
+        q: "............. = ]2,5[ ∪ {2,5}",
+        o: ["]2,5[", "[2,5[", "]2,5]", "[2,5]"],
+        a: 3
+      },
+      {
+        q: "نقطة تقاطع متوسطات المثلث تقسم المتوسط بنسبة .......... من جهة الرأس",
+        o: ["2:1", "1:2", "3:1", "1:3"],
+        a: 0
+      },
+      {
+        q: "اى الاضلاع الاتية تصلح ان تكون أضلاع مثلث منفرج الزاوية",
+        o: ["5,5,5", "15,8,17", "6,5,3", "4,7,7"],
+        a: 2
+      },
+      {
+        q: "x+y=5 , x²-y²=20 فإن y-x= .........",
+        o: ["4", "5", "4-", "5-"],
+        a: 2
+      },
+      {
+        q: "مثلث متساوي الساقين قياس زاوية الرأس تساوى 80 فإن قباس احدى زوايا القاعدة تساوى ......",
+        o: ["70", "100", "40", "50"],
+        a: 3
+      },
+      {
+        q: "المنوال للقيم 7,6,4,3,7,8 يساوى ........",
+        o: ["8", "3", "7", "4"],
+        a: 2
+      },
+      {
+        q: "زاويتان متتامتان ومتطابقتان فإن قياس كل منهما يساوى.......",
+        o: ["90", "50", "45", "60"],
+        a: 2
+      },
+      {
+        q: "ABC مثلث قائم الزاوية فى B فية AB=4 , BC=3 فإن طول AC يساوى .......",
+        o: ["3", "4", "7", "5"],
+        a: 3
+      },
+      {
+        q: "مجموعه حل المعادلة 2x³-1=15 فى R هو",
+        o: ["{2}", "{3}", "{2,2-}", "∅"],
+        a: 0
+      },
+      {
+        q: "تحليل المقدار 2x²-7x+6 هو .....",
+        o: ["(2-x)(2x-3)", "(x-2)(2x+3)", "(x+2)(2x-3)", "(x+2)(2x+3)"],
+        a: 0
+      },
+      {
+        q: "اذا كان الوسط الحسابى للقيم 6 ،8,9,11,k هو 7 فإن قيمة k تساوى .......",
+        o: ["1", "2", "3", "4"],
+        a: 0
+      },
+      {
+        q: "اذا كان الوسيط للقيم k-3 , k+2 , k-4 هو 7 فإن قيمة k تساوى .......",
+        o: ["7", "3", "4", "10"],
+        a: 3
+      },
+      {
+        q: "كل زاوية من زوايا القاعدة في المثلث المتساوى الساقين يجب أن تكون.........",
+        o: ["حادة", "منفرجة", "قائمة", "مستقيمة"],
+        a: 0
+      },
+      {
+        q: "يسمى المستقيم العمودي على قطعة مستقيمة من منتصفها ب ........",
+        o: ["متوسط", "عمود", "منصف", "محور تماثل"],
+        a: 3
+      },
+      {
+        q: "عدد محاور تماثل المعين يساوى .....",
+        o: ["0", "1", "2", "4"],
+        a: 2
+      },
+      {
+        q: "ABC مثلث قائم الزاوية في B وقياس الزاوية A يساوى 30 وطول BC يساوى 5سم فإن طول AC يساوى .......",
+        o: ["2.5", "10", "15", "12"],
+        a: 1
+      },
+      {
+        q: "عدد أضلاع المضلع الذى قياس احدى زواياه الخارجة 18 هو .....",
+        o: ["10", "18", "20", "25"],
+        a: 2
+      },
+      {
+        q: "عدد أضلاع المضلع الذى مجموع قياسات زواياه الداخلة 1440 هو .....",
+        o: ["9", "10", "11", "12"],
+        a: 1
+      },
+      {
+        q: "اذا كان مثلث ABC ≡ مثلث EFG وكان قياس زاوية A تساوى 56 وقياس زاوية F تساوى 64 فإن قياس زاوية C تساوى .......",
+        o: ["60", "70", "80", "50"],
+        a: 0
+      },
+      {
+        q: "..........= ]R ∪ ]-3,4",
+        o: ["]3,4-]", "]3,4-[", "[3,4-]", "R"],
+        a: 3
+      },
+      {
+        q: "ربع العدد 2¹⁴ هو .........",
+        o: ["2⁷", "2¹⁰", "2¹²", "2⁸"],
+        a: 2
+      },
+      {
+        q: "اذا كان 5ⁿ=15 فإن 5ⁿ-¹",
+        o: ["5", "3", "8", "1"],
+        a: 1
+      },
+      {
+        q: "المعكوس الضربى للعدد 2- 3√ هو ......",
+        o: ["3√ -2", "2+3√", "2-3√-", "2-3√"],
+        a: 2
+      },
+      {
+        q: "اذا كان 2-5√=x=√5+2 , y فإن y-x= .........",
+        o: ["4-", "5√2", "4", "5√2-"],
+        a: 0
+      },
+      {
+        q: "اذا كانت النقطة C تقع على محور تماثل AB فإن BC- AC = .........",
+        o: ["1", "0", "2", "4"],
+        a: 1
+      },
+      {
+        q: "مجموع قياسات الزوايا الخارجة للشكل الخماسى يساوى .......",
+        o: ["540", "450", "120", "360"],
+        a: 3
+      },
+      {
+        q: "ABC∆ أطوال أضلاعة 3x , 4x , 5x فإن نوع المثلث هو ......",
+        o: ["قائم الزاوية", "حاد الزوايا", "منفرج الزاوية", "متساوى الساقين"],
+        a: 0
+      },
+      {
+        q: "ABC ∆ فية AB²<AC²+BC² فإن نوع المثلث",
+        o: ["حاد الزوايا", "قائم الزاوية", "منفرج الزاوية", "متساوى الاضلاع"],
+        a: 0
       }
+    ];
+
+    const quizLetters = ["أ", "ب", "ج", "ء"];
+    let quizAnswers = Array(quizQuestions.length).fill(null);
+    let quizIndex = 0;
+    let quizFinished = false;
+
+    function renderQuizQuestion() {
+      const holder = document.getElementById("quizQuestion");
+      const progress = document.getElementById("quizProgress");
+      const previous = document.getElementById("quizPrev");
+      const next = document.getElementById("quizNext");
+      const submit = document.getElementById("quizSubmit");
+      const item = quizQuestions[quizIndex];
+
+      progress.textContent =
+        "السؤال " + (quizIndex + 1) + " من " + quizQuestions.length +
+        " — تمت الإجابة عن " +
+        quizAnswers.filter(value => value !== null).length + " سؤالًا";
+
+      holder.replaceChildren();
+
+      const heading = document.createElement("p");
+      heading.className = "quiz-question-title";
+      heading.textContent = (quizIndex + 1) + ". " + item.q;
+      holder.appendChild(heading);
+
+      item.o.forEach((option, optionIndex) => {
+        const label = document.createElement("label");
+        label.className = "quiz-option";
+
+        const radio = document.createElement("input");
+        radio.type = "radio";
+        radio.name = "currentQuizAnswer";
+        radio.value = String(optionIndex);
+        radio.checked = quizAnswers[quizIndex] === optionIndex;
+
+        radio.addEventListener("change", () => {
+          quizAnswers[quizIndex] = optionIndex;
+          renderQuizQuestion();
+        });
+
+        const optionText = document.createElement("span");
+        optionText.textContent = quizLetters[optionIndex] + ") " + option;
+
+        label.append(radio, optionText);
+        holder.appendChild(label);
+      });
+
+      previous.disabled = quizIndex === 0;
+      next.hidden = quizIndex === quizQuestions.length - 1;
+      submit.hidden = quizIndex !== quizQuestions.length - 1;
     }
+
+    function finishQuiz() {
+      if (quizFinished) return;
+
+      const unanswered = quizAnswers.filter(value => value === null).length;
+
+      if (unanswered > 0) {
+        document.getElementById("quizResult").textContent =
+          "لم تجب عن " + unanswered +
+          " سؤالًا. يمكنك الرجوع إليها أو إنهاء الاختبار بعد الإجابة عنها.";
+        return;
+      }
+
+      quizFinished = true;
+
+      const score = quizQuestions.reduce((total, question, index) => {
+        return total + (quizAnswers[index] === question.a ? 1 : 0);
+      }, 0);
+
+      document.getElementById("quizResult").textContent =
+        "نتيجتك: " + score + " من " + quizQuestions.length;
+
+      document.getElementById("quizMessage").hidden = false;
+      document.getElementById("quizQuestion").hidden = true;
+      document.getElementById("quizProgress").hidden = true;
+      document.getElementById("quizPrev").hidden = true;
+      document.getElementById("quizNext").hidden = true;
+      document.getElementById("quizSubmit").hidden = true;
+
+      const review = document.getElementById("quizReview");
+      review.replaceChildren();
+
+      const title = document.createElement("h3");
+      title.textContent = "مراجعة الإجابات";
+      review.appendChild(title);
+
+      quizQuestions.forEach((question, index) => {
+        const entry = document.createElement("div");
+        entry.className = "quiz-review-item";
+
+        const prompt = document.createElement("p");
+        prompt.textContent = (index + 1) + ". " + question.q;
+
+        const chosen = document.createElement("p");
+        chosen.textContent =
+          "إجابتك: " + quizLetters[quizAnswers[index]] +
+          ") " + question.o[quizAnswers[index]];
+        chosen.className =
+          quizAnswers[index] === question.a
+            ? "correct-answer"
+            : "wrong-answer";
+
+        const correct = document.createElement("p");
+        correct.textContent =
+          "الإجابة الصحيحة: " + quizLetters[question.a] +
+          ") " + question.o[question.a];
+
+        entry.append(prompt, chosen, correct);
+        review.appendChild(entry);
+      });
+    }
+
+    document.getElementById("quizPrev").addEventListener("click", () => {
+      if (quizIndex > 0) {
+        quizIndex--;
+        renderQuizQuestion();
+      }
+    });
+
+    document.getElementById("quizNext").addEventListener("click", () => {
+      if (quizIndex < quizQuestions.length - 1) {
+        quizIndex++;
+        renderQuizQuestion();
+      }
+    });
+
+    document.getElementById("quizSubmit").addEventListener("click", finishQuiz);
+
+    renderQuizQuestion();
   </script>
 
 </body>
