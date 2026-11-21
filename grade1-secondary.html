@@ -2,258 +2,132 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>رياضيات الصف الأول الثانوي ٢٠٢٧ | شرح مستر محمد ربيع</title>
-
-  <meta name="description" content="شرح رياضيات الصف الأول الثانوي مع مستر محمد ربيع، دروس الأعداد المركبة والمعادلات التربيعية وإشارة الدالة والدوال المثلثية والتشابه، مع فيديوهات شرح مبسطة ومراجعة مذكرة توجيه الرياضيات ٢٠٢٧.">
-
-  <meta name="keywords" content="رياضيات الصف الأول الثانوي, شرح رياضيات أولى ثانوي, مستر محمد ربيع, الأعداد المركبة, المعادلات التربيعية, إشارة الدالة, الدوال المثلثية, تشابه المثلثات">
-
-  <meta name="author" content="مستر محمد ربيع">
-  <meta name="robots" content="index, follow">
-
-  <link rel="canonical" href="https://phnrabi-max.github.io/grade1-secondary.html">
-
-  <meta property="og:type" content="website">
-  <meta property="og:locale" content="ar_EG">
-  <meta property="og:title" content="رياضيات الصف الأول الثانوي ٢٠٢٧ | مستر محمد ربيع">
-  <meta property="og:description" content="شاهد شرح دروس الرياضيات للصف الأول الثانوي مع مستر محمد ربيع.">
-  <meta property="og:url" content="https://phnrabi-max.github.io/grade1-secondary.html">
-  <meta property="og:image" content="https://phnrabi-max.github.io/teacher.jpg">
-
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8JB3G7MD6C"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-8JB3G7MD6C');
-  </script>
-  <!-- نهاية Google Analytics -->
-
-  <link rel="stylesheet" href="style.css">
-
-  <style>
-    .unit-section {
-      margin-top: 25px;
-      padding: 18px;
-      background: #ffffff;
-      border: 1px solid #e2e8f0;
-      border-radius: 14px;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.05);
-    }
-
-    .unit-title {
-      color: #07549a;
-      background: #e8f3ff;
-      padding: 12px 16px;
-      border-radius: 10px;
-      margin: 0 0 18px;
-      font-size: 21px;
-    }
-
-    .video-list {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 12px;
-    }
-
-    .video-list .btn {
-      display: block;
-      background: #0876bd;
-      color: white;
-      text-decoration: none;
-      text-align: center;
-      padding: 12px 15px;
-      border-radius: 9px;
-      font-weight: bold;
-      transition: 0.2s;
-      line-height: 1.8;
-    }
-
-    .video-list .btn:hover {
-      background: #064f88;
-    }
-
-    .section-description {
-      color: #64748b;
-      margin-bottom: 18px;
-      line-height: 1.8;
-    }
-
-    .memo-section {
-      margin-top: 25px;
-    }
-
-    @media (max-width: 600px) {
-      .unit-section {
-        padding: 13px;
-      }
-
-      .unit-title {
-        font-size: 19px;
-      }
-
-      .video-list {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>رياضيات الصف الأول الثانوي ٢٠٢٧ | مستر محمد ربيع</title>
+<meta name="description" content="اختر الترم الأول أو الثاني لمتابعة شرح رياضيات الصف الأول الثانوي مع مستر محمد ربيع.">
+<link rel="canonical" href="https://phnrabi-max.github.io/grade1-secondary.html">
+<style>
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: Tahoma, Arial, sans-serif;
+  background: #f3f6fb;
+  color: #172033;
+  line-height: 1.8;
+}
+header {
+  background: linear-gradient(135deg, #073b78, #0876bd);
+  color: white;
+  text-align: center;
+  padding: 40px 15px;
+}
+header h1 { margin: 0; font-size: 28px; }
+main {
+  width: 92%;
+  max-width: 850px;
+  margin: 30px auto;
+}
+.panel {
+  background: white;
+  padding: 28px 20px;
+  margin-bottom: 22px;
+  border-radius: 14px;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.07);
+  text-align: center;
+}
+h2 { color: #07549a; }
+.muted { color: #64748b; }
+.terms {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 18px;
+  margin-top: 25px;
+}
+.term-card {
+  display: block;
+  text-decoration: none;
+  color: white;
+  padding: 30px 18px;
+  border-radius: 15px;
+  transition: transform .2s ease;
+}
+.term-card:hover { transform: translateY(-5px); }
+.term-card h3 {
+  color: white;
+  font-size: 23px;
+  margin: 8px 0;
+}
+.term-card p { color: white; margin: 8px 0; }
+.term-icon { font-size: 42px; }
+.term1 {
+  background: linear-gradient(135deg, #174A91, #2678C8);
+}
+.term2 {
+  background: linear-gradient(135deg, #087C83, #12A6A0);
+}
+.btn {
+  display: block;
+  background: #0876bd;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  padding: 12px 15px;
+  border-radius: 9px;
+  font-weight: bold;
+  margin-top: 20px;
+}
+footer {
+  background: #073b78;
+  color: white;
+  text-align: center;
+  padding: 18px;
+  margin-top: 35px;
+}
+</style>
 </head>
-
 <body>
 
 <header>
-  <h1>الصف الأول الثانوي</h1>
-  <p>شرح مبسّط وتدريب مستمر مع مستر محمد ربيع</p>
+  <h1>رياضيات الصف الأول الثانوي</h1>
+  <p>أكاديمية مستر محمد ربيع</p>
+  <p>شرح مبسط – تدريبات شاملة – مراجعات واختبارات</p>
 </header>
 
 <main>
-
-  <p>
-    <a class="btn secondary" href="index.html">
-      ← الرجوع للصفحة الرئيسية
-    </a>
+<section class="panel">
+  <h2>📚 اختر الترم الدراسي</h2>
+  <p class="muted">
+    أهلاً بك في صفحة الصف الأول الثانوي.
+    اختر الترم الذي تريد الدراسة فيه للوصول إلى الشروحات والتدريبات والاختبارات.
   </p>
 
-  <section class="panel">
+  <div class="terms">
 
-    <h2>📺 فيديوهات شرح الرياضيات</h2>
-
-    <p class="section-description">
-      اختر الوحدة التي تريد دراستها، ثم اضغط على زر الدرس لمشاهدة الشرح مباشرة.
-    </p>
-
-    <!-- الوحدة الأولى -->
-
-    <section class="unit-section">
-
-      <h3 class="unit-title">📘 الوحدة الأولى</h3>
-
-      <div class="video-list">
-
-        <a class="btn" href="https://youtu.be/ODLLT4ubKgU?si=fR2gGEMHxdFNMbzz" target="_blank" rel="noopener">
-          مقدمة عن الأعداد المركبة
-        </a>
-
-        <a class="btn" href="https://youtu.be/Z0Q_dcDP0YQ?si=w77qSeGPKfdN435G" target="_blank" rel="noopener">
-          تحديد نوع جذري المعادلة التربيعية
-        </a>
-
-        <a class="btn" href="https://youtu.be/FG_Y7jQxjh8?si=kNqbaBZdvokp3L7I" target="_blank" rel="noopener">
-          العلاقة بين جذري المعادلة التربيعية ومعاملات حدودها
-        </a>
-
-        <a class="btn" href="https://youtu.be/RRdMwJmxjVM?si=mJJatgA2eh1uhAab" target="_blank" rel="noopener">
-          تكوين المعادلة التربيعية متى علم جذراها
-        </a>
-
-        <a class="btn" href="https://youtu.be/ld6X8c5j79E?si=yGZfkO74F_wSYV82" target="_blank" rel="noopener">
-          إشارة الدالة
-        </a>
-
-      </div>
-    </section>
-
-    <!-- الوحدة الثانية -->
-
-    <section class="unit-section">
-
-      <h3 class="unit-title">📗 الوحدة الثانية</h3>
-
-      <div class="video-list">
-
-        <a class="btn" href="https://youtu.be/eyS-PtSYGIk?si=fmeAnWRJyhnE6Za5" target="_blank" rel="noopener">
-          الزاوية الموجهة
-        </a>
-
-        <a class="btn" href="https://youtu.be/5PP0cH6iq_g?si=QiYEfYQB7Z7Uiv5-" target="_blank" rel="noopener">
-          القياس الستيني والدائري لزاوية
-        </a>
-
-        <a class="btn" href="https://youtu.be/m1Pfrut8Oxw?si=PM4MhR24O8XlzZVc" target="_blank" rel="noopener">
-          الدوال المثلثية
-        </a>
-
-        <a class="btn" href="https://youtu.be/6xBqdTYC4zA?si=fllYatqBOHOGAhhk" target="_blank" rel="noopener">
-          الزوايا المنتسبة
-        </a>
-
-        <a class="btn" href="https://youtu.be/77Fv3a6n2hk" target="_blank" rel="noopener">
-          التمثيل البياني للدوال المثلثية
-        </a>
-
-      </div>
-    </section>
-
-    <!-- الوحدة الثالثة -->
-
-    <section class="unit-section">
-
-      <h3 class="unit-title">📙 الوحدة الثالثة</h3>
-
-      <div class="video-list">
-
-        <a class="btn" href="https://youtu.be/z4xm0I8VCEA?si=7BVigJ8c4U11IH8B" target="_blank" rel="noopener">
-          تشابه المضلعات
-        </a>
-
-        <a class="btn" href="https://youtu.be/GSr5srEUgu8?si=I4TiWhZy06LtMIZH" target="_blank" rel="noopener">
-          تشابه المثلثات
-        </a>
-
-        <a class="btn" href="https://youtu.be/qakJOTNLLVU?si=Iy7feuirsz809wT2" target="_blank" rel="noopener">
-          العلاقة بين سطحي مضلعين متشابهين
-        </a>
-
-        <a class="btn" href="https://youtu.be/DvNfDx5n9R8?si=XvCBRxxyTyGyAbSY" target="_blank" rel="noopener">
-          تطبيقات التشابه في الدائرة
-        </a>
-
-      </div>
-    </section>
-
-  </section>
-
-  <!-- حل مذكرة التوجيه -->
-
-  <section class="panel memo-section">
-
-    <h2>📝 حل مذكرة توجيه الرياضيات ٢٠٢٧</h2>
-
-    <p class="section-description">
-      تابع شرح وحل مذكرة توجيه الرياضيات للصف الأول الثانوي مع مستر محمد ربيع.
-    </p>
-
-    <p class="muted">
-      سيتم إضافة روابط فيديوهات حل المذكرة هنا عند تجهيزها.
-    </p>
-
-  </section>
-
-  <!-- التواصل -->
-
-  <section class="panel">
-
-    <h2>📞 تواصل مع مستر محمد ربيع</h2>
-
-    <p class="section-description">
-      للاستفسارات والمتابعة يمكنك التواصل معنا عبر واتساب.
-    </p>
-
-    <a class="btn" href="https://wa.me/201281281205" target="_blank" rel="noopener">
-      تواصل معايا على واتساب
+    <a class="term-card term1" href="grade1-secondary-term1.html">
+      <div class="term-icon">📘</div>
+      <h3>الترم الأول</h3>
+      <p>شرح الدروس والفيديوهات والتدريبات والمذكرات والاختبارات.</p>
+      <strong>الدخول إلى محتوى الترم الأول ←</strong>
     </a>
 
-  </section>
+    <a class="term-card term2" href="grade1-secondary-term2.html">
+      <div class="term-icon">📗</div>
+      <h3>الترم الثاني</h3>
+      <p>شرح الدروس والفيديوهات والتدريبات والاختبارات.</p>
+      <strong>الدخول إلى محتوى الترم الثاني ←</strong>
+    </a>
 
-  <footer>
-    أكاديمية مستر محمد ربيع
-  </footer>
+  </div>
 
+  <a class="btn" href="index.html">العودة إلى الصفحة الرئيسية</a>
+</section>
 </main>
+
+<footer>
+  أكاديمية مستر محمد ربيع
+  <p>الرياضيات ببساطة… افهم، اتدرّب، واتفوّق</p>
+</footer>
 
 </body>
 </html>
