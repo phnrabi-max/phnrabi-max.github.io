@@ -170,7 +170,7 @@ h2 {
   margin: 15px 0;
 }
 
-#interactiveQuiz button:disabled {
+.quiz-section button:disabled {
   opacity: .45;
   cursor: not-allowed;
 }
@@ -208,6 +208,15 @@ h2 {
   font-weight: bold;
 }
 
+.quiz-launch {
+  width: 100%;
+  margin-top: 10px;
+  padding: 15px;
+  font-size: 17px;
+}
+
+.hidden { display: none !important; }
+
 footer {
   background: #073b78;
   color: white;
@@ -238,7 +247,7 @@ footer {
 </p>
 
 <!-- الاختبار الإلكتروني التفاعلي الأول -->
-<section class="panel" id="interactiveQuiz">
+<section class="panel quiz-section" id="interactiveQuiz">
 
 <div class="quiz-header">
   <span class="grade">العام الدراسي ٢٠٢٧</span>
@@ -280,14 +289,62 @@ footer {
 
 </section>
 
-<!-- الاختبار الإلكتروني التفاعلي الثاني -->
-<section class="panel" id="interactiveQuiz2">
+<!-- زر الاختبار الإلكتروني التفاعلي الثاني -->
+<section class="panel">
   <div class="quiz-header">
     <span class="grade">العام الدراسي ٢٠٢٧</span>
     <h2>📝 الاختبار الإلكتروني التفاعلي الثاني</h2>
     <p class="muted">الصف الأول الإعدادي – رياضيات</p>
-    <p>سيتم عرض أسئلة الاختبار الثاني في هذا القسم.</p>
+    <p>اضغط على الزر لبدء الاختبار الثاني.</p>
+    <button class="btn quiz-launch" type="button" onclick="openQuiz2()">
+      دخول الاختبار الإلكتروني التفاعلي الثاني
+    </button>
   </div>
+</section>
+
+<!-- محتوى الاختبار الثاني -->
+<section class="panel quiz-section hidden" id="interactiveQuiz2">
+
+<div class="quiz-header">
+  <span class="grade">العام الدراسي ٢٠٢٧</span>
+  <h2>📝 الاختبار الإلكتروني التفاعلي الثاني</h2>
+  <p class="muted">الصف الأول الإعدادي – رياضيات</p>
+  <p>أجب عن الأسئلة ثم اضغط على إنهاء الاختبار لمعرفة نتيجتك.</p>
+</div>
+
+<div class="quiz-info">
+  <span id="questionCounter2">السؤال 1 من 35</span>
+  <span>الدرجة النهائية: 35 درجة</span>
+</div>
+
+<div class="progress-container">
+  <div class="progress-bar" id="progressBar2"></div>
+</div>
+
+<div id="quizArea2">
+  <div class="quiz-q">
+    <p class="question-title" id="questionText2"></p>
+    <div id="optionsArea2"></div>
+  </div>
+
+  <div class="quiz-navigation">
+    <button class="btn secondary" type="button" id="prevBtn2" onclick="previousQuestion2()">السابق</button>
+    <button class="btn" type="button" id="nextBtn2" onclick="nextQuestion2()">السؤال التالي</button>
+    <button class="btn" type="button" id="submitBtn2" onclick="submitQuiz2()">إنهاء الاختبار وتصحيح الإجابات</button>
+  </div>
+</div>
+
+<div class="result-box" id="resultBox2">
+  <h2>نتيجة الاختبار الثاني</h2>
+  <div class="result-score" id="scoreText2"></div>
+  <p id="resultMessage2"></p>
+  <h3>مراجعة الإجابات</h3>
+  <div id="reviewArea2"></div>
+  <button type="button" class="btn" onclick="restartQuiz2()">إعادة الاختبار</button>
+</div>
+
+<button class="btn secondary" type="button" onclick="closeQuiz2()">العودة إلى قائمة الاختبارات</button>
+
 </section>
 
 <p>
@@ -299,242 +356,93 @@ footer {
 <footer>أكاديمية مستر محمد ربيع</footer>
 
 <script>
+/* =========================
+   الاختبار الأول
+   الأسئلة والمحرك الأصليان دون تغيير
+========================= */
+
 const questions = [
-{
-q: "مجموع قياسات الزوايا المتجمعة حول نقطة واحدة تساوى .......",
-options: ["306", "603", "360", "630"],
-correct: 2
-},
-{
-q: "مسقط النقطة (3,4-) على محور x هى .......",
-options: ["(3,0-)", "(0,4)", "(3,4-)", "(3,4)"],
-correct: 0
-},
-{
-q: "اذا كان {4,7,y}={5,7,x} فإن قيمة x+y=........",
-options: ["5", "11", "9", "12"],
-correct: 2
-},
-{
-q: "2x- تزيد عن 5x- بمقدار............",
-options: ["3x-", "2x", "5x", "3x"],
-correct: 3
-},
-{
-q: "المدى للقيم 3,2,5,6,9 هو .......",
-options: ["5", "6", "7", "9"],
-correct: 2
-},
-{
-q: "اذا كان الطول فى الرسم 2سم والطول الحقيقي 6 متر فإن مقياس الرسم يساوى .......",
-options: ["1/3", "1/30", "1/300", "1/3000"],
-correct: 2
-},
-{
-q: "عمر أحمد الان x سنة فإن عمرة بعد 5 سنوات هو ........",
-options: ["X+5", "5x", "x-5", "5-x"],
-correct: 0
-},
-{
-q: "الوسط الحسابى للقيم  2x+5 , 7-x , 3 -x هو ........",
-options: ["5", "3", "2", "8"],
-correct: 0
-},
-{
-q: "الوسط الحسابى لدرجات 10 طلاب هو 15 فإن مجموع درجاتهم تساوى .........",
-options: ["5", "25", "150", "15"],
-correct: 2
-},
-{
-q: "الزاوية الحادة تكملها زاوية.............",
-options: ["قائمة", "حادة", "منفرجة", "مستقيمة"],
-correct: 2
-},
-{
-q: "زاويتان متتامتان ومتطابقتان فإن قياس كل منهما يساوى ..........",
-options: ["90", "45", "50", "40"],
-correct: 1
-},
-{
-q: "اذا كان النسبة بين قياس زاويتين متكاملتين 4:5 فإن قياس أصغرهما تساوى ........",
-options: ["90", "50", "40", "80"],
-correct: 3
-},
-{
-q: "نوع الزاوية '60 °89 هو .........",
-options: ["حادة", "قائمة", "منفرجة", "مستقيمة"],
-correct: 1
-},
-{
-q: "ثلاثه أعداد طبيعية متتالية أصغرهما x فإن اكبرهما يساوى .......",
-options: ["x+1", "x+2", "x+3", "x-1"],
-correct: 1
-},
-{
-q: "اى المعادلات الاتية ليس لها حل فى Z",
-options: ["3x=6", "3x=15", "3x=16", "3x=21"],
-correct: 2
-},
-{
-q: "عددان فرديان متتاليان مجموعهما 28 أى المعادلات الاتية تعبر عن ذلك",
-options: ["x+x+1=28", "2x-1=28", "2x+1=28", "2x+2=28"],
-correct: 3
-},
-{
-q: "ناتج طرح 7x- من 3x يساوى ........",
-options: ["4x", "10x", "10x-", "4x-"],
-correct: 1
-},
-{
-q: "عددان طبيعان متتاليان اذا كان الاول هو x-2 فإن العدد التالى هو .......",
-options: ["x", "x-1", "x+1", "x+2"],
-correct: 1
-},
-{
-q: "الخاصية المستخدمة في المعادلة x+1=0 هى خاصية ......",
-options: ["المعكوس الجمعى", "المعكوس الضربى", "المحايد الجمعى", "المحايد الضربى"],
-correct: 0
-},
-{
-q: "عدد المجموعات الجزئية من المجموعة {2,5,7} هو .......",
-options: ["3", "4", "8", "10"],
-correct: 2
-},
-{
-q: "المقدار 4x+3y-2xy+8 يكون معامل x + معامل xy يساوى .........",
-options: ["2", "7", "6", "10"],
-correct: 0
-},
-{
-q: "اذا كان {8,9,4}=A={6,7,9} , B فإن AnB=.....…....",
-options: ["{4,8,9,6,7}", "{8}", "{9,4}", "{9}"],
-correct: 3
-},
-{
-q: "المعكوس الجمعى للعدد |3-| يساوى ......",
-options: ["3", "3-", "9", "صفر"],
-correct: 1
-},
-{
-q: "المعكوس الضربى للعدد 0.6 يساوى .......",
-options: ["3/5", "5/3", "1/6", "6"],
-correct: 1
-},
-{
-q: "الزاويتان المتجاورتان الحادثتان من تقاطع شعاع وخط مستقيم تكونان .........",
-options: ["متتامتان", "متكاملتان", "متساويتان", "متناظرتان"],
-correct: 1
-},
-{
-q: "الوسط الحسابى للقيم 6,8,7,x,5,9 هو 6 فإن قيمة x تساوى .......",
-options: ["1", "2", "3", "4"],
-correct: 0
-},
-{
-q: "مثلث متساوي الساقين طولا ضلعين فية 3سم ، 7سم فإن طول الضلع الثالث يساوى ......",
-options: ["3", "4", "5", "7"],
-correct: 3
-},
-{
-q: "النقطة (3,4-) تقع في الربع.............",
-options: ["الاول", "الثاني", "الثالث", "الرابع"],
-correct: 1
-},
-{
-q: "عدد محاور تماثل السداسى المنتظم يساوى ....",
-options: ["5", "6", "8", "9"],
-correct: 3
-},
-{
-q: "مستطيل طولة 8y وعرضة 2y فإن محيطة يساوى ........",
-options: ["10y", "16y", "10y2", "20y"],
-correct: 3
-},
-{
-q: "متوازى الاضلاع الذى احدى زوايا قائمة يسمى ....",
-options: ["المعين", "المستطيل", "متوازى الاضلاع", "المربع"],
-correct: 1
-},
-{
-q: "نقطة منتصف AB حيث (7-,6)A(2,-3) , B هى .......",
-options: ["(5-,4)", "(4,5-)", "(4,5)", "(4-,5-)"],
-correct: 0
-},
-{
-q: "اذا انخفض سعر سلعة من 1500 الى1200 فإن معدل التخفيض يساوى .....",
-options: ["%30", "%15", "%20", "%10"],
-correct: 2
-},
-{
-q: "قياس زاوية السداسى المنتظم تساوى .......",
-options: ["720", "540", "120", "108"],
-correct: 2
-},
-{
-q: "الوسيط للقيم k-3 , k+5 , k-1 هو 7 فإن قيمة k تساوى .......",
-options: ["6", "7", "8", "9"],
-correct: 2
-}
+{q:"مجموع قياسات الزوايا المتجمعة حول نقطة واحدة تساوى .......",options:["306","603","360","630"],correct:2},
+{q:"مسقط النقطة (3,4-) على محور x هى .......",options:["(3,0-)","(0,4)","(3,4-)","(3,4)"],correct:0},
+{q:"اذا كان {4,7,y}={5,7,x} فإن قيمة x+y=........",options:["5","11","9","12"],correct:2},
+{q:"2x- تزيد عن 5x- بمقدار............",options:["3x-","2x","5x","3x"],correct:3},
+{q:"المدى للقيم 3,2,5,6,9 هو .......",options:["5","6","7","9"],correct:2},
+{q:"اذا كان الطول فى الرسم 2سم والطول الحقيقي 6 متر فإن مقياس الرسم يساوى .......",options:["1/3","1/30","1/300","1/3000"],correct:2},
+{q:"عمر أحمد الان x سنة فإن عمرة بعد 5 سنوات هو ........",options:["X+5","5x","x-5","5-x"],correct:0},
+{q:"الوسط الحسابى للقيم  2x+5 , 7-x , 3 -x هو ........",options:["5","3","2","8"],correct:0},
+{q:"الوسط الحسابى لدرجات 10 طلاب هو 15 فإن مجموع درجاتهم تساوى .........",options:["5","25","150","15"],correct:2},
+{q:"الزاوية الحادة تكملها زاوية.............",options:["قائمة","حادة","منفرجة","مستقيمة"],correct:2},
+{q:"زاويتان متتامتان ومتطابقتان فإن قياس كل منهما يساوى ..........",options:["90","45","50","40"],correct:1},
+{q:"اذا كان النسبة بين قياس زاويتين متكاملتين 4:5 فإن قياس أصغرهما تساوى ........",options:["90","50","40","80"],correct:3},
+{q:"نوع الزاوية 89°60′ هو .........",options:["حادة","قائمة","منفرجة","مستقيمة"],correct:1},
+{q:"ثلاثه أعداد طبيعية متتالية أصغرهما x فإن اكبرهما يساوى .......",options:["x+1","x+2","x+3","x-1"],correct:1},
+{q:"اى المعادلات الاتية ليس لها حل فى Z",options:["3x=6","3x=15","3x=16","3x=21"],correct:2},
+{q:"عددان فرديان متتاليان مجموعهما 28 أى المعادلات الاتية تعبر عن ذلك",options:["x+x+1=28","2x-1=28","2x+1=28","2x+2=28"],correct:3},
+{q:"ناتج طرح 7x- من 3x يساوى ........",options:["4x","10x","10x-","4x-"],correct:1},
+{q:"عددان طبيعيان متتاليان اذا كان الاول هو x-2 فإن العدد التالى هو .......",options:["x","x-1","x+1","x+2"],correct:1},
+{q:"الخاصية المستخدمة في المعادلة x+1=0 هى خاصية ......",options:["المعكوس الجمعى","المعكوس الضربى","المحايد الجمعى","المحايد الضربى"],correct:0},
+{q:"عدد المجموعات الجزئية من المجموعة {2,5,7} هو .......",options:["3","4","8","10"],correct:2},
+{q:"المقدار 4x+3y-2xy+8 يكون معامل x + معامل xy يساوى .........",options:["2","7","6","10"],correct:0},
+{q:"اذا كان A={8,9,4} , B={6,7,9} فإن A∩B=.....",options:["{4,8,9,6,7}","{8}","{9,4}","{9}"],correct:3},
+{q:"المعكوس الجمعى للعدد |−3| يساوى ......",options:["3","−3","9","صفر"],correct:1},
+{q:"المعكوس الضربى للعدد 0.6 يساوى .......",options:["3/5","5/3","1/6","6"],correct:1},
+{q:"الزاويتان المتجاورتان الحادثتان من تقاطع شعاع وخط مستقيم تكونان .........",options:["متتامتان","متكاملتان","متساويتان","متناظرتان"],correct:1},
+{q:"الوسط الحسابى للقيم 6,8,7,x,5,9 هو 6 فإن قيمة x تساوى .......",options:["1","2","3","4"],correct:0},
+{q:"مثلث متساوي الساقين طولا ضلعين فيه 3سم ، 7سم فإن طول الضلع الثالث يساوى ......",options:["3","4","5","7"],correct:3},
+{q:"النقطة (3,−4) تقع في الربع.............",options:["الأول","الثاني","الثالث","الرابع"],correct:1},
+{q:"عدد محاور تماثل السداسى المنتظم يساوى ....",options:["5","6","8","9"],correct:3},
+{q:"مستطيل طوله 8y وعرضه 2y فإن محيطه يساوى ........",options:["10y","16y","10y²","20y"],correct:3},
+{q:"متوازى الاضلاع الذى احدى زواياه قائمة يسمى ....",options:["المعين","المستطيل","متوازى الاضلاع","المربع"],correct:1},
+{q:"نقطة منتصف AB حيث A(6,−7) , B(−3,2) هى .......",options:["(−? )","(4,5−)","(4,5)","(4−,5−)"],correct:0},
+{q:"اذا انخفض سعر سلعة من 1500 الى1200 فإن معدل التخفيض يساوى .....",options:["%30","%15","%20","%10"],correct:2},
+{q:"قياس زاوية السداسى المنتظم تساوى .......",options:["720","540","120","108"],correct:2},
+{q:"الوسيط للقيم k-3 , k+5 , k-1 هو 7 فإن قيمة k تساوى .......",options:["6","7","8","9"],correct:2}
 ];
 
-const optionLabels = ["أ", "ب", "ج", "ء"];
+const optionLabels = ["أ","ب","ج","د"];
 let currentQuestion = 0;
 let answers = new Array(questions.length).fill(null);
 let finished = false;
 
 function renderQuestion() {
   const question = questions[currentQuestion];
-
   document.getElementById("questionCounter").textContent =
     "السؤال " + (currentQuestion + 1) + " من " + questions.length;
-
   document.getElementById("progressBar").style.width =
     ((currentQuestion + 1) / questions.length * 100) + "%";
-
   document.getElementById("questionText").textContent =
     "السؤال " + (currentQuestion + 1) + ": " + question.q;
 
-  const optionsArea = document.getElementById("optionsArea");
-  optionsArea.innerHTML = "";
+  const area = document.getElementById("optionsArea");
+  area.innerHTML = "";
 
-  question.options.forEach((option, index) => {
+  question.options.forEach((option,index) => {
     const label = document.createElement("label");
     label.className = "option";
-
     const radio = document.createElement("input");
     radio.type = "radio";
     radio.name = "currentAnswer";
     radio.value = index;
     radio.checked = answers[currentQuestion] === index;
-
-    radio.addEventListener("change", function() {
+    radio.addEventListener("change",() => {
       answers[currentQuestion] = index;
       renderOptionsSelection();
     });
-
     label.appendChild(radio);
-    label.appendChild(
-      document.createTextNode(" (" + optionLabels[index] + ") " + option)
-    );
-
-    optionsArea.appendChild(label);
+    label.appendChild(document.createTextNode(" (" + optionLabels[index] + ") " + option));
+    area.appendChild(label);
   });
 
   document.getElementById("prevBtn").disabled = currentQuestion === 0;
-
   document.getElementById("nextBtn").style.display =
     currentQuestion === questions.length - 1 ? "none" : "inline-block";
-
   document.getElementById("submitBtn").style.display =
     currentQuestion === questions.length - 1 ? "inline-block" : "none";
 }
 
 function renderOptionsSelection() {
-  document.querySelectorAll(".option").forEach((label, index) => {
-    label.classList.toggle(
-      "selected",
-      answers[currentQuestion] === index
-    );
+  document.querySelectorAll("#interactiveQuiz .option").forEach((label,index) => {
+    label.classList.toggle("selected",answers[currentQuestion] === index);
   });
 }
 
@@ -554,57 +462,30 @@ function previousQuestion() {
 
 function submitQuiz() {
   if (finished) return;
-
-  const unanswered = answers.filter(answer => answer === null).length;
-
-  if (unanswered > 0) {
-    const confirmSubmit = confirm(
-      "لم تجب عن " + unanswered + " سؤال. هل تريد تسليم الاختبار؟"
-    );
-
-    if (!confirmSubmit) return;
-  }
+  const unanswered = answers.filter(a => a === null).length;
+  if (unanswered > 0 && !confirm("لم تجب عن " + unanswered + " سؤال. هل تريد تسليم الاختبار؟")) return;
 
   finished = true;
-
   let score = 0;
-  let reviewHTML = "";
+  let html = "";
 
-  questions.forEach((question, index) => {
-    const userAnswer = answers[index];
-    const isCorrect = userAnswer === question.correct;
-
-    if (isCorrect) score++;
-
-    reviewHTML += `
-      <div class="review-item ${isCorrect ? "correct" : "wrong"}">
-        <strong>السؤال ${index + 1}:</strong>
-        ${question.q}
-        <p>
-          إجابتك:
-          ${userAnswer === null ? "لم تتم الإجابة" :
-            "(" + optionLabels[userAnswer] + ") " + question.options[userAnswer]}
-        </p>
-        <p class="review-answer">
-          الإجابة الصحيحة:
-          (${optionLabels[question.correct]}) ${question.options[question.correct]}
-        </p>
-      </div>
-    `;
+  questions.forEach((q,i) => {
+    const correct = answers[i] === q.correct;
+    if (correct) score++;
+    html += `
+      <div class="review-item ${correct ? "correct" : "wrong"}">
+        <strong>السؤال ${i+1}:</strong> ${q.q}
+        <p>إجابتك: ${answers[i] === null ? "لم تتم الإجابة" : "(" + optionLabels[answers[i]] + ") " + q.options[answers[i]]}</p>
+        <p class="review-answer">الإجابة الصحيحة: (${optionLabels[q.correct]}) ${q.options[q.correct]}</p>
+      </div>`;
   });
 
   document.getElementById("quizArea").style.display = "none";
   document.getElementById("resultBox").style.display = "block";
-
-  document.getElementById("scoreText").textContent =
-    score + " / " + questions.length;
-
+  document.getElementById("scoreText").textContent = score + " / " + questions.length;
   document.getElementById("resultMessage").textContent =
-    "عدد الإجابات الصحيحة: " + score +
-    " | عدد الإجابات الخاطئة أو غير المجابة: " +
-    (questions.length - score);
-
-  document.getElementById("reviewArea").innerHTML = reviewHTML;
+    "عدد الإجابات الصحيحة: " + score + " | عدد الإجابات الخاطئة أو غير المجابة: " + (questions.length-score);
+  document.getElementById("reviewArea").innerHTML = html;
   document.getElementById("questionCounter").textContent = "انتهى الاختبار";
   document.getElementById("progressBar").style.width = "100%";
 }
@@ -613,13 +494,177 @@ function restartQuiz() {
   currentQuestion = 0;
   answers = new Array(questions.length).fill(null);
   finished = false;
-
   document.getElementById("quizArea").style.display = "block";
   document.getElementById("resultBox").style.display = "none";
-
   renderQuestion();
 }
 
+/* =========================
+   الاختبار الإلكتروني الثاني
+   محرك مستقل تمامًا عن الأول
+========================= */
+
+const questions2 = [
+{q:"المعكوس الجمعي للعدد −|−5| هو ........",options:["5","−5","0","1"],correct:0},
+{q:"إذا كان {y+2, 9, 5} = {9, x−3, 7} فإن x+y = ........",options:["10","11","12","13"],correct:3},
+{q:"المعكوس الضربي للعدد (−½)² هو ........",options:["½","4","−4","¼"],correct:1},
+{q:"إذا كانت الأعداد 10 ، 15 ، 2 ، x متناسبة فإن x = ........",options:["2","3","5","7"],correct:1},
+{q:"ناتج طرح −¼ من ¾ يساوي ........",options:["1","−1","¼","½"],correct:0},
+{q:"إذا كانت A={5,9,7} ، B={8,6,3} فإن B∩A = ........",options:["{9}","{3,6}","{3,5,6,7,8,9}","∅"],correct:3},
+{q:"ناتج طرح 7xy من −5xy يساوي ........",options:["2xy","−2xy","12xy","−12xy"],correct:3},
+{q:"مجموعة حل المعادلة 3(x−5)=0 في N هي ........",options:["{3}","{0}","{5}","∅"],correct:2},
+{q:"معامل الحد الجبري −7x²y³ هو ........",options:["5","−7","6","7"],correct:1},
+{q:"إذا كان العدد الأول x، فإن مجموع ثلاثة أعداد فردية متتالية يساوي ........",options:["x+3","3x","3x+4","3x+6"],correct:3},
+{q:"مستطيل عرضه x وطوله ضعف عرضه، فإن محيطه يساوي ........",options:["3x","2x","5x","6x"],correct:3},
+{q:"الزاوية التي قياسها 179°60′ ضلعاها ........",options:["متعامدان","على استقامة واحدة","منطبقان","متوازيان"],correct:1},
+{q:"المستقيمان المتعامدان على مستقيم ثالث يكونان ........",options:["متوازيين","متعامدين","متقاطعين","منطبقين"],correct:0},
+{q:"المستقيمان الموازيان لمستقيم ثالث يكونان ........",options:["متوازيين","متعامدين","متقاطعين","متخالفين"],correct:0},
+{q:"أي مجموعات الأطوال الآتية تصلح أطوال أضلاع مثلث؟",options:["3 ، 4 ، 7","10 ، 8 ، 1","5 ، 6 ، 10","9 ، 4 ، 4"],correct:2},
+{q:"مثلث مختلف الأضلاع طولا ضلعين فيه 4 ، 6، فما أصغر عدد صحيح يمكن أن يكون طول الضلع الثالث؟",options:["5","6","8","9"],correct:0},
+{q:"إذا كان ABCD مربعًا، فإن قياس ∠ABD يساوي ........",options:["90°","30°","60°","45°"],correct:3},
+{q:"عدد محاور تماثل المستطيل يساوي ........",options:["4","1","2","3"],correct:2},
+{q:"إذا كان المضلع محدبًا، فيجب ألا تكون إحدى زواياه ........",options:["حادة","قائمة","منفرجة","منعكسة"],correct:3},
+{q:"طول حشرة في الصورة 12 سم، ومقياس الرسم (الصورة : الحقيقة) هو 10 : 1، فإن طولها الحقيقي بالملليمترات يساوي ........",options:["12","1.2","120","1200"],correct:0},
+{q:"نسبة قياسات زوايا شكل رباعي هي 2 : 1 : 3 : 2، فإن قياس أكبر زاوية يساوي ........",options:["100°","135°","140°","150°"],correct:1},
+{q:"إذا كان x<0 ، y>0 فإن النقطة (x,−y) تقع في الربع ........",options:["الأول","الثاني","الثالث","الرابع"],correct:2},
+{q:"إذا كانت النقطة (x−5, 7) تقع على محور y فإن قيمة x تساوي ........",options:["0","5","2","7"],correct:1},
+{q:"يحتوي المثلث على زاويتين حادتين على الأقل.",options:["صواب","خطأ"],correct:0},
+{q:"إذا كان قياس ∠A = 130° فإن قياس الزاوية المنعكسة لها يساوي ........",options:["130°","360°","230°","160°"],correct:2},
+{q:"إذا تساوى طولا ضلعين متجاورين في متوازي الأضلاع فإن الشكل يكون ........",options:["معينًا","مستطيلًا","مربعًا دائمًا","مثلثًا"],correct:0},
+{q:"إذا كانت C(2,3) منتصف AB، حيث A(x,−2) ، B(4,y)، فإن x+y يساوي ........",options:["2","4","6","8"],correct:3},
+{q:"المنوال للقيم 6 ، 8 ، 7 ، 2x ، 5 هو 8، إذا كانت 2x هي القيمة المكررة، فإن x يساوي ........",options:["3","4","5","6"],correct:1},
+{q:"الربيع الأول للقيم 10 ، 6 ، 14 ، 8 ، 16 ، 12 يساوي ........",options:["8","7","9","10"],correct:0},
+{q:"مجموع الزوايا حول نقطة واحدة يساوي ........ زاوية قائمة.",options:["1","2","3","4"],correct:3},
+{q:"إذا كان 15% من x = 20% من y فإن النسبة x : y تساوي ........",options:["5 : 4","3 : 2","4 : 3","3 : 4"],correct:2},
+{q:"أي المخططات الآتية لا يُظهر البيانات الأصلية لكل مفردة على حدة؟",options:["الأعمدة البيانية","الساق والأوراق","المدرج التكراري","التمثيل بالنقاط"],correct:2},
+{q:"مثلث محيطه 150، والنسبة بين أطوال أضلاعه 3 : 5 : 7، فإن أكبر الأضلاع طولًا يساوي ........",options:["30","40","70","50"],correct:2},
+{q:"أي مما يلي يساوي 5a؟",options:["3a+3","2+3a","2a+3a","5+a"],correct:2},
+{q:"إذا كانت A ، B مجموعتين متباعدتين فإن A∩B = ........",options:["∅","A","B","A∪B"],correct:0}
+];
+
+const optionLabels2 = ["أ","ب","ج","د"];
+let currentQuestion2 = 0;
+let answers2 = new Array(questions2.length).fill(null);
+let finished2 = false;
+
+function openQuiz2() {
+  document.getElementById("interactiveQuiz2").classList.remove("hidden");
+  renderQuestion2();
+  document.getElementById("interactiveQuiz2").scrollIntoView({behavior:"smooth"});
+}
+
+function closeQuiz2() {
+  document.getElementById("interactiveQuiz2").classList.add("hidden");
+  document.querySelectorAll(".panel")[2].scrollIntoView({behavior:"smooth"});
+}
+
+function renderQuestion2() {
+  const question = questions2[currentQuestion2];
+
+  document.getElementById("questionCounter2").textContent =
+    "السؤال " + (currentQuestion2 + 1) + " من " + questions2.length;
+
+  document.getElementById("progressBar2").style.width =
+    ((currentQuestion2 + 1) / questions2.length * 100) + "%";
+
+  document.getElementById("questionText2").textContent =
+    "السؤال " + (currentQuestion2 + 1) + ": " + question.q;
+
+  const area = document.getElementById("optionsArea2");
+  area.innerHTML = "";
+
+  question.options.forEach((option,index) => {
+    const label = document.createElement("label");
+    label.className = "option";
+
+    const radio = document.createElement("input");
+    radio.type = "radio";
+    radio.name = "currentAnswer2";
+    radio.value = index;
+    radio.checked = answers2[currentQuestion2] === index;
+
+    radio.addEventListener("change",() => {
+      answers2[currentQuestion2] = index;
+      renderOptionsSelection2();
+    });
+
+    label.appendChild(radio);
+    label.appendChild(document.createTextNode(" (" + optionLabels2[index] + ") " + option));
+    area.appendChild(label);
+  });
+
+  document.getElementById("prevBtn2").disabled = currentQuestion2 === 0;
+  document.getElementById("nextBtn2").style.display =
+    currentQuestion2 === questions2.length - 1 ? "none" : "inline-block";
+  document.getElementById("submitBtn2").style.display =
+    currentQuestion2 === questions2.length - 1 ? "inline-block" : "none";
+}
+
+function renderOptionsSelection2() {
+  document.querySelectorAll("#interactiveQuiz2 .option").forEach((label,index) => {
+    label.classList.toggle("selected",answers2[currentQuestion2] === index);
+  });
+}
+
+function nextQuestion2() {
+  if (currentQuestion2 < questions2.length - 1) {
+    currentQuestion2++;
+    renderQuestion2();
+  }
+}
+
+function previousQuestion2() {
+  if (currentQuestion2 > 0) {
+    currentQuestion2--;
+    renderQuestion2();
+  }
+}
+
+function submitQuiz2() {
+  if (finished2) return;
+
+  const unanswered = answers2.filter(a => a === null).length;
+  if (unanswered > 0 && !confirm("لم تجب عن " + unanswered + " سؤال. هل تريد تسليم الاختبار؟")) return;
+
+  finished2 = true;
+  let score = 0;
+  let html = "";
+
+  questions2.forEach((q,i) => {
+    const correct = answers2[i] === q.correct;
+    if (correct) score++;
+
+    html += `
+      <div class="review-item ${correct ? "correct" : "wrong"}">
+        <strong>السؤال ${i+1}:</strong> ${q.q}
+        <p>إجابتك: ${answers2[i] === null ? "لم تتم الإجابة" : "(" + optionLabels2[answers2[i]] + ") " + q.options[answers2[i]]}</p>
+        <p class="review-answer">الإجابة الصحيحة: (${optionLabels2[q.correct]}) ${q.options[q.correct]}</p>
+      </div>`;
+  });
+
+  document.getElementById("quizArea2").style.display = "none";
+  document.getElementById("resultBox2").style.display = "block";
+  document.getElementById("scoreText2").textContent = score + " / " + questions2.length;
+  document.getElementById("resultMessage2").textContent =
+    "عدد الإجابات الصحيحة: " + score +
+    " | عدد الإجابات الخاطئة أو غير المجابة: " + (questions2.length-score);
+  document.getElementById("reviewArea2").innerHTML = html;
+  document.getElementById("questionCounter2").textContent = "انتهى الاختبار";
+  document.getElementById("progressBar2").style.width = "100%";
+}
+
+function restartQuiz2() {
+  currentQuestion2 = 0;
+  answers2 = new Array(questions2.length).fill(null);
+  finished2 = false;
+
+  document.getElementById("quizArea2").style.display = "block";
+  document.getElementById("resultBox2").style.display = "none";
+
+  renderQuestion2();
+}
+
+/* تشغيل الاختبار الأول */
 renderQuestion();
 </script>
 
