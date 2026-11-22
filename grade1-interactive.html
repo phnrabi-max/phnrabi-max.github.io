@@ -246,8 +246,25 @@ footer {
 <a class="btn secondary" href="grade1-term1.html">العودة إلى صفحة الصف الأول الإعدادي</a>
 </p>
 
+<!-- قائمة الاختبارات -->
+<section class="panel" id="quizMenu">
+  <div class="quiz-header">
+    <span class="grade">العام الدراسي ٢٠٢٧</span>
+    <h2>اختر الاختبار الإلكتروني</h2>
+    <p class="muted">الصف الأول الإعدادي – رياضيات</p>
+
+    <button class="btn quiz-launch" type="button" onclick="openQuiz1()">
+      الاختبار الإلكتروني التفاعلي الأول
+    </button>
+
+    <button class="btn quiz-launch" type="button" onclick="openQuiz2()">
+      الاختبار الإلكتروني التفاعلي الثاني
+    </button>
+  </div>
+</section>
+
 <!-- الاختبار الإلكتروني التفاعلي الأول -->
-<section class="panel quiz-section" id="interactiveQuiz">
+<section class="panel quiz-section hidden" id="interactiveQuiz">
 
 <div class="quiz-header">
   <span class="grade">العام الدراسي ٢٠٢٧</span>
@@ -287,22 +304,11 @@ footer {
   <button type="button" class="btn" onclick="restartQuiz()">إعادة الاختبار</button>
 </div>
 
+<button class="btn secondary" type="button" onclick="closeQuiz1()">العودة إلى قائمة الاختبارات</button>
+
 </section>
 
-<!-- زر الاختبار الإلكتروني التفاعلي الثاني -->
-<section class="panel">
-  <div class="quiz-header">
-    <span class="grade">العام الدراسي ٢٠٢٧</span>
-    <h2>📝 الاختبار الإلكتروني التفاعلي الثاني</h2>
-    <p class="muted">الصف الأول الإعدادي – رياضيات</p>
-    <p>اضغط على الزر لبدء الاختبار الثاني.</p>
-    <button class="btn quiz-launch" type="button" onclick="openQuiz2()">
-      دخول الاختبار الإلكتروني التفاعلي الثاني
-    </button>
-  </div>
-</section>
-
-<!-- محتوى الاختبار الثاني -->
+<!-- الاختبار الإلكتروني التفاعلي الثاني -->
 <section class="panel quiz-section hidden" id="interactiveQuiz2">
 
 <div class="quiz-header">
@@ -356,9 +362,9 @@ footer {
 <footer>أكاديمية مستر محمد ربيع</footer>
 
 <script>
+
 /* =========================
-   الاختبار الأول
-   الأسئلة والمحرك الأصليان دون تغيير
+   الاختبار الإلكتروني الأول
 ========================= */
 
 const questions = [
@@ -406,10 +412,13 @@ let finished = false;
 
 function renderQuestion() {
   const question = questions[currentQuestion];
+
   document.getElementById("questionCounter").textContent =
     "السؤال " + (currentQuestion + 1) + " من " + questions.length;
+
   document.getElementById("progressBar").style.width =
     ((currentQuestion + 1) / questions.length * 100) + "%";
+
   document.getElementById("questionText").textContent =
     "السؤال " + (currentQuestion + 1) + ": " + question.q;
 
@@ -419,23 +428,28 @@ function renderQuestion() {
   question.options.forEach((option,index) => {
     const label = document.createElement("label");
     label.className = "option";
+
     const radio = document.createElement("input");
     radio.type = "radio";
     radio.name = "currentAnswer";
     radio.value = index;
     radio.checked = answers[currentQuestion] === index;
+
     radio.addEventListener("change",() => {
       answers[currentQuestion] = index;
       renderOptionsSelection();
     });
+
     label.appendChild(radio);
     label.appendChild(document.createTextNode(" (" + optionLabels[index] + ") " + option));
     area.appendChild(label);
   });
 
   document.getElementById("prevBtn").disabled = currentQuestion === 0;
+
   document.getElementById("nextBtn").style.display =
     currentQuestion === questions.length - 1 ? "none" : "inline-block";
+
   document.getElementById("submitBtn").style.display =
     currentQuestion === questions.length - 1 ? "inline-block" : "none";
 }
@@ -462,7 +476,9 @@ function previousQuestion() {
 
 function submitQuiz() {
   if (finished) return;
+
   const unanswered = answers.filter(a => a === null).length;
+
   if (unanswered > 0 && !confirm("لم تجب عن " + unanswered + " سؤال. هل تريد تسليم الاختبار؟")) return;
 
   finished = true;
@@ -472,6 +488,7 @@ function submitQuiz() {
   questions.forEach((q,i) => {
     const correct = answers[i] === q.correct;
     if (correct) score++;
+
     html += `
       <div class="review-item ${correct ? "correct" : "wrong"}">
         <strong>السؤال ${i+1}:</strong> ${q.q}
@@ -483,8 +500,11 @@ function submitQuiz() {
   document.getElementById("quizArea").style.display = "none";
   document.getElementById("resultBox").style.display = "block";
   document.getElementById("scoreText").textContent = score + " / " + questions.length;
+
   document.getElementById("resultMessage").textContent =
-    "عدد الإجابات الصحيحة: " + score + " | عدد الإجابات الخاطئة أو غير المجابة: " + (questions.length-score);
+    "عدد الإجابات الصحيحة: " + score +
+    " | عدد الإجابات الخاطئة أو غير المجابة: " + (questions.length-score);
+
   document.getElementById("reviewArea").innerHTML = html;
   document.getElementById("questionCounter").textContent = "انتهى الاختبار";
   document.getElementById("progressBar").style.width = "100%";
@@ -494,14 +514,15 @@ function restartQuiz() {
   currentQuestion = 0;
   answers = new Array(questions.length).fill(null);
   finished = false;
+
   document.getElementById("quizArea").style.display = "block";
   document.getElementById("resultBox").style.display = "none";
+
   renderQuestion();
 }
 
 /* =========================
    الاختبار الإلكتروني الثاني
-   محرك مستقل تمامًا عن الأول
 ========================= */
 
 const questions2 = [
@@ -547,15 +568,38 @@ let currentQuestion2 = 0;
 let answers2 = new Array(questions2.length).fill(null);
 let finished2 = false;
 
+function openQuiz1() {
+  document.getElementById("quizMenu").classList.add("hidden");
+  document.getElementById("interactiveQuiz2").classList.add("hidden");
+  document.getElementById("interactiveQuiz").classList.remove("hidden");
+
+  renderQuestion();
+
+  document.getElementById("interactiveQuiz").scrollIntoView({behavior:"smooth"});
+}
+
+function closeQuiz1() {
+  document.getElementById("interactiveQuiz").classList.add("hidden");
+  document.getElementById("quizMenu").classList.remove("hidden");
+
+  document.getElementById("quizMenu").scrollIntoView({behavior:"smooth"});
+}
+
 function openQuiz2() {
+  document.getElementById("quizMenu").classList.add("hidden");
+  document.getElementById("interactiveQuiz").classList.add("hidden");
   document.getElementById("interactiveQuiz2").classList.remove("hidden");
+
   renderQuestion2();
+
   document.getElementById("interactiveQuiz2").scrollIntoView({behavior:"smooth"});
 }
 
 function closeQuiz2() {
   document.getElementById("interactiveQuiz2").classList.add("hidden");
-  document.querySelectorAll(".panel")[2].scrollIntoView({behavior:"smooth"});
+  document.getElementById("quizMenu").classList.remove("hidden");
+
+  document.getElementById("quizMenu").scrollIntoView({behavior:"smooth"});
 }
 
 function renderQuestion2() {
@@ -594,8 +638,10 @@ function renderQuestion2() {
   });
 
   document.getElementById("prevBtn2").disabled = currentQuestion2 === 0;
+
   document.getElementById("nextBtn2").style.display =
     currentQuestion2 === questions2.length - 1 ? "none" : "inline-block";
+
   document.getElementById("submitBtn2").style.display =
     currentQuestion2 === questions2.length - 1 ? "inline-block" : "none";
 }
@@ -624,6 +670,7 @@ function submitQuiz2() {
   if (finished2) return;
 
   const unanswered = answers2.filter(a => a === null).length;
+
   if (unanswered > 0 && !confirm("لم تجب عن " + unanswered + " سؤال. هل تريد تسليم الاختبار؟")) return;
 
   finished2 = true;
@@ -645,9 +692,11 @@ function submitQuiz2() {
   document.getElementById("quizArea2").style.display = "none";
   document.getElementById("resultBox2").style.display = "block";
   document.getElementById("scoreText2").textContent = score + " / " + questions2.length;
+
   document.getElementById("resultMessage2").textContent =
     "عدد الإجابات الصحيحة: " + score +
     " | عدد الإجابات الخاطئة أو غير المجابة: " + (questions2.length-score);
+
   document.getElementById("reviewArea2").innerHTML = html;
   document.getElementById("questionCounter2").textContent = "انتهى الاختبار";
   document.getElementById("progressBar2").style.width = "100%";
@@ -664,8 +713,9 @@ function restartQuiz2() {
   renderQuestion2();
 }
 
-/* تشغيل الاختبار الأول */
+/* تهيئة الاختبار الأول دون إظهاره */
 renderQuestion();
+
 </script>
 
 </body>
