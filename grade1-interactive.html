@@ -45,14 +45,34 @@ h2{color:#07549a;margin-top:0;border-bottom:2px solid #e5edf7;padding-bottom:10p
 .quiz-launch{width:100%;margin-top:10px;padding:15px;font-size:17px}
 .hidden{display:none!important}
 footer{background:#073b78;color:white;text-align:center;padding:18px;margin-top:35px}
-.fraction{display:inline-flex;vertical-align:middle;flex-direction:column;text-align:center;line-height:1.2;margin:0 4px}
-.fraction span:first-child{border-bottom:1px solid currentColor;padding:0 5px}
-.fraction span:last-child{padding:1px 5px}
-.mathline{direction:ltr;unicode-bidi:embed;display:inline-block}
+
+/* تنسيق الكسور الرياضية بخط أفقي */
+.fraction{
+ display:inline-flex;
+ vertical-align:middle;
+ flex-direction:column;
+ text-align:center;
+ line-height:1.2;
+ margin:0 5px;
+ direction:ltr;
+ unicode-bidi:isolate;
+}
+.fraction span:first-child{
+ border-bottom:1.5px solid currentColor;
+ padding:0 7px 3px;
+}
+.fraction span:last-child{padding:3px 7px 0}
+.mathline{
+ direction:ltr;
+ unicode-bidi:embed;
+ display:inline-flex;
+ align-items:center;
+ gap:4px;
+}
 @media(max-width:600px){
-header h1{font-size:23px}
-.panel{padding:16px}
-.question-title{font-size:17px}
+ header h1{font-size:23px}
+ .panel{padding:16px}
+ .question-title{font-size:17px}
 }
 </style>
 </head>
@@ -232,7 +252,10 @@ const questions2=[
 ================================== */
 
 const questions3=[
-{q:"إذا كان 21 ÷ x = 12 ÷ 16 فإن قيمة x تساوي ........",options:["21","24","28","32"],correct:2},
+{
+q:'إذا كان <span class="mathline"><span class="fraction"><span>21</span><span>x</span></span> = <span class="fraction"><span>12</span><span>16</span></span></span> فإن قيمة x تساوي ........',
+options:["21","24","28","32"],correct:2
+},
 {q:"إذا كانت مجموعة التعويض هي {3 ، 7 ، 4} فإن القيمة التي لا تصلح حلًا للمعادلة هي ........",options:["3","5","7","4"],correct:1},
 {q:"مجموعة حل المعادلة 5x + 4 = 9 هي ........",options:["{0}","{2}","{3}","{1}"],correct:3},
 {q:"إذا كان الوسط الحسابي للأعداد x ، 7 ، 5 ، 9 يساوي 6 فإن قيمة x تساوي ........",options:["2","3","4","5"],correct:1},
@@ -242,7 +265,10 @@ const questions3=[
 {q:"إحداثي نقطة منتصف AB حيث A(-5،10)، B(3،-4) هي ........",options:["(4،7)","(2،-6)","(-1،3)","(1،3)"],correct:2},
 {q:"المنوال للقيم 2 ، 3 ، 2 ، 5 ، 4 ، 2 هو ........",options:["3","4","2","5"],correct:2},
 {q:"قُسم مبلغ 7200 جنيه بنسبة 3 : 4 : 5 فإن أكبر نصيب يساوي ........",options:["1800","2400","3000","3600"],correct:2},
-{q:"إذا كان 14 = 1 + 26 ÷ k فإن قيمة k تساوي ........",options:["2","3","4","5"],correct:0},
+{
+q:'إذا كان <span class="mathline">14 = 1 + <span class="fraction"><span>26</span><span>k</span></span></span> فإن قيمة k تساوي ........',
+options:["2","3","4","5"],correct:0
+},
 {q:"في قطاع دائري يمثل اللحوم 200 من إجمالي 600، فإن قياس زاوية القطاع يساوي ........",options:["60°","90°","120°","180°"],correct:2},
 {q:"إذا كانت إحدى زوايا متوازي الأضلاع تساوي 140° فإن قياس الزاوية المجاورة لها يساوي ........",options:["140°","100°","60°","40°"],correct:3},
 {q:"إذا كانت النقطة (x-3 ، y+2) هي نقطة الأصل فإن قيمة x+y تساوي ........",options:["-1","0","2","1"],correct:3},
@@ -250,7 +276,10 @@ const questions3=[
 {q:"في مثلث قياس زاويتين 40° ، 70° فإن قياس الزاوية الخارجية عند الرأس الثالث يساوي ........",options:["70°","110°","120°","140°"],correct:1},
 {q:"إذا كان المنوال للقيم 15 ، x+1 ، 9 ، 5 هو 9 فإن قيمة x تساوي ........",options:["8","9","10","11"],correct:0},
 {q:"إذا كان طول شيء في الرسم 5 سم وطوله الحقيقي 2 متر فإن مقياس الرسم يساوي ........",options:["1 : 20","1 : 30","1 : 40","1 : 50"],correct:2},
-{q:"إذا كان (x+1) ÷ 10 = 3 ÷ 5 فإن قيمة x تساوي ........",options:["3","5","6","7"],correct:1},
+{
+q:'إذا كان <span class="mathline"><span class="fraction"><span>x+1</span><span>10</span></span> = <span class="fraction"><span>3</span><span>5</span></span></span> فإن قيمة x تساوي ........',
+options:["3","5","6","7"],correct:1
+},
 {q:"المدى للقيم 5 ، 6 ، 5 ، 4 ، 5 يساوي ........",options:["1","3","4","2"],correct:3},
 {q:"الوسيط للقيم 25 ، 10 ، 13 ، 12 ، 11 يساوي ........",options:["12","13","10","25"],correct:0},
 {q:"إذا كانت النسب المئوية للألوان الأحمر 30% والأخضر 45% والأزرق 25% فإن زاوية قطاع اللون الأزرق تساوي ........",options:["45°","90°","108°","120°"],correct:1},
@@ -261,7 +290,7 @@ const questions3=[
 {q:"عدد محاور تماثل متوازي الأضلاع العادي يساوي ........",options:["1","2","4","0"],correct:3},
 {q:"المقدار 5xy ينقص عن المقدار 7xy بمقدار ........",options:["2xy","12xy","-2xy","-12xy"],correct:0},
 {q:"إذا كانت زوايا شكل رباعي هي 2x ، 3x ، 4x ، 6x فإن قيمة x تساوي ........",options:["20°","24°","30°","36°"],correct:1},
-{q:"مقلوب العدد 0.2 يساوي ........",options:["2","5","10","20"],correct:1}
+{q:"المعكوس الضربي للعدد 0.2 يساوي ........",options:["2","5","10","20"],correct:1}
 ];
 
 /* ==================================
@@ -318,7 +347,8 @@ document.getElementById("totalMarks").textContent=
 document.getElementById("progressBar").style.width=
 ((currentQuestion+1)/questions.length*100)+"%";
 
-document.getElementById("questionText").textContent=
+/* innerHTML لعرض الكسور ذات الخط الأفقي */
+document.getElementById("questionText").innerHTML=
 "السؤال "+(currentQuestion+1)+": "+q.q;
 
 const area=document.getElementById("optionsArea");
