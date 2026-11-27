@@ -1,243 +1,66 @@
+
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>الاختبارات التفاعلية | الصف الأول الإعدادي | مستر محمد ربيع</title>
+<title>الاختبارات الإلكترونية التفاعلية | الصف الأول الإعدادي | مستر محمد ربيع</title>
 <meta name="description" content="اختبارات إلكترونية تفاعلية في الرياضيات للصف الأول الإعدادي مع مستر محمد ربيع.">
 <meta name="author" content="مستر محمد ربيع">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://phnrabi-max.github.io/grade1-interactive.html">
 
 <style>
-* { box-sizing: border-box; }
-
-body {
-  margin: 0;
-  font-family: Tahoma, Arial, sans-serif;
-  background: #f3f6fb;
-  color: #172033;
-  line-height: 1.8;
-}
-
-header {
-  background: linear-gradient(135deg, #073b78, #0876bd);
-  color: white;
-  text-align: center;
-  padding: 35px 15px;
-}
-
-header h1 { margin: 0; font-size: 28px; }
-header p { margin: 8px 0 0; }
-
-main {
-  width: 92%;
-  max-width: 900px;
-  margin: 25px auto;
-}
-
-.panel {
-  background: white;
-  padding: 22px;
-  margin-bottom: 22px;
-  border-radius: 14px;
-  box-shadow: 0 3px 12px rgba(0,0,0,0.07);
-}
-
-h2 {
-  color: #07549a;
-  margin-top: 0;
-  border-bottom: 2px solid #e5edf7;
-  padding-bottom: 10px;
-}
-
-.muted { color: #64748b; }
-
-.btn {
-  display: inline-block;
-  background: #0876bd;
-  color: white;
-  text-decoration: none;
-  text-align: center;
-  padding: 12px 15px;
-  border-radius: 9px;
-  font-weight: bold;
-  border: none;
-  cursor: pointer;
-  font-family: inherit;
-  font-size: 16px;
-}
-
-.btn:hover { background: #064f88; }
-
-.btn.secondary {
-  background: #eaf2fb;
-  color: #07549a;
-  border: 1px solid #cbdced;
-}
-
-.grade {
-  display: inline-block;
-  background: #e8f3ff;
-  color: #07549a;
-  padding: 5px 12px;
-  border-radius: 20px;
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-
-.quiz-header {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.quiz-header h2 { text-align: center; }
-
-.quiz-info {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 10px;
-  background: #eaf2fb;
-  color: #07549a;
-  padding: 12px;
-  border-radius: 10px;
-  font-weight: bold;
-  margin-bottom: 18px;
-}
-
-.progress-container {
-  height: 10px;
-  background: #e5edf7;
-  border-radius: 20px;
-  overflow: hidden;
-  margin-bottom: 20px;
-}
-
-.progress-bar {
-  height: 100%;
-  width: 0%;
-  background: #0876bd;
-  transition: width 0.3s;
-}
-
-.quiz-q {
-  background: #f5f8fc;
-  padding: 20px;
-  border-radius: 10px;
-  margin: 15px 0;
-  min-height: 220px;
-}
-
-.question-title {
-  font-size: 19px;
-  font-weight: bold;
-  color: #073b78;
-  margin-top: 0;
-  margin-bottom: 20px;
-}
-
-.option {
-  display: block;
-  background: white;
-  border: 1px solid #d8e2ef;
-  padding: 12px;
-  border-radius: 9px;
-  margin: 10px 0;
-  cursor: pointer;
-  transition: 0.2s;
-}
-
-.option:hover {
-  background: #eaf2fb;
-  border-color: #0876bd;
-}
-
-.option input {
-  margin-left: 8px;
-  accent-color: #0876bd;
-}
-
-.option.selected {
-  background: #eaf2fb;
-  border-color: #0876bd;
-}
-
-.quiz-navigation {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin: 15px 0;
-}
-
-.quiz-section button:disabled {
-  opacity: .45;
-  cursor: not-allowed;
-}
-
-.result-box {
-  display: none;
-  background: #eaf7ef;
-  border: 1px solid #b9e2c8;
-  border-radius: 12px;
-  padding: 20px;
-  margin-top: 20px;
-  text-align: center;
-}
-
-.result-score {
-  font-size: 30px;
-  color: #16834a;
-  font-weight: bold;
-}
-
-.review-item {
-  text-align: right;
-  background: white;
-  padding: 12px;
-  border-radius: 9px;
-  margin: 10px 0;
-  border-right: 5px solid #ccc;
-}
-
-.review-item.correct { border-right-color: #16834a; }
-.review-item.wrong { border-right-color: #d43b3b; }
-
-.review-answer {
-  color: #16834a;
-  font-weight: bold;
-}
-
-.quiz-launch {
-  width: 100%;
-  margin-top: 10px;
-  padding: 15px;
-  font-size: 17px;
-}
-
-.hidden { display: none !important; }
-
-footer {
-  background: #073b78;
-  color: white;
-  text-align: center;
-  padding: 18px;
-  margin-top: 35px;
-}
-
-@media (max-width: 600px) {
-  header h1 { font-size: 23px; }
-  .panel { padding: 16px; }
-  .question-title { font-size: 17px; }
+*{box-sizing:border-box}
+body{margin:0;font-family:Tahoma,Arial,sans-serif;background:#f3f6fb;color:#172033;line-height:1.8}
+header{background:linear-gradient(135deg,#073b78,#0876bd);color:white;text-align:center;padding:35px 15px}
+header h1{margin:0;font-size:28px}
+header p{margin:8px 0 0}
+main{width:92%;max-width:900px;margin:25px auto}
+.panel{background:white;padding:22px;margin-bottom:22px;border-radius:14px;box-shadow:0 3px 12px rgba(0,0,0,.07)}
+h2{color:#07549a;margin-top:0;border-bottom:2px solid #e5edf7;padding-bottom:10px}
+.muted{color:#64748b}
+.btn{display:inline-block;background:#0876bd;color:white;text-decoration:none;text-align:center;padding:12px 15px;border-radius:9px;font-weight:bold;border:none;cursor:pointer;font-family:inherit;font-size:16px}
+.btn:hover{background:#064f88}
+.btn.secondary{background:#eaf2fb;color:#07549a;border:1px solid #cbdced}
+.grade{display:inline-block;background:#e8f3ff;color:#07549a;padding:5px 12px;border-radius:20px;font-weight:bold;margin-bottom:10px}
+.quiz-header{text-align:center;margin-bottom:20px}
+.quiz-header h2{text-align:center}
+.quiz-info{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;background:#eaf2fb;color:#07549a;padding:12px;border-radius:10px;font-weight:bold;margin-bottom:18px}
+.progress-container{height:10px;background:#e5edf7;border-radius:20px;overflow:hidden;margin-bottom:20px}
+.progress-bar{height:100%;width:0%;background:#0876bd;transition:width .3s}
+.quiz-q{background:#f5f8fc;padding:20px;border-radius:10px;margin:15px 0;min-height:220px}
+.question-title{font-size:19px;font-weight:bold;color:#073b78;margin-top:0;margin-bottom:20px}
+.option{display:block;background:white;border:1px solid #d8e2ef;padding:12px;border-radius:9px;margin:10px 0;cursor:pointer;transition:.2s}
+.option:hover,.option.selected{background:#eaf2fb;border-color:#0876bd}
+.option input{margin-left:8px;accent-color:#0876bd}
+.quiz-navigation{display:flex;flex-wrap:wrap;gap:10px;margin:15px 0}
+.quiz-section button:disabled{opacity:.45;cursor:not-allowed}
+.result-box{display:none;background:#eaf7ef;border:1px solid #b9e2c8;border-radius:12px;padding:20px;margin-top:20px;text-align:center}
+.result-score{font-size:30px;color:#16834a;font-weight:bold}
+.review-item{text-align:right;background:white;padding:12px;border-radius:9px;margin:10px 0;border-right:5px solid #ccc}
+.review-item.correct{border-right-color:#16834a}
+.review-item.wrong{border-right-color:#d43b3b}
+.review-answer{color:#16834a;font-weight:bold}
+.quiz-launch{width:100%;margin-top:10px;padding:15px;font-size:17px}
+.hidden{display:none!important}
+footer{background:#073b78;color:white;text-align:center;padding:18px;margin-top:35px}
+.fraction{display:inline-flex;vertical-align:middle;flex-direction:column;text-align:center;line-height:1.2;margin:0 4px}
+.fraction span:first-child{border-bottom:1px solid currentColor;padding:0 5px}
+.fraction span:last-child{padding:1px 5px}
+.mathline{direction:ltr;unicode-bidi:embed;display:inline-block}
+@media(max-width:600px){
+header h1{font-size:23px}
+.panel{padding:16px}
+.question-title{font-size:17px}
 }
 </style>
 </head>
 
 <body>
-
 <header>
-  <h1>الاختبارات الإلكترونية التفاعلية</h1>
-  <p>الصف الأول الإعدادي – الترم الأول 2027</p>
+<h1>الاختبارات الإلكترونية التفاعلية</h1>
+<p>الصف الأول الإعدادي – الترم الأول 2027</p>
 </header>
 
 <main>
@@ -246,111 +69,67 @@ footer {
 <a class="btn secondary" href="grade1-term1.html">العودة إلى صفحة الصف الأول الإعدادي</a>
 </p>
 
-<!-- قائمة الاختبارات -->
 <section class="panel" id="quizMenu">
-  <div class="quiz-header">
-    <span class="grade">العام الدراسي ٢٠٢٧</span>
-    <h2>اختر الاختبار الإلكتروني</h2>
-    <p class="muted">الصف الأول الإعدادي – رياضيات</p>
+<div class="quiz-header">
+<span class="grade">العام الدراسي ٢٠٢٧</span>
+<h2>اختر الاختبار الإلكتروني</h2>
+<p class="muted">الصف الأول الإعدادي – رياضيات</p>
 
-    <button class="btn quiz-launch" type="button" onclick="openQuiz1()">
-      الاختبار الإلكتروني التفاعلي الأول
-    </button>
+<button class="btn quiz-launch" onclick="openQuiz(0)">
+الاختبار الإلكتروني التفاعلي الأول
+</button>
 
-    <button class="btn quiz-launch" type="button" onclick="openQuiz2()">
-      الاختبار الإلكتروني التفاعلي الثاني
-    </button>
-  </div>
+<button class="btn quiz-launch" onclick="openQuiz(1)">
+الاختبار الإلكتروني التفاعلي الثاني
+</button>
+
+<button class="btn quiz-launch" onclick="openQuiz(2)">
+الاختبار الإلكتروني التفاعلي الثالث
+</button>
+</div>
 </section>
 
-<!-- الاختبار الإلكتروني التفاعلي الأول -->
-<section class="panel quiz-section hidden" id="interactiveQuiz">
+<section class="panel quiz-section hidden" id="quizPanel">
 
 <div class="quiz-header">
-  <span class="grade">العام الدراسي ٢٠٢٧</span>
-  <h2>📝 الاختبار الإلكتروني التفاعلي الأول</h2>
-  <p class="muted">الصف الأول الإعدادي – رياضيات</p>
-  <p>أجب عن جميع الأسئلة ثم اضغط على إنهاء الاختبار لمعرفة نتيجتك.</p>
+<span class="grade">العام الدراسي ٢٠٢٧</span>
+<h2 id="quizTitle"></h2>
+<p class="muted">الصف الأول الإعدادي – رياضيات</p>
+<p>أجب عن جميع الأسئلة ثم اضغط على إنهاء الاختبار لمعرفة نتيجتك.</p>
 </div>
 
 <div class="quiz-info">
-  <span id="questionCounter">السؤال 1 من 35</span>
-  <span>الدرجة النهائية: 35 درجة</span>
+<span id="questionCounter"></span>
+<span id="totalMarks"></span>
 </div>
 
 <div class="progress-container">
-  <div class="progress-bar" id="progressBar"></div>
+<div class="progress-bar" id="progressBar"></div>
 </div>
 
 <div id="quizArea">
-  <div class="quiz-q">
-    <p class="question-title" id="questionText"></p>
-    <div id="optionsArea"></div>
-  </div>
+<div class="quiz-q">
+<p class="question-title" id="questionText"></p>
+<div id="optionsArea"></div>
+</div>
 
-  <div class="quiz-navigation">
-    <button class="btn secondary" type="button" id="prevBtn" onclick="previousQuestion()">السابق</button>
-    <button class="btn" type="button" id="nextBtn" onclick="nextQuestion()">السؤال التالي</button>
-    <button class="btn" type="button" id="submitBtn" onclick="submitQuiz()">إنهاء الاختبار وتصحيح الإجابات</button>
-  </div>
+<div class="quiz-navigation">
+<button class="btn secondary" id="prevBtn" onclick="previousQuestion()">السابق</button>
+<button class="btn" id="nextBtn" onclick="nextQuestion()">السؤال التالي</button>
+<button class="btn" id="submitBtn" onclick="submitQuiz()">إنهاء الاختبار وتصحيح الإجابات</button>
+</div>
 </div>
 
 <div class="result-box" id="resultBox">
-  <h2>نتيجة الاختبار</h2>
-  <div class="result-score" id="scoreText"></div>
-  <p id="resultMessage"></p>
-  <h3>مراجعة الإجابات</h3>
-  <div id="reviewArea"></div>
-  <button type="button" class="btn" onclick="restartQuiz()">إعادة الاختبار</button>
+<h2>نتيجة الاختبار</h2>
+<div class="result-score" id="scoreText"></div>
+<p id="resultMessage"></p>
+<h3>مراجعة الإجابات</h3>
+<div id="reviewArea"></div>
+<button class="btn" onclick="restartQuiz()">إعادة الاختبار</button>
 </div>
 
-<button class="btn secondary" type="button" onclick="closeQuiz1()">العودة إلى قائمة الاختبارات</button>
-
-</section>
-
-<!-- الاختبار الإلكتروني التفاعلي الثاني -->
-<section class="panel quiz-section hidden" id="interactiveQuiz2">
-
-<div class="quiz-header">
-  <span class="grade">العام الدراسي ٢٠٢٧</span>
-  <h2>📝 الاختبار الإلكتروني التفاعلي الثاني</h2>
-  <p class="muted">الصف الأول الإعدادي – رياضيات</p>
-  <p>أجب عن الأسئلة ثم اضغط على إنهاء الاختبار لمعرفة نتيجتك.</p>
-</div>
-
-<div class="quiz-info">
-  <span id="questionCounter2">السؤال 1 من 35</span>
-  <span>الدرجة النهائية: 35 درجة</span>
-</div>
-
-<div class="progress-container">
-  <div class="progress-bar" id="progressBar2"></div>
-</div>
-
-<div id="quizArea2">
-  <div class="quiz-q">
-    <p class="question-title" id="questionText2"></p>
-    <div id="optionsArea2"></div>
-  </div>
-
-  <div class="quiz-navigation">
-    <button class="btn secondary" type="button" id="prevBtn2" onclick="previousQuestion2()">السابق</button>
-    <button class="btn" type="button" id="nextBtn2" onclick="nextQuestion2()">السؤال التالي</button>
-    <button class="btn" type="button" id="submitBtn2" onclick="submitQuiz2()">إنهاء الاختبار وتصحيح الإجابات</button>
-  </div>
-</div>
-
-<div class="result-box" id="resultBox2">
-  <h2>نتيجة الاختبار الثاني</h2>
-  <div class="result-score" id="scoreText2"></div>
-  <p id="resultMessage2"></p>
-  <h3>مراجعة الإجابات</h3>
-  <div id="reviewArea2"></div>
-  <button type="button" class="btn" onclick="restartQuiz2()">إعادة الاختبار</button>
-</div>
-
-<button class="btn secondary" type="button" onclick="closeQuiz2()">العودة إلى قائمة الاختبارات</button>
-
+<button class="btn secondary" onclick="closeQuiz()">العودة إلى قائمة الاختبارات</button>
 </section>
 
 <p>
@@ -362,12 +141,13 @@ footer {
 <footer>أكاديمية مستر محمد ربيع</footer>
 
 <script>
+const optionLabels=["أ","ب","ج","د"];
 
-/* =========================
-   الاختبار الإلكتروني الأول
-========================= */
+/* ==================================
+   الاختبار الإلكتروني التفاعلي الأول
+================================== */
 
-const questions = [
+const questions1=[
 {q:"مجموع قياسات الزوايا المتجمعة حول نقطة واحدة تساوى .......",options:["306","603","360","630"],correct:2},
 {q:"مسقط النقطة (3,4-) على محور x هى .......",options:["(3,0-)","(0,4)","(3,4-)","(3,4)"],correct:0},
 {q:"اذا كان {4,7,y}={5,7,x} فإن قيمة x+y=........",options:["5","11","9","12"],correct:2},
@@ -375,7 +155,7 @@ const questions = [
 {q:"المدى للقيم 3,2,5,6,9 هو .......",options:["5","6","7","9"],correct:2},
 {q:"اذا كان الطول فى الرسم 2سم والطول الحقيقي 6 متر فإن مقياس الرسم يساوى .......",options:["1/3","1/30","1/300","1/3000"],correct:2},
 {q:"عمر أحمد الان x سنة فإن عمرة بعد 5 سنوات هو ........",options:["X+5","5x","x-5","5-x"],correct:0},
-{q:"الوسط الحسابى للقيم  2x+5 , 7-x , 3 -x هو ........",options:["5","3","2","8"],correct:0},
+{q:"الوسط الحسابى للقيم 2x+5 , 7-x , 3 -x هو ........",options:["5","3","2","8"],correct:0},
 {q:"الوسط الحسابى لدرجات 10 طلاب هو 15 فإن مجموع درجاتهم تساوى .........",options:["5","25","150","15"],correct:2},
 {q:"الزاوية الحادة تكملها زاوية.............",options:["قائمة","حادة","منفرجة","مستقيمة"],correct:2},
 {q:"زاويتان متتامتان ومتطابقتان فإن قياس كل منهما يساوى ..........",options:["90","45","50","40"],correct:1},
@@ -405,127 +185,11 @@ const questions = [
 {q:"الوسيط للقيم k-3 , k+5 , k-1 هو 7 فإن قيمة k تساوى .......",options:["6","7","8","9"],correct:2}
 ];
 
-const optionLabels = ["أ","ب","ج","د"];
-let currentQuestion = 0;
-let answers = new Array(questions.length).fill(null);
-let finished = false;
+/* ==================================
+   الاختبار الإلكتروني التفاعلي الثاني
+================================== */
 
-function renderQuestion() {
-  const question = questions[currentQuestion];
-
-  document.getElementById("questionCounter").textContent =
-    "السؤال " + (currentQuestion + 1) + " من " + questions.length;
-
-  document.getElementById("progressBar").style.width =
-    ((currentQuestion + 1) / questions.length * 100) + "%";
-
-  document.getElementById("questionText").textContent =
-    "السؤال " + (currentQuestion + 1) + ": " + question.q;
-
-  const area = document.getElementById("optionsArea");
-  area.innerHTML = "";
-
-  question.options.forEach((option,index) => {
-    const label = document.createElement("label");
-    label.className = "option";
-
-    const radio = document.createElement("input");
-    radio.type = "radio";
-    radio.name = "currentAnswer";
-    radio.value = index;
-    radio.checked = answers[currentQuestion] === index;
-
-    radio.addEventListener("change",() => {
-      answers[currentQuestion] = index;
-      renderOptionsSelection();
-    });
-
-    label.appendChild(radio);
-    label.appendChild(document.createTextNode(" (" + optionLabels[index] + ") " + option));
-    area.appendChild(label);
-  });
-
-  document.getElementById("prevBtn").disabled = currentQuestion === 0;
-
-  document.getElementById("nextBtn").style.display =
-    currentQuestion === questions.length - 1 ? "none" : "inline-block";
-
-  document.getElementById("submitBtn").style.display =
-    currentQuestion === questions.length - 1 ? "inline-block" : "none";
-}
-
-function renderOptionsSelection() {
-  document.querySelectorAll("#interactiveQuiz .option").forEach((label,index) => {
-    label.classList.toggle("selected",answers[currentQuestion] === index);
-  });
-}
-
-function nextQuestion() {
-  if (currentQuestion < questions.length - 1) {
-    currentQuestion++;
-    renderQuestion();
-  }
-}
-
-function previousQuestion() {
-  if (currentQuestion > 0) {
-    currentQuestion--;
-    renderQuestion();
-  }
-}
-
-function submitQuiz() {
-  if (finished) return;
-
-  const unanswered = answers.filter(a => a === null).length;
-
-  if (unanswered > 0 && !confirm("لم تجب عن " + unanswered + " سؤال. هل تريد تسليم الاختبار؟")) return;
-
-  finished = true;
-  let score = 0;
-  let html = "";
-
-  questions.forEach((q,i) => {
-    const correct = answers[i] === q.correct;
-    if (correct) score++;
-
-    html += `
-      <div class="review-item ${correct ? "correct" : "wrong"}">
-        <strong>السؤال ${i+1}:</strong> ${q.q}
-        <p>إجابتك: ${answers[i] === null ? "لم تتم الإجابة" : "(" + optionLabels[answers[i]] + ") " + q.options[answers[i]]}</p>
-        <p class="review-answer">الإجابة الصحيحة: (${optionLabels[q.correct]}) ${q.options[q.correct]}</p>
-      </div>`;
-  });
-
-  document.getElementById("quizArea").style.display = "none";
-  document.getElementById("resultBox").style.display = "block";
-  document.getElementById("scoreText").textContent = score + " / " + questions.length;
-
-  document.getElementById("resultMessage").textContent =
-    "عدد الإجابات الصحيحة: " + score +
-    " | عدد الإجابات الخاطئة أو غير المجابة: " + (questions.length-score);
-
-  document.getElementById("reviewArea").innerHTML = html;
-  document.getElementById("questionCounter").textContent = "انتهى الاختبار";
-  document.getElementById("progressBar").style.width = "100%";
-}
-
-function restartQuiz() {
-  currentQuestion = 0;
-  answers = new Array(questions.length).fill(null);
-  finished = false;
-
-  document.getElementById("quizArea").style.display = "block";
-  document.getElementById("resultBox").style.display = "none";
-
-  renderQuestion();
-}
-
-/* =========================
-   الاختبار الإلكتروني الثاني
-========================= */
-
-const questions2 = [
+const questions2=[
 {q:"المعكوس الجمعي للعدد −|−5| هو ........",options:["5","−5","0","1"],correct:0},
 {q:"إذا كان {y+2, 9, 5} = {9, x−3, 7} فإن x+y = ........",options:["10","11","12","13"],correct:3},
 {q:"المعكوس الضربي للعدد (−½)² هو ........",options:["½","4","−4","¼"],correct:1},
@@ -563,160 +227,207 @@ const questions2 = [
 {q:"إذا كانت A ، B مجموعتين متباعدتين فإن A∩B = ........",options:["∅","A","B","A∪B"],correct:0}
 ];
 
-const optionLabels2 = ["أ","ب","ج","د"];
-let currentQuestion2 = 0;
-let answers2 = new Array(questions2.length).fill(null);
-let finished2 = false;
+/* ==================================
+   الاختبار الإلكتروني التفاعلي الثالث
+================================== */
 
-function openQuiz1() {
-  document.getElementById("quizMenu").classList.add("hidden");
-  document.getElementById("interactiveQuiz2").classList.add("hidden");
-  document.getElementById("interactiveQuiz").classList.remove("hidden");
+const questions3=[
+{q:"إذا كان 21 ÷ x = 12 ÷ 16 فإن قيمة x تساوي ........",options:["21","24","28","32"],correct:2},
+{q:"إذا كانت مجموعة التعويض هي {3 ، 7 ، 4} فإن القيمة التي لا تصلح حلًا للمعادلة هي ........",options:["3","5","7","4"],correct:1},
+{q:"مجموعة حل المعادلة 5x + 4 = 9 هي ........",options:["{0}","{2}","{3}","{1}"],correct:3},
+{q:"إذا كان الوسط الحسابي للأعداد x ، 7 ، 5 ، 9 يساوي 6 فإن قيمة x تساوي ........",options:["2","3","4","5"],correct:1},
+{q:"إذا كانت زاوية قياسها 60° فإن قياس الزاوية المكملة لها يساوي ........",options:["60°","120°","90°","30°"],correct:1},
+{q:"المدى للقيم 10 ، 3 ، 5 ، 6 ، 19 يساوي ........",options:["10","13","15","16"],correct:3},
+{q:"متوازي أضلاع به ضلعان متجاوران متساويان في الطول يكون ........",options:["مستطيلًا","مربعًا دائمًا","شبه منحرف","معينًا"],correct:3},
+{q:"إحداثي نقطة منتصف AB حيث A(-5،10)، B(3،-4) هي ........",options:["(4،7)","(2،-6)","(-1،3)","(1،3)"],correct:2},
+{q:"المنوال للقيم 2 ، 3 ، 2 ، 5 ، 4 ، 2 هو ........",options:["3","4","2","5"],correct:2},
+{q:"قُسم مبلغ 7200 جنيه بنسبة 3 : 4 : 5 فإن أكبر نصيب يساوي ........",options:["1800","2400","3000","3600"],correct:2},
+{q:"إذا كان 14 = 1 + 26 ÷ k فإن قيمة k تساوي ........",options:["2","3","4","5"],correct:0},
+{q:"في قطاع دائري يمثل اللحوم 200 من إجمالي 600، فإن قياس زاوية القطاع يساوي ........",options:["60°","90°","120°","180°"],correct:2},
+{q:"إذا كانت إحدى زوايا متوازي الأضلاع تساوي 140° فإن قياس الزاوية المجاورة لها يساوي ........",options:["140°","100°","60°","40°"],correct:3},
+{q:"إذا كانت النقطة (x-3 ، y+2) هي نقطة الأصل فإن قيمة x+y تساوي ........",options:["-1","0","2","1"],correct:3},
+{q:"الوسيط للقيم 28 ، 24 ، 19 ، 45 ، 27 يساوي ........",options:["24","27","28","19"],correct:1},
+{q:"في مثلث قياس زاويتين 40° ، 70° فإن قياس الزاوية الخارجية عند الرأس الثالث يساوي ........",options:["70°","110°","120°","140°"],correct:1},
+{q:"إذا كان المنوال للقيم 15 ، x+1 ، 9 ، 5 هو 9 فإن قيمة x تساوي ........",options:["8","9","10","11"],correct:0},
+{q:"إذا كان طول شيء في الرسم 5 سم وطوله الحقيقي 2 متر فإن مقياس الرسم يساوي ........",options:["1 : 20","1 : 30","1 : 40","1 : 50"],correct:2},
+{q:"إذا كان (x+1) ÷ 10 = 3 ÷ 5 فإن قيمة x تساوي ........",options:["3","5","6","7"],correct:1},
+{q:"المدى للقيم 5 ، 6 ، 5 ، 4 ، 5 يساوي ........",options:["1","3","4","2"],correct:3},
+{q:"الوسيط للقيم 25 ، 10 ، 13 ، 12 ، 11 يساوي ........",options:["12","13","10","25"],correct:0},
+{q:"إذا كانت النسب المئوية للألوان الأحمر 30% والأخضر 45% والأزرق 25% فإن زاوية قطاع اللون الأزرق تساوي ........",options:["45°","90°","108°","120°"],correct:1},
+{q:"قياس الزاوية الداخلية للمضلع الخماسي المنتظم يساوي ........",options:["90°","108°","120°","135°"],correct:1},
+{q:"إذا كانت A(-3،2) ، B(4،-4) فإن طول مسقط القطعة AB على محور السينات يساوي ........",options:["3","4","6","7"],correct:3},
+{q:"المنوال للقيم 2 ، 3 ، 4 ، 2 ، 5 ، 2 هو ........",options:["3","4","2","5"],correct:2},
+{q:"عدد أقطار الشكل السداسي يساوي ........",options:["6","8","12","9"],correct:3},
+{q:"عدد محاور تماثل متوازي الأضلاع العادي يساوي ........",options:["1","2","4","0"],correct:3},
+{q:"المقدار 5xy ينقص عن المقدار 7xy بمقدار ........",options:["2xy","12xy","-2xy","-12xy"],correct:0},
+{q:"إذا كانت زوايا شكل رباعي هي 2x ، 3x ، 4x ، 6x فإن قيمة x تساوي ........",options:["20°","24°","30°","36°"],correct:1},
+{q:"مقلوب العدد 0.2 يساوي ........",options:["2","5","10","20"],correct:1}
+];
 
-  renderQuestion();
+/* ==================================
+   نظام تشغيل الاختبارات الثلاثة
+================================== */
 
-  document.getElementById("interactiveQuiz").scrollIntoView({behavior:"smooth"});
-}
+const quizzes=[
+{title:"الاختبار الإلكتروني التفاعلي الأول",questions:questions1},
+{title:"الاختبار الإلكتروني التفاعلي الثاني",questions:questions2},
+{title:"الاختبار الإلكتروني التفاعلي الثالث",questions:questions3}
+];
 
-function closeQuiz1() {
-  document.getElementById("interactiveQuiz").classList.add("hidden");
-  document.getElementById("quizMenu").classList.remove("hidden");
+let activeQuiz=0;
+let currentQuestion=0;
+let answers=[];
+let finished=false;
 
-  document.getElementById("quizMenu").scrollIntoView({behavior:"smooth"});
-}
+function openQuiz(index){
+activeQuiz=index;
+currentQuestion=0;
+answers=new Array(quizzes[index].questions.length).fill(null);
+finished=false;
 
-function openQuiz2() {
-  document.getElementById("quizMenu").classList.add("hidden");
-  document.getElementById("interactiveQuiz").classList.add("hidden");
-  document.getElementById("interactiveQuiz2").classList.remove("hidden");
+document.getElementById("quizMenu").classList.add("hidden");
+document.getElementById("quizPanel").classList.remove("hidden");
+document.getElementById("quizTitle").textContent=quizzes[index].title;
+document.getElementById("resultBox").style.display="none";
+document.getElementById("quizArea").style.display="block";
 
-  renderQuestion2();
-
-  document.getElementById("interactiveQuiz2").scrollIntoView({behavior:"smooth"});
-}
-
-function closeQuiz2() {
-  document.getElementById("interactiveQuiz2").classList.add("hidden");
-  document.getElementById("quizMenu").classList.remove("hidden");
-
-  document.getElementById("quizMenu").scrollIntoView({behavior:"smooth"});
-}
-
-function renderQuestion2() {
-  const question = questions2[currentQuestion2];
-
-  document.getElementById("questionCounter2").textContent =
-    "السؤال " + (currentQuestion2 + 1) + " من " + questions2.length;
-
-  document.getElementById("progressBar2").style.width =
-    ((currentQuestion2 + 1) / questions2.length * 100) + "%";
-
-  document.getElementById("questionText2").textContent =
-    "السؤال " + (currentQuestion2 + 1) + ": " + question.q;
-
-  const area = document.getElementById("optionsArea2");
-  area.innerHTML = "";
-
-  question.options.forEach((option,index) => {
-    const label = document.createElement("label");
-    label.className = "option";
-
-    const radio = document.createElement("input");
-    radio.type = "radio";
-    radio.name = "currentAnswer2";
-    radio.value = index;
-    radio.checked = answers2[currentQuestion2] === index;
-
-    radio.addEventListener("change",() => {
-      answers2[currentQuestion2] = index;
-      renderOptionsSelection2();
-    });
-
-    label.appendChild(radio);
-    label.appendChild(document.createTextNode(" (" + optionLabels2[index] + ") " + option));
-    area.appendChild(label);
-  });
-
-  document.getElementById("prevBtn2").disabled = currentQuestion2 === 0;
-
-  document.getElementById("nextBtn2").style.display =
-    currentQuestion2 === questions2.length - 1 ? "none" : "inline-block";
-
-  document.getElementById("submitBtn2").style.display =
-    currentQuestion2 === questions2.length - 1 ? "inline-block" : "none";
-}
-
-function renderOptionsSelection2() {
-  document.querySelectorAll("#interactiveQuiz2 .option").forEach((label,index) => {
-    label.classList.toggle("selected",answers2[currentQuestion2] === index);
-  });
-}
-
-function nextQuestion2() {
-  if (currentQuestion2 < questions2.length - 1) {
-    currentQuestion2++;
-    renderQuestion2();
-  }
-}
-
-function previousQuestion2() {
-  if (currentQuestion2 > 0) {
-    currentQuestion2--;
-    renderQuestion2();
-  }
-}
-
-function submitQuiz2() {
-  if (finished2) return;
-
-  const unanswered = answers2.filter(a => a === null).length;
-
-  if (unanswered > 0 && !confirm("لم تجب عن " + unanswered + " سؤال. هل تريد تسليم الاختبار؟")) return;
-
-  finished2 = true;
-  let score = 0;
-  let html = "";
-
-  questions2.forEach((q,i) => {
-    const correct = answers2[i] === q.correct;
-    if (correct) score++;
-
-    html += `
-      <div class="review-item ${correct ? "correct" : "wrong"}">
-        <strong>السؤال ${i+1}:</strong> ${q.q}
-        <p>إجابتك: ${answers2[i] === null ? "لم تتم الإجابة" : "(" + optionLabels2[answers2[i]] + ") " + q.options[answers2[i]]}</p>
-        <p class="review-answer">الإجابة الصحيحة: (${optionLabels2[q.correct]}) ${q.options[q.correct]}</p>
-      </div>`;
-  });
-
-  document.getElementById("quizArea2").style.display = "none";
-  document.getElementById("resultBox2").style.display = "block";
-  document.getElementById("scoreText2").textContent = score + " / " + questions2.length;
-
-  document.getElementById("resultMessage2").textContent =
-    "عدد الإجابات الصحيحة: " + score +
-    " | عدد الإجابات الخاطئة أو غير المجابة: " + (questions2.length-score);
-
-  document.getElementById("reviewArea2").innerHTML = html;
-  document.getElementById("questionCounter2").textContent = "انتهى الاختبار";
-  document.getElementById("progressBar2").style.width = "100%";
-}
-
-function restartQuiz2() {
-  currentQuestion2 = 0;
-  answers2 = new Array(questions2.length).fill(null);
-  finished2 = false;
-
-  document.getElementById("quizArea2").style.display = "block";
-  document.getElementById("resultBox2").style.display = "none";
-
-  renderQuestion2();
-}
-
-/* تهيئة الاختبار الأول دون إظهاره */
 renderQuestion();
+document.getElementById("quizPanel").scrollIntoView({behavior:"smooth"});
+}
+
+function closeQuiz(){
+document.getElementById("quizPanel").classList.add("hidden");
+document.getElementById("quizMenu").classList.remove("hidden");
+document.getElementById("quizMenu").scrollIntoView({behavior:"smooth"});
+}
+
+function getQuestions(){
+return quizzes[activeQuiz].questions;
+}
+
+function renderQuestion(){
+const questions=getQuestions();
+const q=questions[currentQuestion];
+
+document.getElementById("questionCounter").textContent=
+"السؤال "+(currentQuestion+1)+" من "+questions.length;
+
+document.getElementById("totalMarks").textContent=
+"الدرجة النهائية: "+questions.length+" درجة";
+
+document.getElementById("progressBar").style.width=
+((currentQuestion+1)/questions.length*100)+"%";
+
+document.getElementById("questionText").textContent=
+"السؤال "+(currentQuestion+1)+": "+q.q;
+
+const area=document.getElementById("optionsArea");
+area.innerHTML="";
+
+q.options.forEach((option,index)=>{
+const label=document.createElement("label");
+label.className="option";
+
+const radio=document.createElement("input");
+radio.type="radio";
+radio.name="currentAnswer";
+radio.value=index;
+radio.checked=answers[currentQuestion]===index;
+
+radio.addEventListener("change",()=>{
+answers[currentQuestion]=index;
+renderOptionsSelection();
+});
+
+label.appendChild(radio);
+label.appendChild(document.createTextNode(
+" ("+optionLabels[index]+") "+option
+));
+area.appendChild(label);
+});
+
+document.getElementById("prevBtn").disabled=currentQuestion===0;
+
+document.getElementById("nextBtn").style.display=
+currentQuestion===questions.length-1?"none":"inline-block";
+
+document.getElementById("submitBtn").style.display=
+currentQuestion===questions.length-1?"inline-block":"none";
+}
+
+function renderOptionsSelection(){
+document.querySelectorAll("#optionsArea .option").forEach((label,index)=>{
+label.classList.toggle("selected",answers[currentQuestion]===index);
+});
+}
+
+function nextQuestion(){
+if(currentQuestion<getQuestions().length-1){
+currentQuestion++;
+renderQuestion();
+}
+}
+
+function previousQuestion(){
+if(currentQuestion>0){
+currentQuestion--;
+renderQuestion();
+}
+}
+
+function submitQuiz(){
+if(finished)return;
+
+const questions=getQuestions();
+const unanswered=answers.filter(a=>a===null).length;
+
+if(unanswered>0&&!confirm(
+"لم تجب عن "+unanswered+" سؤال. هل تريد تسليم الاختبار؟"
+))return;
+
+finished=true;
+let score=0;
+let html="";
+
+questions.forEach((q,i)=>{
+const correct=answers[i]===q.correct;
+if(correct)score++;
+
+html+=`
+<div class="review-item ${correct?"correct":"wrong"}">
+<strong>السؤال ${i+1}:</strong> ${q.q}
+<p>إجابتك: ${
+answers[i]===null
+?"لم تتم الإجابة"
+:"("+optionLabels[answers[i]]+") "+q.options[answers[i]]
+}</p>
+<p class="review-answer">
+الإجابة الصحيحة: (${optionLabels[q.correct]}) ${q.options[q.correct]}
+</p>
+</div>`;
+});
+
+document.getElementById("quizArea").style.display="none";
+document.getElementById("resultBox").style.display="block";
+document.getElementById("scoreText").textContent=
+score+" / "+questions.length;
+
+document.getElementById("resultMessage").textContent=
+"عدد الإجابات الصحيحة: "+score+
+" | عدد الإجابات الخاطئة أو غير المجابة: "+
+(questions.length-score);
+
+document.getElementById("reviewArea").innerHTML=html;
+document.getElementById("questionCounter").textContent="انتهى الاختبار";
+document.getElementById("progressBar").style.width="100%";
+
+document.getElementById("resultBox").scrollIntoView({behavior:"smooth"});
+}
+
+function restartQuiz(){
+openQuiz(activeQuiz);
+}
 
 </script>
-
 </body>
 </html>
